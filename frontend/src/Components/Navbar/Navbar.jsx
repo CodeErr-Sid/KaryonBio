@@ -75,23 +75,23 @@ const Navbar = () => {
 
       {/* Overlay menu for small screens */}
       <div
-        className={`fixed inset-0 bg-black bg-opacity-90 flex flex-col justify-center items-center text-2xl space-y-8 transform ${
+        className={`fixed inset-0 bg-white backdrop-blur-sm bg-opacity-90 flex flex-col justify-center items-center text-2xl space-y-8 transform ${
           menuOpen ? 'translate-x-0' : 'translate-x-full'
-        } transition-transform duration-300 ease-in-out md:hidden ${isScrolled ? 'text-black' : 'text-white'}`}
+        } transition-transform duration-300 ease-in-out md:hidden text-black`}
       >
-        <a href="#" onClick={toggleMenu} className={`hover:text-sky-400 ${isScrolled ? 'text-black' : 'text-white'}`}>
+        <a href="#" onClick={toggleMenu} className="hover:text-sky-400">
           Home
         </a>
-        <a href="#" onClick={toggleMenu} className={`hover:text-sky-400 ${isScrolled ? 'text-black' : 'text-white'}`}>
+        <a href="#" onClick={toggleMenu} className="hover:text-sky-400">
           About
         </a>
-        <a href="#" onClick={toggleMenu} className={`hover:text-sky-400 ${isScrolled ? 'text-black' : 'text-white'}`}>
+        <a href="#" onClick={toggleMenu} className="hover:text-sky-400">
           Services
         </a>
-        <a href="#" onClick={toggleMenu} className={`hover:text-sky-400 ${isScrolled ? 'text-black' : 'text-white'}`}>
+        <a href="#" onClick={toggleMenu} className="hover:text-sky-400">
           Casestudies
         </a>
-        <a href="#" onClick={toggleMenu} className={`hover:text-sky-400 ${isScrolled ? 'text-black' : 'text-white'}`}>
+        <a href="#" onClick={toggleMenu} className="hover:text-sky-400">
           Contact
         </a>
       </div>
