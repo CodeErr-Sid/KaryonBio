@@ -160,10 +160,10 @@
         </div>
       </div>
     </section>
-    <section class="lg:py-16 bg-[#F5F7FA] px-4 mt-4 md:mt-0">
+    <section class="lg:py-16 bg-[#F5F7FA] px-4 mt-4 mb-4 md:mt-0">
       <div class="container mx-auto text-center">
         <!-- Section Title -->
-        <h2 class="text-4xl font-bold text-[#2B3A4B] mb-2 md:mb-12">
+        <h2 class="text-4xl font-bold mt-10 text-[#2B3A4B] mb-2 md:mb-12">
           Our Team
         </h2>
 
@@ -174,7 +174,7 @@
           <div
             v-for="(expert, index) in experts"
             :key="index"
-            class="relative overflow-hidden transition-all duration-300 h-[650px] lg:h-[750px] md:w-[360px] lg:w-auto xl:w-[400px] rounded-xl shadow-md"
+            class="relative overflow-hidden transition-all duration-300 h-[700px] md:h-[670px] lg:h-[750px] md:w-[360px] lg:w-auto xl:w-[400px] rounded-xl shadow-md"
           >
             <!-- Image and Basic Info -->
             <div class="">
@@ -196,7 +196,7 @@
               </div>
 
               <h3
-                class="lg:text-2xl text-sm px-4 lg:px-9 text-satrt font-bold text-[#2B3A4B] mb-2"
+                class="lg:text-2xl text-sm px-4 mt-2 lg:px-9 text-satrt font-bold text-[#2B3A4B] mb-2"
               >
                 {{ expert.name }}
               </h3>
