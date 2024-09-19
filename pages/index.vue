@@ -51,7 +51,7 @@
           <!-- Menu Links (hidden on mobile) -->
           <div
             :class="[
-              'md:flex lg:gap-6 gap-6 mt-20 text-[#F5F7FA]   text-[20px]',
+              'md:flex lg:gap-6 gap-6 mt-20 md:mt-0 text-[#F5F7FA]   text-[20px]',
               isOpen ? 'block ' : 'hidden',
             ]"
             class="absolute top-0 left-0 w-full transition-all duration-300 -z-40 md:bg-none md:top-20 md:static md:w-auto md:block"
