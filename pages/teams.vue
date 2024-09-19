@@ -246,8 +246,14 @@
               class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50"
             >
               <div
-                class="relative z-10 w-full p-2 transition-transform duration-300 ease-in-out transform scale-95 bg-white shadow-lg md:p-6 md:max-w-4xl rounded-xl"
+                class="relative z-10 w-full p-2 md:h-[350px] transition-transform duration-300 ease-in-out transform scale-95 bg-white shadow-lg md:p-6 md:max-w-4xl rounded-xl"
               >
+                <button
+                  @click="closeModal"
+                  class="absolute w-10 h-10 p-2 font-bold text-red-900 top-2 right-2"
+                >
+                  X
+                </button>
                 <!-- Modal Content -->
                 <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
                   <!-- Small Card -->
@@ -306,12 +312,6 @@
                 </div>
 
                 <!-- Close Button -->
-                <button
-                  @click="closeModal"
-                  class="absolute w-10 h-10 p-2 text-white bg-red-600 rounded-full top-4 right-4 hover:bg-red-500"
-                >
-                  &times;
-                </button>
               </div>
             </div>
           </transition>
