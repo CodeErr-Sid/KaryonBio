@@ -109,22 +109,23 @@
         <div :class="['', isOpen ? ' hidden ' : ' ']">
           <!-- Typewriter effect here -->
           <h1
-            class="md:text-[35px] text-base lg:text-[52px] font-semibold md:leading-[63px] text-center"
+            class="text-[35px] text-base mt-4 md:mt-0 lg:text-[52px] font-semibold md:leading-[63px] text-center"
           >
             Contact Us
           </h1>
-          <p class="mt-2 text-sm font-normal text-center text-white md:text-xl">
-            Kindly reach us to get the fastest response and treatment
+          <p class="mt-4 text-sm text-center text-white md:text-xl">
+            Kindly reach us to get the <br class="md:hidden" />
+            fastest response and treatment
           </p>
           <h1
-            class="md:text-[48px] text-base font-semibold mt-5 l md:leading-[63px] text-center"
+            class="lg:text-[48px] text-sm md:text-base font-semibold mt-2 md:mt-5 l lg:leading-[63px] text-center"
           >
             Our Expertise at Your Fingertips
           </h1>
           <p
-            class="mt-2 text-lg md:text-[32px] text-white md:leading-[63px] font-normal text-center"
+            class="text-sm md:text-[32px] text-white md:leading-[53px] font-normal text-center"
           >
-            Innovative Solutions for Biomarker <br />
+            Innovative Solutions for Biomarker <br class="hidden lg:block" />
             Discovery and Drug Development
           </p>
         </div>
