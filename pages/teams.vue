@@ -163,7 +163,7 @@
     <section class="lg:py-16 bg-[#F5F7FA] px-4 mt-4 mb-4 md:mt-0">
       <div class="container mx-auto text-center">
         <!-- Section Title -->
-        <h2 class="text-4xl font-bold mt-10 text-[#2B3A4B] mb-2 md:mb-12">
+        <h2 class="text-4xl font-bold pt-10 text-[#2B3A4B] mb-2 md:mb-12">
           Our Team
         </h2>
 
