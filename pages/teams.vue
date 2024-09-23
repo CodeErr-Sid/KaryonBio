@@ -117,7 +117,7 @@
             <nuxt-link
               class="block py-2 lg:px-6 px-4 md:px-0 md:inline-block hover:text-[#3AD9FF] cursor-pointer"
               to="/teams"
-              >MyTeam</nuxt-link
+              >OurExperts</nuxt-link
             >
             <nuxt-link
               class="block py-2 lg:px-6 px-4 md:px-0 md:inline-block hover:text-[#3AD9FF] cursor-pointer"
@@ -222,17 +222,7 @@
               <a
                 class="text-[#3B5998] bg-[#83B0DC] cursor-pointer w-10 h-10 rounded-full flex justify-center items-center"
               >
-                <img src="/social-icons/2.svg" alt="facebook" />
-              </a>
-              <a
-                class="text-[#3B5998] bg-[#83B0DC] cursor-pointer w-10 h-10 rounded-full flex justify-center items-center"
-              >
                 <img src="/social-icons/1.svg" alt="linkedin" />
-              </a>
-              <a
-                class="text-[#3B5998] bg-[#83B0DC] cursor-pointer w-10 h-10 rounded-full flex justify-center items-center"
-              >
-                <img src="/social-icons/3.svg" alt="facebook" />
               </a>
             </div>
           </div>
