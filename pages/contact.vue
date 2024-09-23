@@ -10,91 +10,6 @@
       ]"
     >
       <div>
-        <nav
-          class="relative z-[9999] md:h-auto flex items-center justify-between px-4 py-2 md:py-6 md:px-10 xl:px-20"
-        >
-          <!-- Logo -->
-          <img src="/logo.svg" alt="logo" class="w-20 md:w-28" />
-
-          <!-- Hamburger Icon (visible on mobile only) -->
-          <div class="md:hidden">
-            <button @click="toggleMenu" class="text-white focus:outline-none">
-              <svg
-                v-if="!isOpen"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                class="w-8 h-8"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M4 6h16M4 12h16M4 18h16"
-                />
-              </svg>
-              <!-- Close Icon (visible when the menu is open) -->
-              <svg
-                v-if="isOpen"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                class="w-8 h-8"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M6 18L18 6M6 6l12 12"
-                />
-              </svg>
-            </button>
-          </div>
-
-          <!-- Menu Links (hidden on mobile) -->
-          <div
-            :class="[
-              'md:flex lg:gap-6 gap-6 mt-20 md:mt-0 text-[#F5F7FA]   text-[20px]',
-              isOpen ? 'block ' : 'hidden',
-            ]"
-            class="absolute top-0 left-0 w-full transition-all duration-300 -z-40 md:bg-none md:top-20 md:static md:w-auto md:block"
-          >
-            <nuxt-link
-              class="block py-2 lg:px-6 px-4 md:px-0 md:inline-block hover:text-[#3AD9FF] cursor-pointer"
-              to="/"
-              >Home</nuxt-link
-            >
-            <nuxt-link
-              class="block py-2 lg:px-6 px-4 md:px-0 md:inline-block hover:text-[#3AD9FF] cursor-pointer"
-              to="/about"
-              >About</nuxt-link
-            >
-            <nuxt-link
-              class="block py-2 lg:px-6 px-4 md:px-0 md:inline-block hover:text-[#3AD9FF] cursor-pointer"
-              to="/services"
-              >Services</nuxt-link
-            >
-            <nuxt-link
-              class="block py-2 lg:px-6 px-4 md:px-0 md:inline-block hover:text-[#3AD9FF] cursor-pointer"
-              to="/casestudies"
-              >Casestudies</nuxt-link
-            >
-            <nuxt-link
-              class="block py-2 lg:px-6 px-4 md:px-0 md:inline-block hover:text-[#3AD9FF] cursor-pointer"
-              to="/teams"
-              >OurExperts</nuxt-link
-            >
-            <nuxt-link
-              class="block py-2 lg:px-6 px-4 md:px-0 md:inline-block hover:text-[#3AD9FF] cursor-pointer"
-              to="/contact"
-              >Contact</nuxt-link
-            >
-          </div>
-        </nav>
-      </div>
-      <div>
         <img
           src="/contact/hero.svg"
           class="absolute -top-12 md:top-0 md:inset-0 object-cover w-full md:h-[715px]"
@@ -104,7 +19,7 @@
       </div>
 
       <div
-        class="relative z-10 text-[#F5F7FA] items-center justify-center px-4 md:pt-[63px] md:flex-row md:px-6 xl:px-10"
+        class="relative z-10 mt-20 md:mt-28 text-[#F5F7FA] items-center justify-center px-4 md:pt-[63px] md:flex-row md:px-6 xl:px-10"
       >
         <div :class="['', isOpen ? ' hidden ' : ' ']">
           <!-- Typewriter effect here -->
@@ -278,7 +193,7 @@
         class="mt-2 md:mt-10 flex flex-col items-center justify-center lg:mt-[68px] w-full"
       >
         <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31119.76035501348!2d80.04439557778329!3d12.84521129732877!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a52f7097f45e5f5%3A0x3d51f5557fe19225!2sGuduvancheri%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1726648854170!5m2!1sen!2sin"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3169.729981692729!2d-122.05178922413414!3d37.39621747208313!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fb70548de66fd%3A0x19d323945972ea61!2s855%20Maude%20Ave%2C%20Mountain%20View%2C%20CA%2094043%2C%20USA!5e0!3m2!1sen!2sin!4v1727097725585!5m2!1sen!2sin"
           width="100%"
           allowfullscreen=""
           loading="lazy"
