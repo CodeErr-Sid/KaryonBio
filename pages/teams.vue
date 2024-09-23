@@ -5,129 +5,6 @@
       :class="['', isOpen ? ' h-screen ' : ' ']"
     >
       <div>
-        <nav
-          class="relative z-[9999] md:h-auto flex items-center justify-between px-4 py-2 md:py-6 md:px-4 xl:px-20"
-        >
-          <!-- Logo -->
-          <img src="/logo.svg" alt="logo" class="w-20 md:w-28" />
-
-          <!-- Hamburger Icon (visible on mobile only) -->
-          <div class="md:hidden">
-            <button @click="toggleMenu" class="text-white focus:outline-none">
-              <svg
-                v-if="!isOpen"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                class="w-8 h-8"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M4 6h16M4 12h16M4 18h16"
-                />
-              </svg>
-              <!-- Close Icon (visible when the menu is open) -->
-              <svg
-                v-if="isOpen"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                class="w-8 h-8"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M6 18L18 6M6 6l12 12"
-                />
-              </svg>
-            </button>
-          </div>
-
-          <!-- Menu Links (hidden on mobile) -->
-          <div
-            :class="[
-              'md:flex lg:gap-6 gap-6 text-[#F5F7FA]   text-[20px]',
-              isOpen ? 'block ' : 'hidden',
-            ]"
-            class="absolute top-0 left-0 w-full transition-all duration-300 -z-40 md:bg-none md:top-20 md:static md:w-auto md:block"
-          >
-            <div class="w-full">
-              <button
-                @click="toggleMenu"
-                class="flex items-end justify-end w-full px-4 mt-4 text-white md:hidden focus:outline-none"
-              >
-                <svg
-                  v-if="!isOpen"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  class="w-8 h-8"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M4 6h16M4 12h16M4 18h16"
-                  />
-                </svg>
-                <!-- Close Icon (visible when the menu is open) -->
-                <svg
-                  v-if="isOpen"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  class="w-8 h-8"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M6 18L18 6M6 6l12 12"
-                  />
-                </svg>
-              </button>
-            </div>
-            <nuxt-link
-              class="block py-2 lg:px-6 px-4 md:px-0 md:inline-block hover:text-[#3AD9FF] cursor-pointer"
-              to="/"
-              >Home</nuxt-link
-            >
-            <nuxt-link
-              class="block py-2 lg:px-6 px-4 md:px-0 md:inline-block hover:text-[#3AD9FF] cursor-pointer"
-              to="/about"
-              >About</nuxt-link
-            >
-            <nuxt-link
-              class="block py-2 lg:px-6 px-4 md:px-0 md:inline-block hover:text-[#3AD9FF] cursor-pointer"
-              to="/services"
-              >Services</nuxt-link
-            >
-            <nuxt-link
-              class="block py-2 lg:px-6 px-4 md:px-0 md:inline-block hover:text-[#3AD9FF] cursor-pointer"
-              to="/casestudies"
-              >Casestudies</nuxt-link
-            >
-            <nuxt-link
-              class="block py-2 lg:px-6 px-4 md:px-0 md:inline-block hover:text-[#3AD9FF] cursor-pointer"
-              to="/teams"
-              >OurExperts</nuxt-link
-            >
-            <nuxt-link
-              class="block py-2 lg:px-6 px-4 md:px-0 md:inline-block hover:text-[#3AD9FF] cursor-pointer"
-              to="/contact"
-              >Contact</nuxt-link
-            >
-          </div>
-        </nav>
-      </div>
-      <div>
         <img
           src="/teams/rotate.png"
           class="absolute object-contain w-full md:hidden -top-12 m o"
@@ -141,7 +18,7 @@
       </div>
 
       <div
-        class="relative z-10 text-[#F5F7FA] items-center justify-center pt-5 px-4 lg:pt-[63px] md:flex-row md:px-6 xl:px-10"
+        class="relative z-10 mt-20 md:mt-28 text-[#F5F7FA] items-center justify-center pt-5 px-4 lg:pt-[63px] md:flex-row md:px-6 xl:px-10"
       >
         <div :class="['', isOpen ? ' hidden ' : 'block ']">
           <!-- Typewriter effect here -->
@@ -174,19 +51,19 @@
           <div
             v-for="(expert, index) in experts"
             :key="index"
-            class="relative overflow-hidden transition-all duration-300 h-[700px] md:h-[670px] lg:h-[750px] md:w-[360px] lg:w-auto xl:w-[400px] rounded-xl shadow-md"
+            class="relative overflow-hidden transition-all duration-300 md:h-[600px] md:w-[360px] lg:w-auto xl:w-[400px] rounded-xl shadow-md"
           >
             <!-- Image and Basic Info -->
             <div class="">
               <div
-                class="flex flex-col items-center pt-10 px-4 md:px-10 justify-center mx-auto bg-[#EDF6FB]"
+                class="flex flex-col items-center pt-4 px-4 md:px-6 justify-center mx-auto bg-[#EDF6FB]"
               >
                 <img
                   :src="expert.image"
                   :alt="expert.name"
-                  class="w-[400px] rounded-full 0"
+                  class="w-[200px] rounded-full 0"
                 />
-                <div class="flex items-center justify-center px-4">
+                <div class="flex items-center justify-center px-4 mt-2">
                   <p
                     class="bg-[#307BC4] text-[#F5F7FA] w-[292px] py-2 px-2 lg:px-4 rounded-t-2xl font-semibold text-sm lg:text-lg"
                   >
@@ -196,7 +73,7 @@
               </div>
 
               <h3
-                class="lg:text-2xl text-sm px-4 mt-2 lg:px-9 text-satrt font-bold text-[#2B3A4B] mb-2"
+                class="lg:text-lg text-sm px-4 mt-2 lg:px-6 text-satrt font-bold text-[#2B3A4B] mb-2"
               >
                 {{ expert.name }}
               </h3>
@@ -205,19 +82,19 @@
             <!-- Expand button -->
             <div>
               <p
-                class="text-[#9CABB6] px-2 md:px-4 lg:px-[45px] text-balance mb-2"
+                class="text-[#9CABB6] px-2 md:px-4 lg:px-[35px] text-balance mb-2"
               >
                 <span>Hi, I'm {{ expert.name }}</span> {{ expert.description }}
                 <span
                   @click="openModal(index)"
-                  class="w-full py-2 text-[#307BC4] cursor-pointer"
+                  class="w-full py-2 text-[#307BC4] underline cursor-pointer"
                 >
                   Read More
                 </span>
               </p>
             </div>
             <div
-              class="absolute flex items-center justify-center w-full gap-4 mb-5 bottom-4"
+              class="flex items-center justify-center w-full gap-4 mb-5 md:absolute bottom-4"
             >
               <a
                 class="text-[#3B5998] bg-[#83B0DC] cursor-pointer w-10 h-10 rounded-full flex justify-center items-center"
@@ -227,9 +104,6 @@
             </div>
           </div>
 
-          <!-- Full-Screen Modal -->
-          <!-- Full-Screen Modal -->
-          <!-- Full-Screen Modal -->
           <transition name="fade-scale">
             <div
               v-if="isModalOpen"
@@ -305,6 +179,24 @@
               </div>
             </div>
           </transition>
+        </div>
+      </div>
+    </section>
+    <section
+      class="flex items-center justify-center mt-4 mb-4 md:mt-10 md:mb-10"
+    >
+      <div class="md:w-[550px] relative">
+        <img src="/partner/jelly.svg " class="relative" alt="" />
+        <div class="absolute inset-0 mt-10 md:mt-10">
+          <h1
+            class="text-xl md:text-[53px] font-bold text-center text-[#307BC4]"
+          >
+            Don’t Let Your Health Take a Backseat!
+          </h1>
+          <p class="text-sm md:text-[20px] text-center text-[#307BC4]">
+            Schedule an appointment with one of our experienced medical
+            professionals today!
+          </p>
         </div>
       </div>
     </section>
@@ -455,7 +347,7 @@ young scientists, and participating in open-source projects.`,
         {
           name: "Dr. Keerthi Harikrishnan, Advisor",
           position: "Advisor",
-          image: "/teams/expert7.png",
+          image: "/teams/expert8.png",
           description: `Dr. Keerthi Harikrishnan is a seasoned domain expert with over 
           a decade of experience in healthcare R&D, specializing in oncology, cardiology, drug
            discovery, and clinical research.`,

@@ -11,92 +11,6 @@
         );
       "
     >
-      <div>
-        <nav
-          class="relative z-10 flex items-center justify-between px-4 py-2 md:py-6 md:px-10 xl:px-20"
-        >
-          <!-- Logo -->
-          <img src="/logo.svg" alt="logo" class="w-20 md:w-28" />
-
-          <!-- Hamburger Icon (visible on mobile only) -->
-          <div class="md:hidden">
-            <button @click="toggleMenu" class="text-white focus:outline-none">
-              <svg
-                v-if="!isOpen"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                class="w-8 h-8"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M4 6h16M4 12h16M4 18h16"
-                />
-              </svg>
-              <!-- Close Icon (visible when the menu is open) -->
-              <svg
-                v-if="isOpen"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                class="w-8 h-8"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M6 18L18 6M6 6l12 12"
-                />
-              </svg>
-            </button>
-          </div>
-
-          <!-- Menu Links (hidden on mobile) -->
-          <div
-            :class="[
-              'md:flex lg:gap-6 gap-6 mt-20 md:mt-0 text-[#F5F7FA] text-[20px]',
-              isOpen ? 'block ' : 'hidden',
-            ]"
-            class="absolute top-0 left-0 w-full transition-all duration-300 -z-40 md:bg-none md:top-20 md:static md:w-auto md:block"
-          >
-            <nuxt-link
-              class="block py-2 lg:px-6 px-4 md:px-0 md:inline-block hover:text-[#3AD9FF] cursor-pointer"
-              to="/"
-              >Home</nuxt-link
-            >
-            <nuxt-link
-              class="block py-2 lg:px-6 px-4 md:px-0 md:inline-block hover:text-[#3AD9FF] cursor-pointer"
-              to="/about"
-              >About</nuxt-link
-            >
-            <nuxt-link
-              class="block py-2 lg:px-6 px-4 md:px-0 md:inline-block hover:text-[#3AD9FF] cursor-pointer"
-              to="/services"
-              >Services</nuxt-link
-            >
-            <nuxt-link
-              class="block py-2 lg:px-6 px-4 md:px-0 md:inline-block hover:text-[#3AD9FF] cursor-pointer"
-              to="/casestudies"
-              >Casestudies</nuxt-link
-            >
-            <nuxt-link
-              class="block py-2 lg:px-6 px-4 md:px-0 md:inline-block hover:text-[#3AD9FF] cursor-pointer"
-              to="/teams"
-              >OurExperts</nuxt-link
-            >
-            <nuxt-link
-              class="block py-2 lg:px-6 px-4 md:px-0 md:inline-block hover:text-[#3AD9FF] cursor-pointer"
-              to="/contact"
-              >Contact</nuxt-link
-            >
-          </div>
-        </nav>
-      </div>
-
       <!-- SVG background image -->
       <img
         src="/partner/hero.svg"
@@ -106,7 +20,7 @@
       />
 
       <div
-        class="relative z-10 text-[#F5F7FA] items-center justify-center pt-5 px-4 lg:pt-[63px] md:flex-row md:px-6 xl:px-10"
+        class="relative z-10 mt-20 md:mt-28 text-[#F5F7FA] items-center justify-center pt-5 px-4 lg:pt-[63px] md:flex-row md:px-6 xl:px-10"
       >
         <div
           class="flex flex-col items-center justify-center"
@@ -120,7 +34,7 @@
           </h1>
 
           <h1
-            class="md:text-xl text-base font-semibold mt-5 lg:mt-10 l md:leading-[30px] text-center"
+            class="md:text-xl text-base font-semibold md:w-[576px] mt-5 lg:mt-10 l md:leading-[30px] text-center"
           >
             Our innovative AI-driven diagnostic solutions are designed to
             integrate seamlessly with the operations of hospitals, diagnostic
@@ -197,57 +111,61 @@
         </div>
       </div>
     </section> -->
-    <section class="flex flex-col justify-between mb-10 md:flex-row">
-      <div class="md:w-[650px]">
-        <div class="flex flex-col">
-          <h1
-            class="text-[22px] text-center md:text-start px-4 lg:text-[40px] md:mt-[60px] mt-4 font-bold leading-[40px] lg:leading-[63px]"
-          >
-            Elevate your wealth in biomedical <br class="hidden md:block" />
-            research!
-          </h1>
-          <div class="swiper mySwiper">
-            <div
-              class="flex items-center justify-around gap-2 mt-6 swiper-wrapper"
+    <section>
+      <div
+        class="flex flex-col justify-between gap-5 mb-10 md:flex-row xl:w-[1200px]"
+      >
+        <div class="md:w-[600px]">
+          <div class="flex flex-col">
+            <h1
+              class="text-[22px] text-center md:text-start px-4 lg:text-[40px] md:mt-[60px] mt-4 font-bold leading-[40px] lg:leading-[63px]"
             >
-              <img
-                v-for="(swip, index) in swipImages"
-                :key="index"
-                :src="swip.src"
-                :alt="'swip' + index"
-                @click="showSlide(index)"
-                class="cursor-pointer swiper-slide"
-              />
+              Elevate your wealth in biomedical research!
+            </h1>
+            <div class="swiper mySwiper">
+              <div
+                class="flex items-center justify-around gap-2 mt-6 swiper-wrapper"
+              >
+                <img
+                  v-for="(swip, index) in swipImages"
+                  :key="index"
+                  :src="swip.src"
+                  :alt="'swip' + index"
+                  @click="showSlide(index)"
+                  class="cursor-pointer swiper-slide"
+                />
+              </div>
             </div>
           </div>
+          <h1
+            class="text-[36px] font-semibold text-center md:text-start text-[#1F3B60] mt-6"
+          >
+            Hospital
+          </h1>
+          <ul
+            class="list-disc text-[#1F3B60] px-4 text-sm md:leading-8 lg:leading-10 md:text-[24px] md:px-10 mt-5"
+          >
+            <li>
+              Partner with us for an exceptional, personalized service
+              experience that drives success and innovation. Let's ignite
+              progress together.
+            </li>
+            <li class="mt-2 md:mt-5">
+              Partner with us to advance cutting-edge biomedical research and
+              enhance patient care together.
+            </li>
+          </ul>
         </div>
-        <h1
-          class="text-[36px] font-semibold text-center md:text-start text-[#1F3B60] mt-6"
+        <div
+          class="flex flex-col md:w-[400px] pr-10 items-center justify-center lg:items-center"
         >
-          Hospital
-        </h1>
-        <ul
-          class="list-disc text-[#1F3B60] px-4 text-sm md:text-[24px] md:px-10 mt-5"
-        >
-          <li>
-            Partner with us for an exceptional, personalized service experience
-            that drives success and innovation. Let's ignite progress together.
-          </li>
-          <li class="mt-2 md:mt-5">
-            Partner with us to advance cutting-edge biomedical research and
-            enhance patient care together.
-          </li>
-        </ul>
-      </div>
-      <div
-        class="flex flex-col items-center lg:items-start justify-center md:w-[380px]"
-      >
-        <h2
-          class="md:text-[36px] lg:text-[90px] mt-4 xl:-ml-36 text-center lg:text-start font-semibold text-[#1F3B60]"
-        >
-          {{ activeSlide.title }}
-        </h2>
-        <img :src="activeSlide.src" class="mt-2 xl:-ml-36" alt="slide" />
+          <h2
+            class="md:text-[36px] lg:text-[60px] mt-4 text-center lg:text-center font-semibold text-[#1F3B60]"
+          >
+            {{ activeSlide.title }}
+          </h2>
+          <img :src="activeSlide.src" class="mt-2" alt="slide" />
+        </div>
       </div>
     </section>
   </div>
@@ -268,6 +186,8 @@ useHead({
 });
 </script>
 <script>
+definePageMeta({ layout: "primary" });
+
 export default {
   data() {
     return {
