@@ -1,20 +1,13 @@
 <template>
   <div>
     <section
-      class="relative w-full h-screen overflow-hidden"
+      class="relative w-full h-screen overflow-hidden bg-gradient-to-r from-[#1F5179] to-[#1F709C] md:bg-none xl:bg-gradient-to-r xl:from-[#1F5179] xl:to-[#1F709C]"
       :class="['', isOpen ? '  ' : ' ']"
-      style="
-        background: linear-gradient(
-          251deg,
-          rgba(31, 81, 121, 0.8) 9.95%,
-          rgba(31, 112, 156, 0.8) 71.29%
-        );
-      "
     >
       <!-- SVG background image -->
       <img
         src="/partner/hero.svg"
-        class="absolute top-0 opacity-50"
+        class="absolute top-0 hidden md:block xl:opacity-50"
         alt="hero-dot"
         :class="['', isOpen ? ' hidden' : ' ']"
       />
@@ -45,23 +38,25 @@
         </div>
       </div>
     </section>
-    <!-- <section class="relative w-full h-[900px] overflow-hidden bottom-10">
+    <section
+      class="relative w-full py-4 md:py-0 md:h-[800px] xl:h-[1000px] bg-gradient-to-r from-[#0C264A] to-[#1F3B60] md:bg-none md:overflow-hidden bottom-10"
+    >
       <h1
-        class="text-[35px] lg:text-[52px] md:mt-[60px] mt-4 font-semibold leading-[40px] lg:leading-[63px] text-center"
+        class="text-xl md:text-[35px] lg:text-[52px] text-white md:text-black md:mt-[60px] mt-4 font-semibold leading-[40px] lg:leading-[63px] text-center"
       >
         Why Partner with Karyon Bio?
       </h1>
       <div class="flex flex-col items-center justify-center">
         <img
-          src="/partner/lab.svg"
-          class="absolute opacity-80 top-36"
+          src="/partner/lab.png"
+          class="absolute hidden opacity-80 md:block top-36"
           alt="lab"
         />
       </div>
 
       <div
-        class="container relative inset-0 z-20 w-full py-8 mx-auto"
-        :class="expandedSection ? '' : 'mt-32'"
+        class="container relative inset-0 z-20 w-full mx-auto md:py-8"
+        :class="expandedSection ? 'mt-10' : 'md:mt-32 mt-4 '"
       >
         <div
           v-for="(section, index) in sections"
@@ -70,13 +65,13 @@
         >
           <div>
             <div
-              class="px-6 mb-2 text-lg font-bold text-white transition-colors duration-300 rounded-lg"
+              class="px-2 mb-2 text-sm font-bold text-white transition-colors duration-300 rounded-lg md:text-lg md:px-6"
               :class="
                 expandedSection === index + 1
-                  ? 'hidden' 
+                  ? 'hidden'
                   : expandedSection
-                  ? 'bg-[#49719D] bg-opacity-30 py-4' 
-                  : 'bg-[#49719D] bg-opacity-30 py-20' 
+                  ? 'bg-[#49719D] bg-opacity-10 md:bg-opacity-30 py-4'
+                  : 'bg-[#49719D] bg-opacity-10 md:bg-opacity-30 py-4 md:py-10 lg:py-20'
               "
               @click="toggleSection(index + 1)"
             >
@@ -87,7 +82,7 @@
           <transition name="expand">
             <div>
               <h1
-                class="text-[25px] font-bold mt-[0px] text-white text-center cursor-pointer"
+                class="md:text-[25px] font-bold lg:mt-[100px] text-white text-center cursor-pointer"
                 :class="expandedSection === index + 1 ? '' : 'hidden'"
                 @click="toggleSection(index + 1)"
               >
@@ -95,9 +90,11 @@
               </h1>
               <div
                 v-if="expandedSection === index + 1"
-                class="relative flex items-center justify-center h-[324px] px-4 mb-4 text-white rounded-lg bg-opacity-90"
+                class="relative flex flex-col items-center justify-center px-4 mt-2 mb-4 text-white rounded-lg md:flex-row md:items-center bg-opacity-90"
               >
-                <p class="text-[25px] text-start font-semibold">
+                <p
+                  class="text-sm md:text-[25px] md:leading-8 text-center md:text-start font-semibold"
+                >
                   {{ section.content }}
                 </p>
                 <img
@@ -110,7 +107,7 @@
           </transition>
         </div>
       </div>
-    </section> -->
+    </section>
     <section>
       <div
         class="flex flex-col justify-between gap-5 mb-10 md:flex-row xl:w-[1200px]"
@@ -157,7 +154,7 @@
           </ul>
         </div>
         <div
-          class="flex flex-col md:w-[400px] pr-10 items-center justify-center lg:items-center"
+          class="flex flex-col md:w-[400px] md:pr-10 items-center w-full justify-center lg:items-center"
         >
           <h2
             class="md:text-[36px] lg:text-[60px] mt-4 text-center lg:text-center font-semibold text-[#1F3B60]"
@@ -199,7 +196,7 @@ export default {
           content:
             "Stay ahead in liver disease diagnostics with our cutting-edge AI and multi-omics platform. Our technology enables earlier detection and more precise insights for better outcomes. Partner with us to revolutionize liver health diagnostics.",
           image: "/partner/expand1.png",
-          imageClass: "w-[509px]",
+          imageClass: "xl:w-[509px] md:w-[350px] w-[300px] mt-2 md:mt-0",
           alt: "expand1",
         },
         {
@@ -207,7 +204,7 @@ export default {
           content:
             "We provide tailored solutions to meet your unique needs. Our approach is personalized, focusing on delivering the most effective outcomes. Let us help you achieve your goals with precision and care",
           image: "/partner/expand2.png",
-          imageClass: "w-[509px]",
+          imageClass: "xl:w-[509px] md:w-[350px] w-[300px] mt-2 md:mt-0",
           alt: "expand2",
         },
         {
@@ -215,7 +212,7 @@ export default {
           content:
             "Together, we can enhance global liver health outcomes through collaboration and innovative solutions. By focusing on prevention, treatment, and education, we aim to make a positive impact. Let’s work to promote healthier lives worldwide.",
           image: "/partner/expand3.png",
-          imageClass: "w-[509px]",
+          imageClass: "xl:w-[509px] md:w-[350px] w-[300px] mt-2 md:mt-0",
           alt: "expand3",
         },
       ],
