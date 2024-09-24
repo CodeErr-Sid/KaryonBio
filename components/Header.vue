@@ -2,12 +2,13 @@
   <div class="bg-custom-gradient">
     <div>
       <nav
-        class="fixed z-[99999] flex items-center justify-between px-4 py-2 md:py-6 md:px-10 xl:px-20"
-        :class="
-          isOpen
-            ? 'w-[150px]'
-            : ' bg-white bg-opacity-30 w-full  backdrop-filter backdrop-blur-lg'
-        "
+        class="fixed z-[99999] flex items-center justify-between px-4 py-2 md:py-6 md:px-10 xl:px-20 transition-all duration-300"
+        :class="[
+          isOpen ? 'w-[150px] ' : 'w-full ',
+          isScrolled
+            ? 'bg-white bg-opacity-30 backdrop-filter md:backdrop-blur-lg text-white'
+            : '',
+        ]"
       >
         <img
           src="/logo.svg"
@@ -54,10 +55,11 @@
 
         <div
           :class="[
-            'md:flex gap-2 lg:gap-6 text-[#1F3B60] font-semibold text-[20px]',
+            'md:flex gap-2 lg:gap-6 text-[#1F3B60]  font-semibold text-[20px]',
             isOpen
               ? 'block  font-semibold bg-opacity-30 backdrop-filter backdrop-blur-lg bg-white h-screen w-[150px]'
               : 'hidden',
+            isScrolled ? 'md:text-[#1F3B60] ' : ' md:text-white',
           ]"
           class="absolute top-0 left-0 w-full transition-all duration-300 md:bg-none md:top-20 md:static md:w-auto md:block"
         >
@@ -106,7 +108,7 @@
           <nuxt-link
             class="block py-2 px-2 md:inline-block hover:text-[#3AD9FF] cursor-pointer"
             to="/teams"
-            >OurExpert</nuxt-link
+            >OurExperts</nuxt-link
           >
           <nuxt-link
             class="block py-2 px-2 md:inline-block hover:text-[#3AD9FF] cursor-pointer"
@@ -118,17 +120,28 @@
     </div>
   </div>
 </template>
+
 <script>
 export default {
   data() {
     return {
       isOpen: false,
+      isScrolled: false, // Track scroll state
     };
   },
   methods: {
     toggleMenu() {
       this.isOpen = !this.isOpen;
     },
+    handleScroll() {
+      this.isScrolled = window.scrollY > 50; // Change 50 to any scroll position where the effect should start
+    },
+  },
+  mounted() {
+    window.addEventListener("scroll", this.handleScroll);
+  },
+  beforeDestroy() {
+    window.removeEventListener("scroll", this.handleScroll);
   },
 };
 </script>

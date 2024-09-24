@@ -118,7 +118,7 @@
                   @click="closeModal"
                   class="absolute w-10 h-10 p-2 font-bold text-red-900 top-2 right-2"
                 >
-                  <img src="/teams/close.svg" alt="close" />
+                  <img src="/close.svg" alt="close" />
                 </button>
                 <!-- Modal Content -->
                 <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
@@ -203,7 +203,7 @@
       class="flex items-center justify-center mt-4 mb-4 md:mt-10 md:mb-10"
     >
       <div class="md:w-[550px] relative">
-        <img src="/partner/jelly.svg " class="relative" alt="" />
+        <img src="/partner/jelly.svg " id="jelly-svg" class="relative" alt="" />
         <div class="absolute inset-0 mt-10 md:mt-10">
           <h1
             class="text-xl md:text-[53px] font-bold text-center md:leading-[63px] text-[#307BC4]"
@@ -370,7 +370,6 @@ export default {
   },
 };
 </script>
-
 <style scoped>
 /* Tailwind transition classes for smooth animations */
 .fade-scale-enter-active,
@@ -401,5 +400,15 @@ export default {
 /* Hide scrollbar for Firefox */
 .custom-scroll {
   scrollbar-width: none; /* Hide scrollbar */
+}
+
+#jelly-svg {
+  transition: transform 0.5s ease, filter 0.3s ease;
+  cursor: pointer;
+}
+
+#jelly-svg:hover {
+  transform: scale(1.05) skewX(2deg);
+  filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.3));
 }
 </style>

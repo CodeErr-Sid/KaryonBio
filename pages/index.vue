@@ -75,7 +75,7 @@
             <nuxt-link
               class="block py-2 lg:px-6 px-4 md:px-0 md:inline-block hover:text-[#3AD9FF] cursor-pointer"
               to="/teams"
-              >OurExpert</nuxt-link
+              >OurExperts</nuxt-link
             >
             <nuxt-link
               class="block py-2 lg:px-6 px-4 md:px-0 md:inline-block hover:text-[#3AD9FF] cursor-pointer"
@@ -237,7 +237,7 @@
           <div
             v-for="(expert, index) in experts"
             :key="index"
-            class="relative overflow-hidden transition-all duration-300 h-[600px] md:w-[360px] lg:w-auto xl:w-[400px] rounded-xl shadow-md"
+            class="relative overflow-hidden transition-all duration-300 md:h-[600px] md:w-[360px] lg:w-auto xl:w-[400px] rounded-xl shadow-md"
           >
             <!-- Image and Basic Info -->
             <div class="">
@@ -280,7 +280,7 @@
               </p>
             </div>
             <div
-              class="absolute flex items-center justify-center w-full gap-4 mb-5 bottom-4"
+              class="flex items-center justify-center w-full gap-4 mb-5 md:absolute bottom-4"
             >
               <a
                 class="text-[#3B5998] bg-[#83B0DC] cursor-pointer w-10 h-10 rounded-full flex justify-center items-center"
@@ -290,22 +290,21 @@
             </div>
           </div>
 
-          <!-- Full-Screen Modal -->
-          <!-- Full-Screen Modal -->
-          <!-- Full-Screen Modal -->
           <transition name="fade-scale">
             <div
               v-if="isModalOpen"
-              class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50"
+              @click="closeModal"
+              class="fixed inset-0 z-[9999999999] flex items-center justify-center bg-black bg-opacity-50"
             >
               <div
+                data-aos="fade-down"
                 class="relative z-10 w-full p-2 md:h-[350px] transition-transform duration-300 ease-in-out transform scale-95 bg-white shadow-lg md:p-6 md:max-w-4xl rounded-xl"
               >
                 <button
                   @click="closeModal"
                   class="absolute w-10 h-10 p-2 font-bold text-red-900 top-2 right-2"
                 >
-                  X
+                  <img src="/close.svg" alt="close" />
                 </button>
                 <!-- Modal Content -->
                 <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
@@ -326,7 +325,7 @@
                     <p class="mb-4 text-gray-500">
                       {{ selectedExpert.position }}
                     </p>
-                    <!-- LinkedIn Button -->
+                    <!-- Social Links -->
                     <div class="flex justify-center gap-2 md:gap-4 md:mb-5">
                       <a
                         class="text-[#3B5998] bg-[#83B0DC] cursor-pointer md:w-10 md:h-10 w-8 h-8 rounded-full flex justify-center items-center"
@@ -347,7 +346,6 @@
                   </div>
 
                   <!-- Expanded Info -->
-                  <!-- Expanded Info -->
                   <div
                     class="rounded-lg md:p-4 md:h-64 bg-gray-50 custom-scroll"
                   >
@@ -361,10 +359,26 @@
                     >
                       {{ selectedExpert.fullDescription }}
                     </p>
+                    <h4
+                      class="text-sm mt-2 md:text-lg font-bold text-[#2B3A4B] text-start"
+                    >
+                      Expertise:
+                    </h4>
+                    <p class="mt-2 text-xs text-gray-700 md:text-sm text-start">
+                      {{ selectedExpert.expertise }}
+                    </p>
+                    <h4
+                      class="text-sm mt-2 md:text-lg font-bold text-[#2B3A4B] text-start"
+                    >
+                      Role in the Company:
+                    </h4>
+                    <p
+                      class="mt-2 text-xs text-gray-700 md:mt-4 md:text-sm text-start"
+                    >
+                      {{ selectedExpert.role }}
+                    </p>
                   </div>
                 </div>
-
-                <!-- Close Button -->
               </div>
             </div>
           </transition>
@@ -375,6 +389,8 @@
 </template>
 
 <script>
+import AOS from "aos";
+import "aos/dist/aos.css";
 definePageMeta({ layout: "primary" });
 export default {
   data() {
@@ -385,13 +401,10 @@ export default {
           name: "Srinivas Thirunagari, Founder & CEO",
           position: "Founder & CEO",
           image: "/teams/expert1.png",
-          description: `Srinivas leverages over two decades of experience in computer
-           vision and AI. With a strong foundation in Biomedical Engineering and Computer
-            Science, Srinivas has expertise that spans AI-driven diagnostics,`,
-          fullDescription: `Srinivas leverages over two decades of experience in computer
-           vision and AI. With a strong foundation in Biomedical Engineering and Computer
-            Science, Srinivas has expertise that spans AI-driven diagnostics, video processing,
-             and the integration of LLMs into healthcare solutions.`,
+          description: `Srinivas leverages over two decades of experience in computer vision and AI. With a strong foundation in Biomedical Engineering and Computer Science, Srinivas has expertise that spans AI-driven diagnostics.`,
+          fullDescription: `Srinivas Thirunagari brings over two decades of experience in computer vision and AI. With an educational foundation in Biomedical Engineering and Computer Science, he has made significant contributions to AI-driven diagnostics and video processing. His expertise also extends to integrating large language models (LLMs) into healthcare solutions.`,
+          expertise: `Srinivas specializes in leveraging AI technologies to transform diagnostic solutions. His work focuses on using computer vision and AI to create non-invasive diagnostic methods, providing innovative healthcare solutions.`,
+          role: `As the Founder & CEO of Karyon Bio, Srinivas leads the company's mission to develop AI-powered solutions for the early diagnosis, prognosis, and treatment of liver disorders, specifically NAFLD/NASH.`,
           social: {
             facebook: "#",
             twitter: "#",
@@ -399,15 +412,13 @@ export default {
           },
         },
         {
-          name: "Principal Scientist - AI/ML",
-          position: "Dr. Eckart Bindewald, Principal Scientist - AI/ML",
+          name: "Dr. Eckart Bindewald, Principal Scientist - AI/ML",
+          position: "Principal Scientist - AI/ML",
           image: "/teams/expert2.png",
-          description:
-            "Dr. Eckart Bindewald is a seasoned bioinformatics and computational biology expert with over two decades of experience developing cutting-edge AI/ML algorithms for biomedical research. He holds a Ph.D. in Natural Sciences from the ",
-          fullDescription: `Dr. Eckart Bindewald is a seasoned bioinformatics and computational biology expert with over two decades of experience developing cutting-edge AI/ML algorithms for biomedical research. He holds a Ph.D. in Natural Sciences from the University of Heidelberg, Germany, specializing in structural bioinformatics and protein structure prediction.
-Dr. Eckart Bindewald has more than 30 peer reviewed publications in the areas of bioinformatics and machine learning. He developed computational approaches for protein fold recognition, RNA structure prediction and design, nucleic acid nanotechnology as well as genome annotation.  He taught courses in  bioinformatics, mathematics, machine learning and AI.
-Dr. Bindewald has made significant contributions to the field of biomarker discovery, mainly through integrating multi-omics data and advanced machine-learning techniques. His work has been pivotal in advancing the understanding of RNA and protein structures and developing novel computational tools for RNA and DNA structure prediction and design.
-At Karyon Bio, Dr. Bindewald leads the AI/ML initiatives, driving innovations in biomarker discovery by leveraging his extensive experience in generative AI, deep learning, and data mining. His research efforts are focused on harnessing the power of artificial intelligence to uncover new biomarkers and therapeutic targets, ultimately advancing personalized medicine.`,
+          description: `Dr. Eckart Bindewald is a seasoned bioinformatics and computational biology expert with over two decades of experience developing cutting-edge AI/ML algorithms for biomedical research.`,
+          fullDescription: `Dr. Eckart Bindewald holds a Ph.D. in Natural Sciences from the University of Heidelberg, Germany. With over 20 years of experience in bioinformatics and computational biology, he has published more than 30 peer-reviewed papers, specializing in structural bioinformatics and protein structure prediction.`,
+          expertise: `Dr. Bindewald has developed advanced computational approaches for protein fold recognition, RNA structure prediction, and genome annotation. His expertise includes biomarker discovery, multi-omics integration, and applying machine learning to biomedical research.`,
+          role: `At Karyon Bio, Dr. Bindewald leads the AI/ML initiatives, focusing on biomarker discovery and applying deep learning to enhance diagnostic tool accuracy. His research aims to harness artificial intelligence to discover new biomarkers and therapeutic targets, advancing personalized medicine.`,
           social: {
             facebook: "#",
             twitter: "#",
@@ -415,12 +426,13 @@ At Karyon Bio, Dr. Bindewald leads the AI/ML initiatives, driving innovations in
           },
         },
         {
-          name: "Dr. Dhatchana Moorthy, Principal Scientist - Biomarker Researchi",
+          name: "Dr. Dhatchana Moorthy, Principal Scientist - Biomarker Research",
           position: "Principal Scientist - Biomarker Research",
           image: "/teams/expert3.png",
-          description:
-            "Dr. Eckart Bindewald is a seasoned bioinformatics and computational.",
-          fullDescription: `Dr. Eckart Bindewald is a seasoned bioinformatics and computational biology expert with over two decades of experience developing cutting-edge AI/ML algorithms for biomedical research. He holds a Ph.D. in Natural Sciences from the University of Heidelberg, Germany, specializing in structural bioinformatics and protein structure prediction.`,
+          description: `Dr. Dhatchana Moorthy brings over 25 years of expertise in drug discovery, biomarker research, and biotherapeutics, with a focus on gene therapy and targeted small molecules.`,
+          fullDescription: `Dr. Dhatchana Moorthy holds a Ph.D. in Pharmaceutical Science and Biochemistry, with over 25 years of experience in drug discovery, biomarker research, and biotherapeutics. He has led numerous research initiatives, particularly in gene therapy and targeted small molecules.`,
+          expertise: `Dr. Moorthy is an expert in genomics, computational drug discovery, and AI/ML-driven biomarker research. His contributions have been crucial in developing targeted therapies and advancing the digital transformation of pharmaceutical manufacturing.`,
+          role: `As Principal Scientist at Karyon Bio, Dr. Moorthy leads the biomarker research team. He applies his expertise in genomics and machine learning to identify and validate novel biomarkers for liver disorders, particularly NAFLD/NASH, to drive precision medicine forward.`,
           social: {
             facebook: "#",
             twitter: "#",
@@ -428,9 +440,12 @@ At Karyon Bio, Dr. Bindewald leads the AI/ML initiatives, driving innovations in
           },
         },
       ],
+      isModalOpen: false,
+      selectedExpert: null,
     };
   },
   mounted() {
+    AOS.init();
     // Call the typewriter effect after the component is mounted
     this.typeWriterEffect(
       " AI-Driven Novel Biomarker Discovery",
@@ -469,6 +484,46 @@ At Karyon Bio, Dr. Bindewald leads the AI/ML initiatives, driving innovations in
 };
 </script>
 <style scoped>
+/* Tailwind transition classes for smooth animations */
+.fade-scale-enter-active,
+.fade-scale-leave-active {
+  transition: all 0.5s ease;
+}
+
+.fade-scale-enter,
+.fade-scale-leave-to {
+  transform: scale(0.95);
+  opacity: 0;
+}
+
+.fade-scale-leave-active {
+  opacity: 0;
+}
+
+.custom-scroll {
+  overflow-y: auto; /* Enable vertical scrolling */
+  height: 16rem; /* Adjust height as needed */
+}
+
+/* Hide scrollbar for WebKit browsers (Chrome, Safari) */
+.custom-scroll::-webkit-scrollbar {
+  display: none; /* Hide scrollbar */
+}
+
+/* Hide scrollbar for Firefox */
+.custom-scroll {
+  scrollbar-width: none; /* Hide scrollbar */
+}
+
+#jelly-svg {
+  transition: transform 0.5s ease, filter 0.3s ease;
+  cursor: pointer;
+}
+
+#jelly-svg:hover {
+  transform: scale(1.05) skewX(2deg);
+  filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.3));
+}
 .text-example {
   font-family: "FutureW01", sans-serif;
 }
