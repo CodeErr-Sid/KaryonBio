@@ -189,11 +189,13 @@
         <img src="/partner/jelly.svg " class="relative" alt="" />
         <div class="absolute inset-0 mt-10 md:mt-10">
           <h1
-            class="text-xl md:text-[53px] font-bold text-center text-[#307BC4]"
+            class="text-xl md:text-[53px] font-bold text-center md:leading-[63px] text-[#307BC4]"
           >
             Don’t Let Your Health Take a Backseat!
           </h1>
-          <p class="text-sm md:text-[20px] text-center text-[#307BC4]">
+          <p
+            class="text-sm md:text-[20px] text-center md:leading-10 text-[#307BC4]"
+          >
             Schedule an appointment with one of our experienced medical
             professionals today!
           </p>
