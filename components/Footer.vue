@@ -6,7 +6,7 @@
       class="container grid grid-cols-1 gap-2 mx-auto text-white md:gap-8 md:grid-cols-3"
     >
       <!-- Left section: Message -->
-      <div>
+      <div class="text-center md:text-start">
         <h3 class="mb-4 text-sm font-bold md:text-2xl">
           We would love to hear from you
         </h3>
@@ -22,7 +22,7 @@
       </div>
 
       <!-- Middle section: Contact info -->
-      <div>
+      <div class="text-center md:text-start">
         <h3 class="mb-4 text-sm font-bold md:text-2xl">Contact us</h3>
         <ul class="space-y-2 text-[#A3A3A3]">
           <li>karyonbio@gmail.com</li>
@@ -32,7 +32,7 @@
       </div>
 
       <!-- Right section: Follow us -->
-      <div>
+      <div class="text-center md:text-start">
         <h3 class="mb-4 text-sm font-bold md:text-2xl">Follow us</h3>
         <ul class="space-y-4 text-[#A3A3A3]">
           <li>

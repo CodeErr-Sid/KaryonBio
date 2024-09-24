@@ -112,11 +112,12 @@
             >
               <div
                 data-aos="fade-down"
-                class="relative z-10 w-full p-2 md:h-[350px] transition-transform duration-300 ease-in-out transform scale-95 bg-white shadow-lg md:p-6 md:max-w-4xl rounded-xl"
+                id="style-2"
+                class="relative z-10 w-full p-2 force-overflow md:h-[350px] transition-transform duration-300 ease-in-out transform scale-95 bg-white shadow-lg md:p-6 md:max-w-4xl rounded-xl"
               >
                 <button
                   @click="closeModal"
-                  class="absolute w-10 h-10 p-2 font-bold text-red-900 top-2 right-2"
+                  class="absolute top-0 p-2 font-bold text-red-900 right-3.5 w-7 h-7"
                 >
                   <img src="/close.svg" alt="close" />
                 </button>
@@ -372,6 +373,22 @@ export default {
 </script>
 <style scoped>
 /* Tailwind transition classes for smooth animations */
+#style-2::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  background-color: #f5f5f5;
+}
+
+#style-2::-webkit-scrollbar {
+  width: 12px;
+  background-color: #f5f5f5;
+}
+
+#style-2::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: #d62929;
+}
 .fade-scale-enter-active,
 .fade-scale-leave-active {
   transition: all 0.5s ease;
@@ -392,14 +409,24 @@ export default {
   height: 16rem; /* Adjust height as needed */
 }
 
-/* Hide scrollbar for WebKit browsers (Chrome, Safari) */
+/* WebKit browsers (Chrome, Safari) */
 .custom-scroll::-webkit-scrollbar {
-  display: none; /* Hide scrollbar */
+  width: 6px; /* Slim scrollbar width */
 }
 
-/* Hide scrollbar for Firefox */
+.custom-scroll::-webkit-scrollbar-track {
+  background: transparent; /* Scrollbar track background */
+}
+
+.custom-scroll::-webkit-scrollbar-thumb {
+  background-color: #83b0dc; /* Scrollbar thumb color */
+  border-radius: 10px; /* Rounded scrollbar thumb */
+}
+
+/* Firefox */
 .custom-scroll {
-  scrollbar-width: none; /* Hide scrollbar */
+  scrollbar-width: thin; /* Slim scrollbar */
+  scrollbar-color: #83b0dc transparent; /* Thumb color and track background */
 }
 
 #jelly-svg {

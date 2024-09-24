@@ -190,6 +190,7 @@ export default {
     return {
       isOpen: false,
       expandedSection: null,
+      swiperInstance: null,
       sections: [
         {
           title: "INNOVATIVE TECHNOLOGY",
@@ -242,30 +243,34 @@ export default {
     };
   },
   mounted() {
-    new window.Swiper(".mySwiper", {
-      free: true,
-      loop: true,
-      slidesPerView: 1,
-
-      pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-      },
-
-      autoplay: {
-        delay: 2000, // Set autoplay delay in milliseconds
-        disableOnInteraction: true, // Keep autoplay active even after interaction
-      },
-
-      breakpoints: {
-        320: { slidesPerView: "2", spaceBetween: 12 },
-        768: { slidesPerView: "4", spaceBetween: 20 },
-        1024: { slidesPerView: "4", spaceBetween: 20 },
-        1280: { slidesPerView: "4", spaceBetween: 4 },
-      },
-    });
+    this.initializeSwiper(); // Initialize Swiper when the component is mounted
+  },
+  beforeDestroy() {
+    if (this.swiperInstance) {
+      this.swiperInstance.destroy(); // Destroy Swiper before the component is destroyed
+    }
   },
   methods: {
+    initializeSwiper() {
+      this.swiperInstance = new window.Swiper(".mySwiper", {
+        loop: true,
+        slidesPerView: 1,
+        autoplay: {
+          delay: 2000,
+          disableOnInteraction: true,
+        },
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        breakpoints: {
+          320: { slidesPerView: 2, spaceBetween: 12 },
+          768: { slidesPerView: 4, spaceBetween: 20 },
+          1024: { slidesPerView: 4, spaceBetween: 20 },
+          1280: { slidesPerView: 4, spaceBetween: 4 },
+        },
+      });
+    },
     showSlide(index) {
       this.activeSlide = this.slideImages[index];
       this.activeTitle = this.swipImages[index].title; // Update the active title
