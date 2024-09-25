@@ -114,16 +114,16 @@
       <div
         class="flex flex-col justify-between gap-5 mb-10 md:flex-row xl:w-[1200px]"
       >
-        <div class="md:w-[600px]">
+        <div class="md:w-[650px]">
           <div class="flex flex-col">
             <h1
-              class="text-[22px] text-center md:text-start px-4 lg:text-[40px] md:mt-[60px] mt-4 font-bold leading-[40px] lg:leading-[63px]"
+              class="text-[22px] md:w-[700px] text-center md:text-start w-full px-4 lg:text-[40px] md:mt-[60px] mt-4 font-bold leading-[40px] lg:leading-[63px]"
             >
               Elevate your wealth in biomedical research!
             </h1>
-            <div class="swiper mySwiper">
+            <div class="md:-ml-10 swiper mySwiper">
               <div
-                class="flex items-center justify-around gap-2 mt-6 swiper-wrapper"
+                class="flex items-center w-[250px] h-[60px] md:w-[600px] md:h-[100px] justify-around gap-2 mt-6 swiper-wrapper"
               >
                 <img
                   v-for="(swip, index) in swipImages"
@@ -131,7 +131,7 @@
                   :src="swip.src"
                   :alt="'swip' + index"
                   @click="showSlide(index)"
-                  class="cursor-pointer swiper-slide"
+                  class="rounded-full cursor-pointer swiper-slide"
                 />
               </div>
             </div>
@@ -139,32 +139,30 @@
           <h1
             class="text-[36px] font-semibold text-center md:text-start text-[#1F3B60] mt-6"
           >
-            Hospital
+            {{ activeSlide.title }}
           </h1>
           <ul
             class="list-disc text-[#1F3B60] px-4 text-sm md:leading-8 lg:leading-10 md:text-[24px] md:px-10 mt-5"
           >
-            <li>
-              Partner with us for an exceptional, personalized service
-              experience that drives success and innovation. Let's ignite
-              progress together.
-            </li>
-            <li class="mt-2 md:mt-5">
-              Partner with us to advance cutting-edge biomedical research and
-              enhance patient care together.
+            <li v-for="(item, i) in activeSlide.content" :key="i">
+              {{ item }}
             </li>
           </ul>
         </div>
         <div
-          class="flex flex-col md:w-[400px] md:pr-10 items-center w-full justify-center lg:items-center"
+          class="flex flex-col md:relative md:w-[400px] md:pr-10 items-center w-full justify-center lg:items-center"
         >
           <h2
-            class="md:text-[36px] lg:text-[60px] mt-4 text-center lg:text-center font-semibold text-[#1F3B60]"
+            class="md:text-[36px] md:-ml-14 md:relative lg:text-[90px] md:-mt-[300px] text-center lg:text-center font-semibold text-gray-500"
           >
             {{ activeSlide.title }}
           </h2>
-          <img :src="activeSlide.src" class="mt-2" alt="slide" />
+          <img :src="activeSlide.src" class="mt-2 md:absolute" alt="slide" />
         </div>
+      </div>
+      <div class="flex justify-between -mt-4 md:-mt-10">
+        <img src="/partner/sand.svg" class="w-[300px]" alt="" />
+        <img src="/partner/sand2.svg" class="w-[300px] hidden" alt="" />
       </div>
     </section>
   </div>
@@ -231,18 +229,38 @@ export default {
         { src: "/partner/swip1.svg" },
       ],
       slideImages: [
-        { src: "/partner/slide1.png", title: "Hospital" },
-        { src: "/partner/slide2.png", title: "Diagnostic Labs" },
-        { src: "/partner/slide1.png", title: "Hospital" },
-        { src: "/partner/slide3.png", title: "Pharmaceutical Companies" },
-        { src: "/partner/slide1.png", title: "Hospital" },
-        { src: "/partner/slide2.png", title: "Diagnostic Labs" },
-        { src: "/partner/slide1.png", title: "Hospital" },
-        { src: "/partner/slide3.png", title: "Pharmaceutical Companies" },
+        {
+          src: "/partner/slide1.png",
+          title: "Hospital",
+          content: [
+            "Partner with us for an exceptional, personalized service experience that drives success and innovation. Let's ignite progress together.",
+            "Partner with us to advance cutting-edge biomedical research and enhance patient care together.",
+          ],
+        },
+        {
+          src: "/partner/slide2.png",
+          title: "Diagnostic Labs",
+          content: [
+            "We provide tailored solutions to meet your unique needs. Our approach is personalized, focusing on delivering the most effective outcomes.",
+            "Let us help you achieve your goals with precision and care.",
+          ],
+        },
+        {
+          src: "/partner/slide3.png",
+          title: "Pharmaceutical ",
+          content: [
+            "Together, we can enhance global liver health outcomes through collaboration and innovative solutions.",
+            "By focusing on prevention, treatment, and education, we aim to make a positive impact.",
+          ],
+        },
       ],
       activeSlide: {
         src: "/partner/slide1.png",
         title: "Hospital",
+        content: [
+          "Partner with us for an exceptional, personalized service experience that drives success and innovation. Let's ignite progress together.",
+          "Partner with us to advance cutting-edge biomedical research and enhance patient care together.",
+        ],
       },
     };
   },
@@ -282,16 +300,15 @@ export default {
           clickable: true,
         },
         breakpoints: {
-          320: { slidesPerView: 2, spaceBetween: 12 },
+          320: { slidesPerView: 2, spaceBetween: 2 },
           768: { slidesPerView: 4, spaceBetween: 20 },
           1024: { slidesPerView: 4, spaceBetween: 20 },
-          1280: { slidesPerView: 4, spaceBetween: 4 },
+          1280: { slidesPerView: 4 },
         },
       });
     },
     showSlide(index) {
       this.activeSlide = this.slideImages[index];
-      this.activeTitle = this.swipImages[index].title; // Update the active title
     },
     toggleMenu() {
       this.isOpen = !this.isOpen;
