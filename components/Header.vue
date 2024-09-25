@@ -97,18 +97,19 @@
           >
           <nuxt-link
             class="block py-2 px-2 md:inline-block hover:text-[#3AD9FF] cursor-pointer"
-            to="/partner"
+            to="#"
             >Technology</nuxt-link
           >
           <nuxt-link
             class="block py-2 px-2 md:inline-block hover:text-[#3AD9FF] cursor-pointer"
-            to="/casestudies"
-            >Casestudies</nuxt-link
+            to="/partner"
+            >Partner</nuxt-link
           >
+
           <nuxt-link
             class="block py-2 px-2 md:inline-block hover:text-[#3AD9FF] cursor-pointer"
             to="/teams"
-            >OurExperts</nuxt-link
+            >Our Experts</nuxt-link
           >
           <nuxt-link
             class="block py-2 px-2 md:inline-block hover:text-[#3AD9FF] cursor-pointer"

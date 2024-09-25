@@ -75,7 +75,7 @@
             <nuxt-link
               class="block py-2 lg:px-6 px-4 md:px-0 md:inline-block hover:text-[#3AD9FF] cursor-pointer"
               to="/teams"
-              >OurExperts</nuxt-link
+              >Our Experts</nuxt-link
             >
             <nuxt-link
               class="block py-2 lg:px-6 px-4 md:px-0 md:inline-block hover:text-[#3AD9FF] cursor-pointer"
