@@ -1,10 +1,10 @@
 <template>
   <div class="bg-custom-gradient">
     <Preloader
-      v-if="!preloaderComplete && $route.path === '/'"
+      v-if="!preloaderComplete"
       @preloader-complete="preloaderCompleteHandler"
     />
-    <div v-if="preloaderComplete || $route.path !== '/'">
+    <div v-if="preloaderComplete">
       <nav
         class="fixed z-[99999] flex items-center justify-between px-4 py-2 md:py-6 md:px-10 xl:px-20 transition-all duration-300"
         :class="[

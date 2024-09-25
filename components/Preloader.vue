@@ -29,8 +29,11 @@ export default {
     this.runPreloader();
     setTimeout(() => {
       this.loaded = true;
-      this.$emit("preloader-complete"); // Emit event after preloader finishes
-    }, 3000); // Adjust the timing as needed
+
+      setTimeout(() => {
+        this.$emit("preloaderComplete");
+      });
+    }, 4000);
   },
   methods: {
     runPreloader() {
@@ -114,7 +117,7 @@ export default {
 <style scoped>
 .mil-preloader {
   position: fixed;
-  z-index: 9;
+  z-index: 9999999999999999;
   top: 0;
   left: 0;
   width: 100%;
