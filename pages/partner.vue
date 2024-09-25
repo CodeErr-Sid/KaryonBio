@@ -38,24 +38,24 @@
         </div>
       </div>
     </section>
-    <section
-      class="relative w-full py-4 md:py-0 md:h-[800px] xl:h-[1000px] bg-gradient-to-r from-[#0C264A] to-[#1F3B60] md:bg-none md:overflow-hidden bottom-10"
+    <h1
+      class="text-xl md:text-[35px] lg:text-[52px] text-white md:text-black md:mt-[60px] mt-4 font-semibold leading-[40px] lg:leading-[63px] text-center"
     >
-      <h1
-        class="text-xl md:text-[35px] lg:text-[52px] text-white md:text-black md:mt-[60px] mt-4 font-semibold leading-[40px] lg:leading-[63px] text-center"
-      >
-        Why Partner with Karyon Bio?
-      </h1>
-      <div class="flex flex-col items-center justify-center">
+      Why Partner with Karyon Bio?
+    </h1>
+    <section
+      class="w-full py-4 md:py-0 bg-gradient-to-r from-[#0C264A] to-[#1F3B60]"
+    >
+      <!-- <div class="flex flex-col items-center justify-center">
         <img
           src="/partner/lab.png"
-          class="absolute hidden opacity-80 md:block top-36"
+          class="hidden opacity-80 md:block top-36"
           alt="lab"
         />
-      </div>
+      </div> -->
 
       <div
-        class="container relative inset-0 z-20 w-full mx-auto md:py-8"
+        class="container inset-0 z-20 w-full mx-auto md:py-8"
         :class="expandedSection ? 'mt-10' : 'md:mt-32 mt-4 '"
       >
         <div
@@ -70,7 +70,7 @@
                 expandedSection === index + 1
                   ? 'hidden'
                   : expandedSection
-                  ? 'bg-[#49719D] bg-opacity-10 md:bg-opacity-30 py-4'
+                  ? 'bg-[#49719D] bg-opacity-10 md:bg-opacity-30 py-4 md:py-10 lg:py-20'
                   : 'bg-[#49719D] bg-opacity-10 md:bg-opacity-30 py-4 md:py-10 lg:py-20'
               "
               @click="toggleSection(index + 1)"
@@ -82,7 +82,7 @@
           <transition name="expand">
             <div>
               <h1
-                class="md:text-[25px] font-bold lg:mt-[100px] text-white text-center cursor-pointer"
+                class="md:text-[25px] font-bold text-white text-center cursor-pointer"
                 :class="expandedSection === index + 1 ? '' : 'hidden'"
                 @click="toggleSection(index + 1)"
               >
@@ -90,18 +90,20 @@
               </h1>
               <div
                 v-if="expandedSection === index + 1"
-                class="relative flex flex-col items-center justify-center px-4 mt-2 mb-4 text-white rounded-lg md:flex-row md:items-center bg-opacity-90"
+                class="flex flex-col items-center justify-center px-4 mt-2 mb-4 text-white rounded-lg md:flex-row md:items-center bg-opacity-90"
               >
                 <p
-                  class="text-sm md:text-[25px] md:leading-8 text-center md:text-start font-semibold"
+                  :data-aos="getAosAnimation(index)"
+                  :data-aos-delay="index * 100"
+                  class="text-sm md:text-[25px] w-[800px] md:leading-8 text-center md:text-start font-semibold"
                 >
                   {{ section.content }}
                 </p>
-                <img
+                <!-- <img
                   :src="section.image"
                   :class="section.imageClass"
                   :alt="section.alt"
-                />
+                /> -->
               </div>
             </div>
           </transition>
@@ -183,6 +185,8 @@ useHead({
 });
 </script>
 <script>
+import AOS from "aos";
+import "aos/dist/aos.css";
 definePageMeta({ layout: "primary" });
 
 export default {
@@ -243,6 +247,8 @@ export default {
     };
   },
   mounted() {
+    AOS.init();
+
     this.initializeSwiper(); // Initialize Swiper when the component is mounted
   },
   beforeDestroy() {
@@ -251,6 +257,18 @@ export default {
     }
   },
   methods: {
+    getAosAnimation(index) {
+      switch (index % 3) {
+        case 0:
+          return "fade-right"; // index 1, 4, 7...
+        case 1:
+          return "fade-left"; // index 2, 5, 8...
+        case 2:
+          return "fade-down"; // index 3, 6, 9...
+        default:
+          return "fade-right"; // Fallback
+      }
+    },
     initializeSwiper() {
       this.swiperInstance = new window.Swiper(".mySwiper", {
         loop: true,

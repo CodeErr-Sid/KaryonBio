@@ -1,0 +1,169 @@
+<template>
+  <div class="mil-preloader" v-show="!loaded">
+    <div class="mil-preloader-animation">
+      <div class="mil-pos-abs mil-animation-1">
+        <p class="mil-h3 mil-muted mil-thin">Pioneering</p>
+        <p class="mil-h3 mil-muted">Creative</p>
+        <p class="mil-h3 mil-muted mil-thin">Excellence</p>
+      </div>
+      <div class="mil-pos-abs mil-animation-2">
+        <div class="mil-reveal-frame">
+          <p class="mil-reveal-box"></p>
+          <p class="mil-h3 mil-muted mil-thin">ashley.com</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script>
+import { gsap } from "gsap";
+
+export default {
+  data() {
+    return {
+      loaded: false,
+    };
+  },
+  mounted() {
+    this.runPreloader();
+    setTimeout(() => {
+      this.loaded = true;
+      this.$emit("preloader-complete"); // Emit event after preloader finishes
+    }, 3000); // Adjust the timing as needed
+  },
+  methods: {
+    runPreloader() {
+      const timeline = gsap.timeline();
+
+      timeline.to(".mil-preloader-animation", {
+        opacity: 1,
+      });
+
+      timeline.fromTo(
+        ".mil-animation-1 .mil-h3",
+        { y: "30px", opacity: 0 },
+        { y: "0px", opacity: 1, stagger: 0.4 }
+      );
+
+      timeline.to(
+        ".mil-animation-1 .mil-h3",
+        {
+          opacity: 0,
+          y: "-30",
+        },
+        "+=.3"
+      );
+
+      timeline.fromTo(
+        ".mil-reveal-box",
+        0.1,
+        {
+          opacity: 0,
+        },
+        {
+          opacity: 1,
+          x: "-30",
+        }
+      );
+
+      timeline.to(
+        ".mil-reveal-box",
+        0.45,
+        {
+          width: "100%",
+          x: 0,
+        },
+        "+=.1"
+      );
+
+      timeline.to(".mil-reveal-box", { right: "0" });
+
+      timeline.to(".mil-reveal-box", 0.3, { width: "0%" });
+
+      timeline.fromTo(
+        ".mil-animation-2 .mil-h3",
+        {
+          opacity: 0,
+        },
+        {
+          opacity: 1,
+        },
+        "-=.5"
+      );
+
+      timeline.to(
+        ".mil-animation-2 .mil-h3",
+        0.6,
+        {
+          opacity: 0,
+          y: "-30",
+        },
+        "+=.5"
+      );
+
+      timeline.to(".mil-preloader", 0.8, {
+        opacity: 0,
+        ease: "sine",
+      });
+    },
+  },
+};
+</script>
+
+<style scoped>
+.mil-preloader {
+  position: fixed;
+  z-index: 9;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgb(0, 0, 0);
+}
+.mil-preloader .mil-preloader-animation {
+  opacity: 0;
+  position: relative;
+  height: 100vh;
+  color: rgb(255, 255, 255);
+}
+.mil-preloader .mil-preloader-animation .mil-pos-abs {
+  position: absolute;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.mil-preloader .mil-preloader-animation .mil-pos-abs p {
+  opacity: 0;
+  margin-right: 15px;
+}
+@media screen and (max-width: 992px) {
+  .mil-preloader .mil-preloader-animation .mil-pos-abs {
+    flex-direction: column;
+  }
+  .mil-preloader .mil-preloader-animation .mil-pos-abs p {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+}
+.mil-preloader .mil-preloader-animation .mil-pos-abs .mil-reveal-frame {
+  position: relative;
+  padding: 0 30px;
+}
+.mil-preloader
+  .mil-preloader-animation
+  .mil-pos-abs
+  .mil-reveal-frame
+  .mil-reveal-box {
+  z-index: 4;
+  position: absolute;
+  opacity: 0;
+  height: 100%;
+  background-color: rgb(255, 152, 0);
+}
+.mil-preloader.mil-hidden {
+  pointer-events: none;
+}
+</style>

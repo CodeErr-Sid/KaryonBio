@@ -134,7 +134,7 @@
                         class="w-24 h-24 rounded-full"
                       />
                     </div>
-                    <h3 class="text-sm md:text-xl font-semibold text-[#2B3A4B]">
+                    <h3 class="text-sm md:text-xl font-semibold text-[#3B5998]">
                       {{ selectedExpert.name }}
                     </h3>
                     <p class="mb-4 text-gray-500">
@@ -142,21 +142,21 @@
                     </p>
                     <!-- Social Links -->
                     <div class="flex justify-center gap-2 md:gap-4 md:mb-5">
-                      <a
+                      <!-- <a
                         class="text-[#3B5998] bg-[#83B0DC] cursor-pointer md:w-10 md:h-10 w-8 h-8 rounded-full flex justify-center items-center"
                       >
                         <img src="/social-icons/2.svg" alt="facebook" />
-                      </a>
+                      </a> -->
                       <a
                         class="text-[#3B5998] bg-[#83B0DC] cursor-pointer md:w-10 md:h-10 w-8 h-8 rounded-full flex justify-center items-center"
                       >
                         <img src="/social-icons/1.svg" alt="linkedin" />
                       </a>
-                      <a
+                      <!-- <a
                         class="text-[#3B5998] bg-[#83B0DC] cursor-pointer md:w-10 md:h-10 w-8 h-8 rounded-full flex justify-center items-center"
                       >
                         <img src="/social-icons/3.svg" alt="twitter" />
-                      </a>
+                      </a> -->
                     </div>
                   </div>
 
@@ -165,7 +165,7 @@
                     class="rounded-lg md:p-4 md:h-64 bg-gray-50 custom-scroll"
                   >
                     <h4
-                      class="text-sm md:text-lg font-semibold text-[#2B3A4B] text-start"
+                      class="text-sm md:text-lg font-semibold text-[#3B5998] text-start"
                     >
                       Hi, I'm {{ selectedExpert.name }}
                     </h4>
@@ -175,7 +175,7 @@
                       {{ selectedExpert.fullDescription }}
                     </p>
                     <h4
-                      class="text-sm mt-2 md:text-lg font-bold text-[#2B3A4B] text-start"
+                      class="text-sm mt-2 md:text-lg font-bold text-[#3B5998] text-start"
                     >
                       Expertise:
                     </h4>
@@ -183,7 +183,7 @@
                       {{ selectedExpert.expertise }}
                     </p>
                     <h4
-                      class="text-sm mt-2 md:text-lg font-bold text-[#2B3A4B] text-start"
+                      class="text-sm mt-2 md:text-lg font-bold text-[#3B5998] text-start"
                     >
                       Role in the Company:
                     </h4>

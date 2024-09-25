@@ -30,4 +30,11 @@ export default defineNuxtConfig({
   googleFonts: {
     families: {},
   },
+  vite: {
+    resolve: {
+      alias: {
+        gsap: "gsap/dist/gsap.js",
+      },
+    },
+  },
 });
