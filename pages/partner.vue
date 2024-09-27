@@ -110,56 +110,69 @@
         </div>
       </div>
     </section>
-    <section>
-      <div
-        class="flex flex-col justify-between gap-5 mb-10 md:flex-row xl:w-[1200px]"
+    <section
+      style="
+        width: 100%;
+        background-color: white;
+        z-index: 3;
+        position: relative;
+      "
+    >
+      <section
+        style="background-color: white; height: 100%; text-align: center"
+        class="border-top-radius"
       >
-        <div class="md:w-[650px]">
-          <div class="flex flex-col">
-            <h1
-              class="text-[22px] md:w-[700px] text-center md:text-start w-full px-4 lg:text-[40px] md:mt-[60px] mt-4 font-bold leading-[40px] lg:leading-[63px]"
-            >
+        <div
+          class="global-container border-top-radius"
+          :style="{
+            backgroundImage: showBackgroundImage
+              ? 'url(' + selectedCountry.image + ')'
+              : 'none',
+            backgroundSize: '400px',
+            backgroundRepeat: 'no-repeat',
+            backgroundPosition: 'right 10% top 20%',
+          }"
+        >
+          <!-- Country name in the background -->
+          <div class="background-country-name">
+            {{ selectedCountry.country.toUpperCase() }}
+          </div>
+
+          <div class="gc-static">
+            <h2 class="responsive-heading">
               Elevate your wealth in biomedical research!
-            </h1>
-            <div class="md:-ml-10 swiper mySwiper">
+            </h2>
+            <p>Team up with us today for an unforgettable service experience</p>
+            <div class="flag-buttons" style="margin-top: 10px">
               <div
-                class="flex items-center w-[250px] h-[60px] md:w-[600px] md:h-[100px] justify-around gap-2 mt-6 swiper-wrapper"
+                v-for="(flag, index) in flags"
+                :key="index"
+                class="flag-button"
+                :class="{ active: selectedCountry.country === flag.country }"
+                @click="changeCountry(flag)"
               >
-                <img
-                  v-for="(swip, index) in swipImages"
-                  :key="index"
-                  :src="swip.src"
-                  :alt="'swip' + index"
-                  @click="showSlide(index)"
-                  class="rounded-full cursor-pointer swiper-slide"
-                />
+                <img :src="flag.image" alt="" />
+                <p class="text-center" style="align-items: center; width: 60px">
+                  {{ flag.name }}
+                </p>
               </div>
             </div>
           </div>
-          <h1
-            class="text-[36px] font-semibold text-center md:text-start text-[#1F3B60] mt-6"
-          >
-            {{ activeSlide.title }}
-          </h1>
-          <ul
-            class="list-disc text-[#1F3B60] px-4 text-sm md:leading-8 lg:leading-10 md:text-[24px] md:px-10 mt-5"
-          >
-            <li v-for="(item, i) in activeSlide.content" :key="i">
-              {{ item }}
-            </li>
-          </ul>
+          <div class="gc-dynamic">
+            <h5 class="gc-country-name">
+              <b>{{ selectedCountry.country.toUpperCase() }}</b>
+            </h5>
+            <div class="gc-address w">
+              <p class="mb-4" style="width: 500px">
+                {{ selectedCountry.address }}
+              </p>
+              <p class="" style="margin-top: 8px; width: 500px">
+                {{ selectedCountry.address1 }}
+              </p>
+            </div>
+          </div>
         </div>
-        <div
-          class="flex flex-col md:relative md:w-[400px] md:pr-10 items-center w-full justify-center lg:items-center"
-        >
-          <h2
-            class="md:text-[36px] md:-ml-14 md:relative lg:text-[90px] md:-mt-[300px] text-center lg:text-center font-semibold text-gray-500"
-          >
-            {{ activeSlide.title }}
-          </h2>
-          <img :src="activeSlide.src" class="mt-2 md:absolute" alt="slide" />
-        </div>
-      </div>
+      </section>
       <div class="flex justify-between -mt-4 md:-mt-10">
         <img src="/partner/sand.svg" class="w-[300px]" alt="" />
         <img src="/partner/sand2.svg" class="w-[300px] hidden" alt="" />
@@ -167,21 +180,7 @@
     </section>
   </div>
 </template>
-<script setup>
-useHead({
-  script: [
-    {
-      src: "https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js",
-    },
-  ],
-  link: [
-    {
-      rel: "stylesheet",
-      href: "https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css",
-    },
-  ],
-});
-</script>
+
 <script>
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -193,6 +192,7 @@ export default {
       isOpen: false,
       expandedSection: null,
       swiperInstance: null,
+      windowWidth: null,
       sections: [
         {
           title: "INNOVATIVE TECHNOLOGY",
@@ -219,62 +219,91 @@ export default {
           alt: "expand3",
         },
       ],
-      swipImages: [
-        { src: "/partner/swip3.svg" },
-        { src: "/partner/swip4.svg" },
-        { src: "/partner/swip1.svg" },
-        { src: "/partner/swip2.svg" },
-        { src: "/partner/swip3.svg" },
-        { src: "/partner/swip4.svg" },
-        { src: "/partner/swip1.svg" },
-      ],
-      slideImages: [
+      flags: [
         {
-          src: "/partner/slide1.png",
-          title: "Hospital",
-          content: [
-            "Partner with us for an exceptional, personalized service experience that drives success and innovation. Let's ignite progress together.",
-            "Partner with us to advance cutting-edge biomedical research and enhance patient care together.",
-          ],
+          country: "Hospital",
+          name: "Hospital",
+          image: "/partner/swip1.svg",
+          address: `Partner with us for an exceptional, personalized service experience that drives success and innovation. Let's ignite progress together.`,
+          address1: `Partner with us to advance cutting-edge biomedical research and enhance patient care together.`,
+          email: "info@aibotproperties.com",
+          phone: "+971-58-599-7430",
         },
         {
-          src: "/partner/slide2.png",
-          title: "Diagnostic Labs",
-          content: [
+          country: "Diagnostic Labs",
+          name: " Labs",
+          image: "/partner/swip2.svg",
+          address:
             "We provide tailored solutions to meet your unique needs. Our approach is personalized, focusing on delivering the most effective outcomes.",
-            "Let us help you achieve your goals with precision and care.",
-          ],
+          address1: `Let us help you achieve your goals with precision and care.`,
+          email: "info@parisbotproperties.com",
+          phone: "+33-1-2345-6789",
         },
         {
-          src: "/partner/slide3.png",
-          title: "Pharmaceutical ",
-          content: [
+          country: "Pharmaceutical",
+          name: "Pharma",
+          image: "/partner/swip3.svg",
+          address:
             "Together, we can enhance global liver health outcomes through collaboration and innovative solutions.",
-            "By focusing on prevention, treatment, and education, we aim to make a positive impact.",
-          ],
+          address1: `By focusing on prevention, treatment, and education, we aim to make a positive impact.`,
+          email: "info@genevabotproperties.com",
+          phone: "+41-22-1234-5678",
+        },
+        {
+          country: "Hospital",
+          name: "Hospital",
+          image: "/partner/swip1.svg",
+          address: `Partner with us for an exceptional, personalized service experience that drives success and innovation. Let's ignite progress together.`,
+          address1: `Partner with us to advance cutting-edge biomedical research and enhance patient care together.`,
+          email: "info@aibotproperties.com",
+          phone: "+971-58-599-7430",
+        },
+        {
+          country: "Diagnostic Labs",
+          name: " Labs",
+          image: "/partner/swip2.svg",
+          address:
+            "We provide tailored solutions to meet your unique needs. Our approach is personalized, focusing on delivering the most effective outcomes.",
+          address1: `Let us help you achieve your goals with precision and care.`,
+          email: "info@parisbotproperties.com",
+          phone: "+33-1-2345-6789",
+        },
+        {
+          country: "Pharmaceutical",
+          name: "Pharma",
+          image: "/partner/swip3.svg",
+          address:
+            "Together, we can enhance global liver health outcomes through collaboration and innovative solutions.",
+          address1: `By focusing on prevention, treatment, and education, we aim to make a positive impact.`,
+          email: "info@genevabotproperties.com",
+          phone: "+41-22-1234-5678",
         },
       ],
-      activeSlide: {
-        src: "/partner/slide1.png",
-        title: "Hospital",
-        content: [
-          "Partner with us for an exceptional, personalized service experience that drives success and innovation. Let's ignite progress together.",
-          "Partner with us to advance cutting-edge biomedical research and enhance patient care together.",
-        ],
+      selectedCountry: {
+        country: "Hospital",
+        name: "Hospital",
+        image: "/partner/swip1.svg",
+        address: `Partner with us for an exceptional, personalized service experience that drives success and innovation. Let's ignite progress together.`,
+        address1: `Partner with us to advance cutting-edge biomedical research and enhance patient care together.`,
+        email: "info@aibotproperties.com",
+        phone: "+971-58-599-7430",
       },
     };
   },
-  mounted() {
-    AOS.init();
-
-    this.initializeSwiper(); // Initialize Swiper when the component is mounted
-  },
-  beforeDestroy() {
-    if (this.swiperInstance) {
-      this.swiperInstance.destroy(); // Destroy Swiper before the component is destroyed
-    }
+  computed: {
+    showBackgroundImage() {
+      return this.windowWidth >= 1024; // Show image if width is >= 1024px
+    },
   },
   methods: {
+    changeCountry(flag) {
+      this.selectedCountry = flag;
+    },
+    updateWindowWidth() {
+      if (typeof window !== "undefined") {
+        this.windowWidth = window.innerWidth; // Update the window width
+      }
+    },
     getAosAnimation(index) {
       switch (index % 3) {
         case 0:
@@ -307,9 +336,7 @@ export default {
         },
       });
     },
-    showSlide(index) {
-      this.activeSlide = this.slideImages[index];
-    },
+
     toggleMenu() {
       this.isOpen = !this.isOpen;
     },
@@ -317,10 +344,82 @@ export default {
       this.expandedSection = this.expandedSection === section ? null : section;
     },
   },
+  mounted() {
+    AOS.init();
+    this.updateWindowWidth(); // Set initial window width
+    window.addEventListener("resize", this.updateWindowWidth);
+  },
+  beforeDestroy() {
+    window.removeEventListener("resize", this.updateWindowWidth); // Clean up the event listener
+  },
 };
 </script>
 <style scoped>
-/* Enhanced slide and fade transition */
+/* Country name in the background */
+.background-country-name {
+  position: absolute;
+  top: 20%;
+  right: 5%;
+  z-index: 1; /* Make sure it’s behind the content */
+  font-size: 100px; /* Make it large */
+  color: rgba(0, 0, 0, 0.1); /* Light gray for background effect */
+  font-weight: bold;
+  transform: translateY(-50%); /* Center it vertically */
+  pointer-events: none; /* Make sure it doesn’t interfere with interactions */
+}
+
+.flag-buttons {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 0.9rem;
+}
+
+.flag-button {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 2px solid #ddd;
+  background-size: cover;
+  background-position: center;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.global-container {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  align-items: flex-start;
+  justify-content: center;
+  text-align: left;
+  gap: 3rem;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  transition: all 0.5s linear;
+  position: relative;
+  z-index: 2; /* Main content on top of the background text */
+}
+
+.gc-static h2 {
+  font-size: 3rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 1024px) {
+  .responsive-heading {
+    width: 600px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .responsive-heading {
+    width: 500px;
+  }
+}
+
 .slide-fade-enter-active,
 .slide-fade-leave-active {
   transition: all 0.5s ease;
