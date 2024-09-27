@@ -1,7 +1,7 @@
 <template>
   <div class="text-example">
     <section
-      class="w-full overflow-hidden px-4 md:px-0 flex lg:flex-row h-[600px] flex-col justify-center lg:justify-between md:pb-10 bg-gradient-to-r from-[#1F80AE] to-[#1F3B60]"
+      class="w-full overflow-hidden px-4 md:px-0 flex lg:flex-row md:h-[600px] flex-col justify-center lg:justify-between md:pb-10 bg-gradient-to-r from-[#1F80AE] to-[#1F3B60]"
     >
       <div
         class="relative order-2 lg:order-1 lg:w-[400px] pb-20 lg:pb-0 xl:w-[500px] top-10 md:top-16 lg:top-36"
@@ -105,12 +105,12 @@
       </div>
     </section>
     <section
-      class="w-full overflow-hidden px-4 md:px-0 flex lg:flex-row flex-col justify-center lg:justify-between lg:h-[550px] xl:h-[700px] md:pb-10 bg-gradient-to-r from-[#1F80AE] to-[#1F3B60]"
+      class="w-full overflow-hidden px-4 md:px-0 flex lg:flex-row flex-col md:justify-center lg:justify-between lg:h-[550px] xl:h-[700px] md:pb-10 bg-gradient-to-r from-[#1F80AE] to-[#1F3B60]"
     >
       <div
-        class="relative top-20 md:top-36 order-1 lg:order-2 text-white text-balance md:text-center lg:text-start flex flex-col justify-center items-center lg:items-start lg:justify-start pb-20 md:pb-28 lg:w-[400px] xl:w-[500px] lg:mr-24 xl:mr-20"
+        class="relative top-20 md:top-36 order-1 lg:order-2 text-white text-balance md:text-center lg:text-start flex flex-col justify-center md:items-center lg:items-start lg:justify-start pb-20 md:pb-28 lg:w-[400px] xl:w-[500px] lg:mr-24 xl:mr-20"
       >
-        <p class="font-semibold">ABOUT AGENCY</p>
+        <p class="font-semibold text-center">ABOUT AGENCY</p>
         <h1 class="md:text-[36px] mt-1 md:mt-0 xl:text-[40px] font-bold">
           What karyon bio offers
         </h1>
@@ -127,7 +127,7 @@
         <div
           class="flex items-center justify-center gap-2 mt-2 lg:justify-start lg:items-start lg:mt-6 md:mt-10 xl:mt-10"
         >
-          <ul class="ml-4 text-lg list-disc">
+          <ul class="-ml-3 text-sm list-disc md:ml-4 md:text-lg">
             <li>Led by Passionate Experts</li>
             <li>Safe Diagnoses and Effective Therapies</li>
             <li>Fully Equipment</li>
@@ -153,7 +153,7 @@
       </div>
     </section>
     <section class="py-10 bg-purple-50">
-      <h1 class="text-[50px] py-4 md:py-10 text-center font-bold">
+      <h1 class="text-2xl md:text-[50px] py-4 md:py-10 text-center font-bold">
         Our Core Services
       </h1>
       <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
@@ -166,11 +166,17 @@
           >
             <div class="flex items-center mb-4">
               <div
-                class="flex items-center justify-center w-16 h-16 transition-colors duration-300 bg-purple-100 rounded-full hover:bg-blue-500"
+                class="flex items-center justify-center transition-colors duration-300 bg-purple-100 rounded-full md:w-16 md:h-16 hover:bg-blue-500"
               >
-                <img :src="item.icon" class="w-10 h-10" alt="Icon" />
+                <img
+                  :src="item.icon"
+                  class="w-8 h-8 md:w-10 md:h-10"
+                  alt="Icon"
+                />
               </div>
-              <h3 class="ml-4 text-2xl font-semibold">{{ item.title }}</h3>
+              <h3 class="ml-4 text-base font-semibold md:text-2xl">
+                {{ item.title }}
+              </h3>
             </div>
             <p class="text-gray-600 transition-colors duration-300">
               {{ item.description }}
@@ -187,7 +193,7 @@
     </section>
     <section class="py-10 bg-gray-900">
       <div class="px-4 mx-auto text-center max-w-7xl sm:px-6 lg:px-8">
-        <h2 class="mb-10 text-3xl font-bold text-white">
+        <h2 class="mb-10 text-xl font-bold text-white md:text-3xl">
           Challenges and Innovations in Liver Disease Diagnostics
         </h2>
         <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-2">
