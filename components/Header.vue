@@ -87,32 +87,32 @@
             </button>
           </div>
           <nuxt-link
-            class="block py-2 px-2 md:inline-block hover:text-[#3AD9FF] cursor-pointer"
+            class="block py-2 px-2 md:inline-block text-sm lg:text-xl hover:text-[#3AD9FF] cursor-pointer"
             to="/"
             >Home</nuxt-link
           >
           <nuxt-link
-            class="block py-2 px-2 md:inline-block hover:text-[#3AD9FF] cursor-pointer"
+            class="block py-2 px-2 md:inline-block text-sm lg:text-xl hover:text-[#3AD9FF] cursor-pointer"
             to="/about"
             >About</nuxt-link
           >
           <nuxt-link
-            class="block py-2 px-2 md:inline-block hover:text-[#3AD9FF] cursor-pointer"
+            class="block py-2 px-2 md:inline-block text-sm lg:text-xl hover:text-[#3AD9FF] cursor-pointer"
             to="#"
             >Technology</nuxt-link
           >
           <nuxt-link
-            class="block py-2 px-2 md:inline-block hover:text-[#3AD9FF] cursor-pointer"
+            class="block py-2 px-2 md:inline-block text-sm lg:text-xl hover:text-[#3AD9FF] cursor-pointer"
             to="/partner"
             >Partner</nuxt-link
           >
           <nuxt-link
-            class="block py-2 px-2 md:inline-block hover:text-[#3AD9FF] cursor-pointer"
+            class="block py-2 px-2 md:inline-block text-sm lg:text-xl hover:text-[#3AD9FF] cursor-pointer"
             to="/teams"
             >Our Experts</nuxt-link
           >
           <nuxt-link
-            class="block py-2 px-2 md:inline-block hover:text-[#3AD9FF] cursor-pointer"
+            class="block py-2 px-2 md:inline-block text-sm lg:text-xl hover:text-[#3AD9FF] cursor-pointer"
             to="/contact"
             >Contact</nuxt-link
           >
