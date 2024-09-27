@@ -17,7 +17,9 @@
       >
         <div :class="['', isOpen ? 'hidden ' : 'block']">
           <!-- Typewriter effect here -->
-          <h1 class="text-4xl font-bold text-white leading-[50px]">
+          <h1
+            class="text-4xl font-bold z-20 relative text-white leading-[50px]"
+          >
             Empowering Precision Liver Health
           </h1>
           <p id="typewriter" class="mt-2 text-xl font-semibold text-white"></p>

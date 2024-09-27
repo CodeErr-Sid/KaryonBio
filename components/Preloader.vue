@@ -9,7 +9,13 @@
       <div class="mil-pos-abs mil-animation-2">
         <div class="mil-reveal-frame">
           <p class="mil-reveal-box"></p>
-          <p class="mil-h3 mil-muted mil-thin">ashley.com</p>
+          <p
+            class="flex flex-col items-center justify-center mil-h3 mil-muted mil-thin"
+          >
+            <img src="/logo.svg" class="w-[250px]" alt="logo" />
+
+            karyon-bio-omega.com
+          </p>
         </div>
       </div>
     </div>
@@ -33,7 +39,7 @@ export default {
       setTimeout(() => {
         this.$emit("preloaderComplete");
       });
-    }, 4000);
+    }, 6000);
   },
   methods: {
     runPreloader() {

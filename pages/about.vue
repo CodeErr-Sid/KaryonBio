@@ -1,28 +1,50 @@
 <template>
   <div class="text-example">
+    <section class="w-full relative overflow-hidden md:pb-10 md:h-[700px]">
+      <div>
+        <img
+          src="/about/hero.png"
+          class="absolute -top-12 md:top-0 md:inset-0 object-cover w-full md:h-[715px]"
+          alt="hero-dot"
+        />
+      </div>
+
+      <div
+        class="relative z-10 flex mt-20 md:mt-28 text-[#F5F7FA] items-center justify-center px-4 md:pt-[163px] md:flex-row md:px-6 xl:px-10"
+      >
+        <div class="w-[674px]">
+          <h1
+            class="text-[35px] text-base mt-4 md:mt-0 lg:text-[52px] font-semibold md:leading-[63px] text-center"
+          >
+            The future of drug design
+          </h1>
+          <p class="mt-4 text-sm text-center text-white md:text-xl">
+            RECEPTOR.AI provides an end-to-end small molecule drug discovery
+            platform for precision and personalised medicine to achieve ultimate
+            selectivity between highly similar off-target proteins.
+          </p>
+        </div>
+      </div>
+    </section>
     <section
-      class="w-full overflow-hidden px-4 md:px-0 flex lg:flex-row md:h-[600px] flex-col justify-center lg:justify-between md:pb-10 bg-gradient-to-r from-[#1F80AE] to-[#1F3B60]"
+      class="w-full overflow-hidden gap-20 px-4 md:px-0 flex lg:flex-row pt-[150px] pb-24 flex-col justify-center lg:justify-center"
     >
       <div
-        class="relative order-2 lg:order-1 lg:w-[400px] pb-20 lg:pb-0 xl:w-[500px] top-10 md:top-16 lg:top-36"
+        class="order-2 lg:order-1 lg:w-[400px] xl:w-[500px] top-10 md:top-16 lg:top-36"
       >
         <!-- First Image (smaller, positioned lower) -->
-        <img
+        <!-- <img
           src="https://bracketweb.com/ogencywp/wp-content/uploads/2023/07/about-3-1.jpg"
           class="xl:w-[290px] w-[200px] md:w-auto rounded-xl absolute bottom-0 lg:bottom-[160px] md:bottom-0 xl:bottom-[165px] md:left-20 lg:left-[60px] xl:h-[316px] z-10"
           alt=""
-        />
+        /> -->
         <!-- Second Image (larger, default positioning) -->
-        <img
-          src="https://bracketweb.com/ogencywp/wp-content/uploads/2023/07/about-3-2.jpg"
-          class="xl:w-[400px] w-[200px] md:w-auto rounded-xl xl:h-[496px] lg:w-[300px] lg:h-[350px] z-0 left-20 relative md:left-[200px]"
-          alt=""
-        />
+        <img src="/about/hero.webp" class="z-0 rounded-xl h-[300px]" alt="" />
       </div>
       <div
-        class="relative top-20 md:top-36 order-1 lg:order-2 text-white text-balance md:text-center lg:text-start flex flex-col justify-center items-center lg:items-start lg:justify-start pb-20 md:pb-28 lg:w-[400px] xl:w-[500px] lg:mr-24 xl:mr-20"
+        class="flex flex-col justify-center order-1 text-black lg:order-2 text-balance md:text-center lg:text-start"
       >
-        <p class="font-semibold">ABOUT AGENCY</p>
+        <p class="font-semibold">ABOUT</p>
         <h1 class="md:text-[36px] mt-1 md:mt-0 xl:text-[50px] font-bold">
           The Science Behind Karyon Bio
         </h1>
@@ -105,12 +127,11 @@
       </div>
     </section>
     <section
-      class="w-full overflow-hidden px-4 md:px-0 flex lg:flex-row flex-col md:justify-center lg:justify-between lg:h-[550px] xl:h-[700px] md:pb-10 bg-gradient-to-r from-[#1F80AE] to-[#1F3B60]"
+      class="w-full overflow-hidden px-4 md:px-0 flex lg:flex-row flex-col md:justify-center lg:justify-between lg:h-[550px] xl:h-[700px] md:pb-10"
     >
       <div
-        class="relative top-20 md:top-36 order-1 lg:order-2 text-white text-balance md:text-center lg:text-start flex flex-col justify-center md:items-center lg:items-start lg:justify-start pb-20 md:pb-28 lg:w-[400px] xl:w-[500px] lg:mr-24 xl:mr-20"
+        class="relative top-20 md:top-36 order-1 lg:order-2 text-black text-balance md:text-center lg:text-start flex flex-col justify-center md:items-center lg:items-start lg:justify-start pb-20 md:pb-28 lg:w-[400px] xl:w-[500px] lg:mr-24 xl:mr-20"
       >
-        <p class="font-semibold text-center">ABOUT AGENCY</p>
         <h1 class="md:text-[36px] mt-1 md:mt-0 xl:text-[40px] font-bold">
           What karyon bio offers
         </h1>
@@ -152,48 +173,10 @@
         />
       </div>
     </section>
-    <section class="py-10 bg-purple-50">
-      <h1 class="text-2xl md:text-[50px] py-4 md:py-10 text-center font-bold">
-        Our Core Services
-      </h1>
-      <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
-        <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          <div
-            v-for="(item, index) in items"
-            :key="index"
-            data-aos="fade-up"
-            class="p-6 transition-all duration-300 bg-white rounded-lg shadow-md hover:bg-purple-50"
-          >
-            <div class="flex items-center mb-4">
-              <div
-                class="flex items-center justify-center transition-colors duration-300 bg-purple-100 rounded-full md:w-16 md:h-16 hover:bg-blue-500"
-              >
-                <img
-                  :src="item.icon"
-                  class="w-8 h-8 md:w-10 md:h-10"
-                  alt="Icon"
-                />
-              </div>
-              <h3 class="ml-4 text-base font-semibold md:text-2xl">
-                {{ item.title }}
-              </h3>
-            </div>
-            <p class="text-gray-600 transition-colors duration-300">
-              {{ item.description }}
-            </p>
-            <a
-              href="#"
-              class="block mt-4 font-semibold transition-colors duration-300"
-            >
-              Read More +
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section class="py-10 bg-gray-900">
+
+    <section class="py-10">
       <div class="px-4 mx-auto text-center max-w-7xl sm:px-6 lg:px-8">
-        <h2 class="mb-10 text-xl font-bold text-white md:text-3xl">
+        <h2 class="mb-10 text-xl font-bold text-black md:text-3xl">
           Challenges and Innovations in Liver Disease Diagnostics
         </h2>
         <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-2">
@@ -214,16 +197,31 @@
         </div>
       </div>
     </section>
-    <section
-      class="flex flex-col items-center justify-center px-4 py-12 bg-gray-900"
-    >
+    <section class="flex flex-col items-center justify-center px-4 py-12">
       <div class="max-w-5xl mx-auto lg:text-center">
-        <h2 class="mb-4 font-bold text-white md:text-4xl">
-          Over 20 Years Of Experience With Best Results
+        <h2 class="mb-4 font-bold text-black md:text-4xl">
+          Over 20
+          <span
+            class="bg-clip-text text-transparent bg-gradient-to-r from-[#1F80AE] to-[#1F3B60]"
+            >Years</span
+          >
+          Of
+          <span
+            class="bg-clip-text text-transparent bg-gradient-to-r from-[#1F80AE] to-[#1F3B60]"
+            >Experience</span
+          >
+          With
+          <span
+            class="bg-clip-text text-transparent bg-gradient-to-r from-[#1F80AE] to-[#1F3B60]"
+            >Best Results</span
+          >
         </h2>
-        <p class="mb-8 text-white md:text-lg">
-          Your full-service lab for clinical trials. Our mission is to ensure
-          the generation of accurate and precise findings.
+        <p class="mb-8 ml-4 text-black md:text-lg text-start">
+          Empowering Healthcare with Early, Accurate, and Personalized
+          Diagnostics At Karyon Bio, we offer a groundbreaking solution to liver
+          disease diagnostics. Our AI-driven, multi-omics platform detects early
+          biomarkers, predicts disease progression, and tailors treatment plans
+          to each patient’s unique needs.
         </p>
         <div
           class="grid items-center justify-center grid-cols-1 gap-1 md:gap-6"
@@ -235,16 +233,16 @@
           >
             <div class="flex-shrink-0">
               <span
-                class="inline-flex items-center justify-center w-8 h-8 text-white bg-white rounded-full md:w-12 md:h-12"
+                class="inline-flex items-center justify-center w-8 h-8 text-black bg-gray-300 rounded-full md:w-12 md:h-12"
               >
                 ✔️
               </span>
             </div>
             <div class="ml-4">
-              <h3 class="font-bold text-white md:text-xl text-start">
+              <h3 class="font-bold text-black md:text-xl text-start">
                 {{ benefit.title }}
               </h3>
-              <p class="text-sm text-gray-300 md:text-lg">
+              <p class="text-sm text-gray-500 text-start md:text-lg">
                 {{ benefit.description }}
               </p>
             </div>
@@ -330,24 +328,29 @@ export default {
       ],
       benefits: [
         {
-          title: "Free Home Sampling",
+          title: "Precise Insights",
           description:
-            "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt dolore. magna aliqua.",
+            "Our platform delivers data-driven insights, helping healthcare providers understand the molecular complexities of liver diseases.",
         },
         {
-          title: "High-End Technology",
+          title: "Real-Time Monitoring",
           description:
-            "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt dolore. magna aliqua.",
+            "Continuous monitoring capabilities allow for tracking disease progression with unparalleled accuracy.",
         },
         {
-          title: "Patient Support",
+          title: "Early Intervention",
           description:
-            "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt dolore. magna aliqua.",
+            "By detecting disease in its earliest stages, we empower providers to intervene when treatments are most effective.",
         },
         {
-          title: "500 + Different Tests",
+          title: "Tailored Treatment Plans",
           description:
-            "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt dolore. magna aliqua.",
+            "Personalized treatment strategies are created based on each patient’s unique disease profile, enhancing treatment outcomes.",
+        },
+        {
+          title: "Transforming liver disease care",
+          description:
+            "Our comprehensive diagnostic approach is transforming liver disease management, offering a more patient-centered healthcare solution.",
         },
       ],
     };

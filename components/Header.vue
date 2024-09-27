@@ -6,7 +6,7 @@
     />
     <div v-if="preloaderComplete">
       <nav
-        class="fixed z-[99999] flex items-center justify-between px-4 py-2 md:py-6 md:px-10 xl:px-20 transition-all duration-300"
+        class="fixed z-[99999] flex items-center justify-between px-4 py-2 md:py-1 md:px-10 xl:px-20 transition-all duration-300"
         :class="[
           isOpen ? 'w-[150px]' : 'w-full',
           isScrolled
