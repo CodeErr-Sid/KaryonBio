@@ -259,7 +259,7 @@ onMounted(() => {
       scrollTrigger: {
         trigger: ".accordions",
         pin: true,
-        start: "top top",
+        start: "top 100px", // Start when the top of .accordions is 20px from the top of the viewport
         end: "bottom top",
         scrub: 1,
         ease: "linear",
@@ -272,6 +272,7 @@ onMounted(() => {
       opacity: 0,
       stagger: 0.5,
     });
+
     tl.to(
       ".accordion",
       {
