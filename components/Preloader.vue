@@ -2,9 +2,13 @@
   <div class="mil-preloader" v-show="!loaded">
     <div class="mil-preloader-animation">
       <div class="mil-pos-abs mil-animation-1">
-        <p class="mil-h3 mil-muted mil-thin">Pioneering</p>
-        <p class="mil-h3 mil-muted">Creative</p>
-        <p class="mil-h3 mil-muted mil-thin">Excellence</p>
+        <p class="font-semibold mil-h3 mil-muted mil-thin">Transforming</p>
+        <p
+          class="mil-h3 font-bold mil-muted bg-clip-text text-transparent bg-gradient-to-r from-[#1F80AE] to-[#1F3B60]"
+        >
+          Liver Care
+        </p>
+        <p class="font-semibold mil-h3 mil-muted mil-thin">Through AI</p>
       </div>
       <div class="mil-pos-abs mil-animation-2">
         <div class="mil-reveal-frame">
@@ -12,7 +16,7 @@
           <p
             class="flex flex-col items-center justify-center mil-h3 mil-muted mil-thin"
           >
-            <img src="/logo.svg" class="w-[250px]" alt="logo" />
+            <img src="/logo2.svg" class="w-[250px]" alt="logo" />
 
             karyon-bio-omega.com
           </p>
@@ -128,13 +132,13 @@ export default {
   left: 0;
   width: 100%;
   height: 100vh;
-  background-color: rgb(0, 0, 0);
+  background-color: rgb(255, 255, 255);
 }
 .mil-preloader .mil-preloader-animation {
   opacity: 0;
   position: relative;
   height: 100vh;
-  color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
 }
 .mil-preloader .mil-preloader-animation .mil-pos-abs {
   position: absolute;

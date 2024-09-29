@@ -12,17 +12,12 @@
       <div
         class="relative z-10 flex mt-20 md:mt-28 text-[#F5F7FA] items-center justify-center px-4 md:pt-[163px] md:flex-row md:px-6 xl:px-10"
       >
-        <div class="w-[674px]">
+        <div class="">
           <h1
             class="text-[35px] text-base mt-4 md:mt-0 lg:text-[52px] font-semibold md:leading-[63px] text-center"
           >
-            The future of drug design
+            The Science Behind Karyon Bio
           </h1>
-          <p class="mt-4 text-sm text-center text-white md:text-xl">
-            RECEPTOR.AI provides an end-to-end small molecule drug discovery
-            platform for precision and personalised medicine to achieve ultimate
-            selectivity between highly similar off-target proteins.
-          </p>
         </div>
       </div>
     </section>
@@ -125,7 +120,7 @@
       </div>
     </section>
     <section
-      class="w-full overflow-hidden px-4 md:px-0 flex lg:flex-row flex-col md:justify-center lg:justify-between lg:h-[550px] xl:h-[700px] md:pb-10"
+      class="w-full overflow-hidden px-4 md:px-0 flex lg:flex-row flex-col md:justify-center gap-10 lg:h-[550px] xl:h-[700px] md:pb-10"
     >
       <div
         class="relative top-20 md:top-36 order-1 lg:order-2 text-black text-balance md:text-center lg:text-start flex flex-col justify-center md:items-center lg:items-start lg:justify-start pb-20 md:pb-28 lg:w-[400px] xl:w-[500px] lg:mr-24 xl:mr-20"
@@ -133,7 +128,7 @@
         <h1 class="md:text-[36px] mt-1 md:mt-0 xl:text-[40px] font-bold">
           What karyon bio offers
         </h1>
-        <p class="xl:text-[18px] mt-1 md:mt-0 md:w-[500px] text-sm">
+        <p class="xl:text-[18px] mt-1 md:mt-2 md:w-[500px] text-sm">
           When combined with metabolic dysfunctions, the morbidity associated
           with NAFLD/NASH increases exponentially, making early diagnosis and
           effective management critical.
@@ -155,18 +150,18 @@
         </div>
       </div>
       <div
-        class="relative order-2 lg:order-1 lg:w-[400px] pb-20 lg:pb-0 xl:w-[500px] top-10 md:top-16 lg:top-36"
+        class="relative order-2 pb-20 lg:order-1 lg:pb-0 top-10 md:top-16 lg:top-36"
       >
         <!-- First Image (smaller, positioned lower) -->
-        <img
+        <!-- <img
           src="https://bracketweb.com/ogencywp/wp-content/uploads/2023/07/about-3-1.jpg"
           class="xl:w-[290px] w-[200px] md:w-auto rounded-xl absolute bottom-0 lg:bottom-[120px] md:bottom-0 xl:bottom-[165px] md:right-20 lg:-right-20 xl:h-[316px] z-10"
           alt=""
-        />
+        /> -->
         <!-- Second Image (larger, default positioning) -->
         <img
-          src="https://bracketweb.com/ogencywp/wp-content/uploads/2023/07/about-3-2.jpg"
-          class="xl:w-[450px] w-[200px] md:w-auto rounded-xl xl:h-[496px] lg:w-[300px] lg:h-[350px] z-0 left-20 relative md:left-20"
+          src="/about/lab.jpg"
+          class="relative z-0 md:w-auto lg:w-[500px] lg:h-[460px] object-cover rounded-xl md"
           alt=""
         />
       </div>

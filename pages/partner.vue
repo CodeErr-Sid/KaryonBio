@@ -1,7 +1,7 @@
 <template>
   <div>
     <section
-      class="relative w-full h-screen md:h-auto lg:h-screen overflow-hidden bg-gradient-to-r from-[#1F5179] to-[#1F709C] md:bg-none xl:bg-gradient-to-r xl:from-[#1F5179] xl:to-[#1F709C]"
+      class="relative w-full h-screen md:h-auto pb-10 lg:h-screen overflow-hidden bg-gradient-to-r from-[#1F5179] to-[#1F709C] md:bg-none xl:bg-gradient-to-r xl:from-[#1F5179] xl:to-[#1F709C]"
       :class="['', isOpen ? '  ' : ' ']"
     >
       <!-- SVG background image -->
@@ -39,7 +39,7 @@
       </div>
     </section>
     <h1
-      class="text-xl md:text-[35px] lg:text-[52px] text-black md:mt-[60px] pt-4 font-semibold leading-[40px] lg:leading-[63px] text-center"
+      class="text-xl md:text-[35px] lg:text-[52px] text-black lg:mt-[60px] pt-4 font-semibold leading-[40px] lg:leading-[63px] text-center"
     >
       Why Partner with Karyon Bio?
     </h1>
@@ -113,40 +113,53 @@
     <div id="wrapper" class="hidden md:block">
       <div id="content">
         <!-- <div class="spacer"></div> -->
-        <div class="px-4 mt-4 xl:mt-40 accordions">
+        <div class="px-4 mt-4 md:px-0 xl:mt-40 accordions">
           <div class="accordion">
             <div class="title">INNOVATIVE TECHNOLOGY</div>
-            <div class="text">
-              Stay ahead in liver disease diagnostics with our cutting-edge AI
-              and multi-omics platform. Our technology enables earlier detection
-              and more precise insights for better outcomes. Partner with us to
-              revolutionize liver health diagnostics.
+            <div class="flex items-start justify-between">
+              <p style="font-size: 30px" class="w-[500px] text">
+                Stay ahead in liver disease diagnostics with our cutting-edge AI
+                and multi-omics platform. Our technology enables earlier
+                detection and more precise insights for better outcomes. Partner
+                with us to revolutionize liver health diagnostics.
+              </p>
+              <p class="text-[200px] font-bold number text-white">01.</p>
             </div>
           </div>
           <div class="accordion">
             <div class="title">Diagnostic Labs</div>
-            <div class="text">
-              We provide tailored solutions to meet your unique needs. Our
-              approach is personalized, focusing on delivering the most
-              effective outcomes. Let us help you achieve your goals with
-              precision and care
+            <div class="flex justify-between">
+              <p style="font-size: 30px" class="w-[500px] text">
+                We provide tailored solutions to meet your unique needs. Our
+                approach is personalized, focusing on delivering the most
+                effective outcomes. Let us help you achieve your goals with
+                precision and care
+              </p>
+              <p class="text-[200px] font-bold number text-white">02.</p>
             </div>
           </div>
           <div class="accordion">
-            <div class="title">Hospital</div>
-            <div class="text">
-              Together, we can enhance global liver health outcomes through
-              collaboration and innovative solutions. By focusing on prevention,
-              treatment, and education, we aim to make a positive impact. Let’s
-              work to promote healthier lives worldwide.
+            <div class="font-bold title">Hospital</div>
+            <div class="flex justify-between">
+              <p style="font-size: 30px" class="w-[500px] text">
+                Together, we can enhance global liver health outcomes through
+                collaboration and innovative solutions. By focusing on
+                prevention, treatment, and education, we aim to make a positive
+                impact. Let’s work to promote healthier lives worldwide.
+              </p>
+              <p class="text-[200px] font-bold number text-white">01.</p>
             </div>
           </div>
         </div>
         <!-- <div class="spacer"></div> -->
       </div>
     </div>
-    <section class="relative z-30 w-full px-4 bg-white">
-      <section class="h-full text-center bg-white">
+    <section class="relative z-30 w-full bg-white md:px-0">
+      <div class="absolute bottom-0 flex justify-between w-full mt-4 md:-mt-20">
+        <img src="/partner/sand.svg" class="lg:w-[700px]" alt="" />
+        <img src="/partner/sand2.svg" class="hidden lg:block" alt="" />
+      </div>
+      <section class="h-full px-4 text-center bg-white">
         <div
           class="relative z-20 flex flex-col items-start justify-center h-full gap-12 text-left transition-all duration-500 md:-mt-40 global-container"
           :style="{
@@ -217,10 +230,10 @@
         </div>
       </section>
     </section>
-    <div class="flex justify-between mt-4 md:mt-0 xl:mt-10">
+    <!-- <div class="flex justify-between mt-4 md:mt-0">
       <img src="/partner/sand.svg" class="md:w-[400px]" alt="" />
       <img src="/partner/sand2.svg" class="hidden md:block" alt="" />
-    </div>
+    </div> -->
   </div>
 </template>
 <script setup>
@@ -266,8 +279,8 @@ onMounted(() => {
       },
     });
 
-    tl.to(".accordion .text", {
-      height: 0,
+    tl.to(".accordion .text .number", {
+      height: 300,
       paddingBottom: 0,
       opacity: 0,
       stagger: 0.5,
@@ -276,6 +289,8 @@ onMounted(() => {
     tl.to(
       ".accordion",
       {
+        height: 0,
+
         marginBottom: -15,
         stagger: 0.5,
       },
@@ -407,26 +422,6 @@ research and enhance patients together.`,
           return "fade-right"; // Fallback
       }
     },
-    initializeSwiper() {
-      this.swiperInstance = new window.Swiper(".mySwiper", {
-        loop: true,
-        slidesPerView: 1,
-        autoplay: {
-          delay: 2000,
-          disableOnInteraction: true,
-        },
-        pagination: {
-          el: ".swiper-pagination",
-          clickable: true,
-        },
-        breakpoints: {
-          320: { slidesPerView: 2, spaceBetween: 2 },
-          768: { slidesPerView: 4, spaceBetween: 20 },
-          1024: { slidesPerView: 4, spaceBetween: 20 },
-          1280: { slidesPerView: 4 },
-        },
-      });
-    },
 
     toggleMenu() {
       this.isOpen = !this.isOpen;
@@ -467,6 +462,7 @@ research and enhance patients together.`,
 
 .title {
   font-size: max(2vw, 24px);
+  font-weight: 800;
   line-height: 1.1;
   padding-bottom: 0.4em;
   color: rgba(255, 255, 255, 0.7);
@@ -478,7 +474,7 @@ research and enhance patients together.`,
   font-size: max(1vw, 15px);
   line-height: 1.4;
   overflow: hidden;
-  padding-bottom: 20px;
+  padding-bottom: 40px;
   color: rgba(255, 255, 255, 0.7);
 }
 
@@ -491,16 +487,18 @@ research and enhance patients together.`,
 
 .accordion {
   background: linear-gradient(120deg, #1f5179, #1f709c);
-  width: max(750px, 380px);
+  width: 100%; /* Make accordion take full width */
+  max-width: 100%; /* Ensure the max-width is the full container width */
   padding: 25px 30px 10px;
-  border-radius: 15px;
+  border-top-right-radius: 30px;
+  border-top-left-radius: 30px;
   margin-bottom: 40px;
   box-shadow: 0 30px 30px -10px rgba(0, 0, 0, 0.3);
 }
 
 @media (min-width: 1024px) {
   .accordion {
-    max-width: 800px; /* Set max-width to 800px after 1024px */
+    max-width: 100%; /* Ensure max-width is 100% after 1024px */
   }
 }
 

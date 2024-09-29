@@ -40,7 +40,7 @@
           <img
             data-aos="flip-left"
             src="/liver.svg"
-            class="w-[200px] top-28 lg:top-72 left-14 lg:left-[200px] md:right-20 lg:right-0 animate-jump animate-infinite animate-delay-[150ms] z-20 absolute"
+            class="w-[200px] top-28 lg:top-72 left-14 lg:left-[200px] md:right-20 lg:right-0 z-20 absolute"
             alt="liver"
           />
 
@@ -117,14 +117,16 @@
       </div>
     </section>
     <section
-      class="w-full px-4 md:px-6 bg-gradient-to-r pb-4 from-[#307BC4] to-[#85B1DC]"
+      class="w-full px-4 md:px-6 bg-gradient-to-r pb-10 from-[#307BC4] to-[#85B1DC]"
     >
       <div
-        class="flex lg:flex-row flex-col py-10 md:pt-[100px] justify-between"
+        class="flex lg:flex-row flex-col py-10 md:pt-[100px] justify-center items-center"
       >
-        <div class="xl:w-[718px]">
-          <h1 class="text-[#3AD9FF] font-semibold text-[25px] md:text-[36px]">
-            WHY
+        <div class="">
+          <h1
+            class="text-[#3AD9FF] text-center font-semibold text-[25px] md:text-[36px]"
+          >
+            Why Karyon Bio
           </h1>
           <p
             class="ttext-[25px] md:text-[36px] font-medium text-[#F5F7FA] mt-2 md:mt-6 md:leading-[46px]"
@@ -145,7 +147,7 @@
             organs cannot meet what’s required, with minorities
             disproportionately disadvantaged. 
           </p>
-          <div class="flex justify-center gap-2 md:gap-6">
+          <!-- <div class="flex justify-center gap-2 md:gap-6">
             <img src="/play.svg" class="" alt="right-arrow" />
             <p
               class="md:text-[20px] text-sm text-[#F5F7FA] mt-4 md:leading-[26px]"
@@ -153,7 +155,7 @@
               Jack O’Meara on how improving outcomes for liver transplant
               patients is a first step towards treating chronic liver disease 
             </p>
-          </div>
+          </div> -->
         </div>
         <!-- <img
           src="/graph.png"
@@ -259,7 +261,7 @@
                         class="w-24 h-24 rounded-full"
                       />
                     </div>
-                    <h3 class="text-sm md:text-xl font-semibold text-[#2B3A4B]">
+                    <h3 class="text-sm md:text-xl font-semibold text-[#3B5998]">
                       {{ selectedExpert.name }}
                     </h3>
                     <p class="mb-4 text-gray-500">
@@ -272,16 +274,6 @@
                       >
                         <img src="/social-icons/2.svg" alt="facebook" />
                       </a>
-                      <a
-                        class="text-[#3B5998] bg-[#83B0DC] cursor-pointer md:w-10 md:h-10 w-8 h-8 rounded-full flex justify-center items-center"
-                      >
-                        <img src="/social-icons/1.svg" alt="linkedin" />
-                      </a>
-                      <a
-                        class="text-[#3B5998] bg-[#83B0DC] cursor-pointer md:w-10 md:h-10 w-8 h-8 rounded-full flex justify-center items-center"
-                      >
-                        <img src="/social-icons/3.svg" alt="twitter" />
-                      </a>
                     </div>
                   </div>
 
@@ -290,7 +282,7 @@
                     class="rounded-lg md:p-4 md:h-64 bg-gray-50 custom-scroll"
                   >
                     <h4
-                      class="text-sm md:text-lg font-semibold text-[#2B3A4B] text-start"
+                      class="text-sm md:text-lg font-semibold text-[#3B5998] text-start"
                     >
                       Hi, I'm {{ selectedExpert.name }}
                     </h4>
@@ -300,7 +292,7 @@
                       {{ selectedExpert.fullDescription }}
                     </p>
                     <h4
-                      class="text-sm mt-2 md:text-lg font-bold text-[#2B3A4B] text-start"
+                      class="text-sm mt-2 md:text-lg font-bold text-[#3B5998] text-start"
                     >
                       Expertise:
                     </h4>
@@ -308,7 +300,7 @@
                       {{ selectedExpert.expertise }}
                     </p>
                     <h4
-                      class="text-sm mt-2 md:text-lg font-bold text-[#2B3A4B] text-start"
+                      class="text-sm mt-2 md:text-lg font-bold text-[#3B5998] text-start"
                     >
                       Role in the Company:
                     </h4>
@@ -335,7 +327,7 @@
       >
         Empowering Precision Liver Health
       </h1>
-      <img src="/zoom.jpg" class="mt-4" alt="Zoom In Image" />
+      <img src="/zoom.jpg" class="mt-4 rounded-md" alt="Zoom In Image" />
     </section>
   </div>
 </template>
@@ -361,7 +353,7 @@ onMounted(() => {
 
     // Adjust the size dynamically based on screen width
     let initialWidth = innerWidth > 768 ? 400 : 200; // Larger size for desktops, smaller for mobile
-    let zoomInWidth = innerWidth > 768 ? 500 : 500; // Target size for zoom-in animation
+    let zoomInWidth = innerWidth > 768 ? 800 : 800; // Target size for zoom-in animation
 
     // Set the initial width based on the screen size
     const img = document.querySelector("#zoom-in img");
