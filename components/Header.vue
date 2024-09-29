@@ -14,8 +14,9 @@
             : '',
         ]"
       >
+        <!-- Show logo based on scroll state -->
         <img
-          src="/logo.svg"
+          :src="isScrolled ? '/logo2.svg' : '/logo.svg'"
           alt="logo"
           class="w-20 md:w-28"
           :class="isOpen ? 'hidden' : ''"
@@ -145,7 +146,7 @@ export default {
       this.isOpen = !this.isOpen;
     },
     handleScroll() {
-      this.isScrolled = window.scrollY > 50; // Change 50 to any scroll position where the effect should start
+      this.isScrolled = window.scrollY > 50; // Change logo when scrolled past 50px
     },
   },
   watch: {
@@ -154,9 +155,6 @@ export default {
         this.toggleMenu(); // Close menu on route change
       }
     },
-  },
-  mounted() {
-    window.addEventListener("scroll", this.handleScroll);
   },
   beforeDestroy() {
     window.removeEventListener("scroll", this.handleScroll);

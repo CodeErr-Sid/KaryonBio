@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <!-- Magnifying Glass -->
+  <circle cx="27" cy="27" r="10" stroke="white"/>
+  <line x1="33" y1="33" x2="45" y2="45" stroke="white"/>
+  
+  <!-- Exclamation Mark inside the magnifying glass -->
+  <line x1="27" y1="22" x2="27" y2="28" stroke="white" />
+  <circle cx="27" cy="30" r="1" fill="white"/>
+  
+  <!-- Medical Cross Symbol -->
+  <rect x="12" y="45" width="8" height="8" stroke="white" fill="none"/>
+  <line x1="16" y1="45" x2="16" y2="53" stroke="white"/>
+  <line x1="12" y1="49" x2="20" y2="49" stroke="white"/>
+</svg>

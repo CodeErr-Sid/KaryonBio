@@ -27,11 +27,9 @@
       </div>
     </section>
     <section
-      class="w-full overflow-hidden gap-20 px-4 md:px-0 flex lg:flex-row pt-[150px] pb-24 flex-col justify-center lg:justify-center"
+      class="w-full overflow-hidden gap-20 px-4 md:px-20 items-center flex lg:flex-row pt-[150px] pb-24 flex-col justify-center lg:justify-center"
     >
-      <div
-        class="order-2 lg:order-1 lg:w-[400px] xl:w-[500px] top-10 md:top-16 lg:top-36"
-      >
+      <div class="order-2 lg:order-1 lg:w-[600px] xl:w-[600px]">
         <!-- First Image (smaller, positioned lower) -->
         <!-- <img
           src="https://bracketweb.com/ogencywp/wp-content/uploads/2023/07/about-3-1.jpg"
@@ -39,7 +37,7 @@
           alt=""
         /> -->
         <!-- Second Image (larger, default positioning) -->
-        <img src="/about/hero.webp" class="z-0 rounded-xl h-[300px]" alt="" />
+        <img src="/about/hero.webp" class="z-0 rounded-xl h-[450px]" alt="" />
       </div>
       <div
         class="flex flex-col justify-center order-1 text-black lg:order-2 text-balance md:text-center lg:text-start"
@@ -179,18 +177,23 @@
         <h2 class="mb-10 text-xl font-bold text-black md:text-3xl">
           Challenges and Innovations in Liver Disease Diagnostics
         </h2>
-        <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-2">
+        <div
+          class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-2 text-start"
+        >
           <!-- Loop through each card content -->
           <div
             v-for="(card, index) in cards"
             :key="index"
             data-aos="fade-down"
-            class="p-6 transition-all duration-300 rounded-lg shadow-lg bg-lime-300"
+            class="p-6 transition-all duration-300 rounded-lg shadow-lg bg-gradient-to-r from-[#1F80AE] to-[#1F3B60]"
           >
-            <h3 class="mb-4 text-xl font-bold text-black">
+            <h3
+              class="flex items-center gap-2 mb-4 text-xl font-bold text-white"
+            >
+              <img :src="card.img" class="w-10 h-10" alt="img" />
               {{ card.title }}
             </h3>
-            <p class="text-black">
+            <p class="text-white">
               {{ card.content }}
             </p>
           </div>
@@ -235,12 +238,29 @@
               <span
                 class="inline-flex items-center justify-center w-8 h-8 text-black bg-gray-300 rounded-full md:w-12 md:h-12"
               >
-                ✔️
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  x="0px"
+                  y="0px"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 48 48"
+                >
+                  <path
+                    fill="#1F80AE"
+                    d="M40.6 12.1L17 35.7 7.4 26.1 4.6 29 17 41.3 43.4 14.9z"
+                  ></path>
+                </svg>
               </span>
             </div>
             <div class="ml-4">
               <h3 class="font-bold text-black md:text-xl text-start">
                 {{ benefit.title }}
+                <span
+                  class="bg-clip-text text-transparent bg-gradient-to-r from-[#1F80AE] to-[#1F3B60]"
+                >
+                  {{ benefit.title1 }}
+                </span>
               </h3>
               <p class="text-sm text-gray-500 text-start md:text-lg">
                 {{ benefit.description }}
@@ -306,21 +326,29 @@ export default {
       ],
       cards: [
         {
+          img: "/about/icon1.svg",
+
           title: "Challenges of Traditional Diagnostic Methods",
           content:
             "Traditional diagnostic approaches, like liver biopsies, are invasive, costly, and come with significant risks to the patient. Despite their widespread use, these methods often lack the depth needed to fully understand the disease, limiting their effectiveness in guiding personalized treatment plans.",
         },
         {
+          img: "/about/icon2.svg",
+
           title: "Karyon Bio’s Non-Invasive Diagnostic Approach",
           content:
             "At Karyon Bio, we believe the future of liver disease diagnostics lies in non-invasive methods. Our goal is to move beyond conventional techniques and offer safer, more accessible options for early and accurate detection.",
         },
         {
+          img: "/about/icon3.svg",
+
           title: "Harnessing the Power of Artificial Intelligence",
           content:
             "Karyon Bio has adopted Artificial Intelligence (AI) to revolutionize liver disease diagnosis. By analyzing vast amounts of complex biological data, our AI-driven tools can uncover hidden patterns, leading to more precise and personalized treatment strategies for NAFLD and NASH patients.",
         },
         {
+          img: "/about/icon4.svg",
+
           title: "Multi-Omics Technology for Comprehensive Insights",
           content:
             "Our innovative diagnostic tools combine data from genomics, transcriptomics, proteomics, and metabolomics, providing a multi-omics approach that offers a holistic view of the molecular mechanisms behind NAFLD/NASH. This comprehensive analysis is key to enabling personalized treatment strategies tailored to each patient’s unique biology.",
@@ -328,27 +356,37 @@ export default {
       ],
       benefits: [
         {
-          title: "Precise Insights",
+          title: "Precise ",
+          title1: " Insights",
+
           description:
             "Our platform delivers data-driven insights, helping healthcare providers understand the molecular complexities of liver diseases.",
         },
         {
-          title: "Real-Time Monitoring",
+          title: "Real-Time ",
+          title1: "Monitoring",
+
           description:
             "Continuous monitoring capabilities allow for tracking disease progression with unparalleled accuracy.",
         },
         {
-          title: "Early Intervention",
+          title: "Early ",
+          title1: " Intervention",
+
           description:
             "By detecting disease in its earliest stages, we empower providers to intervene when treatments are most effective.",
         },
         {
-          title: "Tailored Treatment Plans",
+          title: "Tailored ",
+          title1: " Treatment Plans",
+
           description:
             "Personalized treatment strategies are created based on each patient’s unique disease profile, enhancing treatment outcomes.",
         },
         {
-          title: "Transforming liver disease care",
+          title: "Transforming liver",
+          title1: " disease care",
+
           description:
             "Our comprehensive diagnostic approach is transforming liver disease management, offering a more patient-centered healthcare solution.",
         },

@@ -1,13 +1,13 @@
 <template>
   <div>
     <section
-      class="relative w-full h-screen overflow-hidden bg-gradient-to-r from-[#1F5179] to-[#1F709C] md:bg-none xl:bg-gradient-to-r xl:from-[#1F5179] xl:to-[#1F709C]"
+      class="relative w-full h-screen md:h-auto lg:h-screen overflow-hidden bg-gradient-to-r from-[#1F5179] to-[#1F709C] md:bg-none xl:bg-gradient-to-r xl:from-[#1F5179] xl:to-[#1F709C]"
       :class="['', isOpen ? '  ' : ' ']"
     >
       <!-- SVG background image -->
       <img
         src="/partner/hero.svg"
-        class="absolute top-0 hidden md:block xl:opacity-50"
+        class="absolute top-0 hidden md:block xl:opacity-10"
         alt="hero-dot"
         :class="['', isOpen ? ' hidden' : ' ']"
       />
@@ -39,12 +39,12 @@
       </div>
     </section>
     <h1
-      class="text-xl md:text-[35px] lg:text-[52px] text-white md:text-black md:mt-[60px] mt-4 font-semibold leading-[40px] lg:leading-[63px] text-center"
+      class="text-xl md:text-[35px] lg:text-[52px] text-black md:mt-[60px] pt-4 font-semibold leading-[40px] lg:leading-[63px] text-center"
     >
       Why Partner with Karyon Bio?
     </h1>
     <section
-      class="w-full py-4 md:py-0 bg-gradient-to-r from-[#0C264A] to-[#1F3B60]"
+      class="w-full md:hidden py-4 md:py-0 bg-gradient-to-r from-[#0C264A] to-[#1F3B60]"
     >
       <!-- <div class="flex flex-col items-center justify-center">
         <img
@@ -110,20 +110,45 @@
         </div>
       </div>
     </section>
-    <section
-      style="
-        width: 100%;
-        background-color: white;
-        z-index: 3;
-        position: relative;
-      "
-    >
-      <section
-        style="background-color: white; height: 100%; text-align: center"
-        class="border-top-radius"
-      >
+    <div id="wrapper" class="hidden md:block">
+      <div id="content">
+        <!-- <div class="spacer"></div> -->
+        <div class="px-4 mt-4 xl:mt-40 accordions">
+          <div class="accordion">
+            <div class="title">INNOVATIVE TECHNOLOGY</div>
+            <div class="text">
+              Stay ahead in liver disease diagnostics with our cutting-edge AI
+              and multi-omics platform. Our technology enables earlier detection
+              and more precise insights for better outcomes. Partner with us to
+              revolutionize liver health diagnostics.
+            </div>
+          </div>
+          <div class="accordion">
+            <div class="title">Diagnostic Labs</div>
+            <div class="text">
+              We provide tailored solutions to meet your unique needs. Our
+              approach is personalized, focusing on delivering the most
+              effective outcomes. Let us help you achieve your goals with
+              precision and care
+            </div>
+          </div>
+          <div class="accordion">
+            <div class="title">Hospital</div>
+            <div class="text">
+              Together, we can enhance global liver health outcomes through
+              collaboration and innovative solutions. By focusing on prevention,
+              treatment, and education, we aim to make a positive impact. Let’s
+              work to promote healthier lives worldwide.
+            </div>
+          </div>
+        </div>
+        <!-- <div class="spacer"></div> -->
+      </div>
+    </div>
+    <section class="relative z-30 w-full px-4 bg-white">
+      <section class="h-full text-center bg-white">
         <div
-          class="global-container border-top-radius"
+          class="relative z-20 flex flex-col items-start justify-center h-full gap-12 text-left transition-all duration-500 md:-mt-40 global-container"
           :style="{
             backgroundImage: showBackgroundImage
               ? 'url(' + selectedCountry.image + ')'
@@ -133,53 +158,131 @@
             backgroundPosition: 'right 10% top 20%',
           }"
         >
-          <!-- Country name in the background -->
-          <div class="background-country-name">
-            {{ selectedCountry.country.toUpperCase() }}
+          <!-- Country name in the background, hidden on mobile/tablet -->
+          <div
+            class="absolute text-center -top-20 right-0 -z-10 text-gray-300 font-bold pointer-events-none text-[60px]"
+            v-if="windowWidth >= 1024"
+          >
+            <b
+              class="w-full text-center"
+              :class="{
+                'pr-28': selectedCountry.country.toUpperCase() === 'HOSPITAL',
+              }"
+              v-html="selectedCountry.country.toUpperCase()"
+            ></b>
           </div>
 
-          <div class="gc-static">
-            <h2 class="responsive-heading">
-              Elevate your wealth in biomedical research!
-            </h2>
-            <p>Team up with us today for an unforgettable service experience</p>
-            <div class="flag-buttons" style="margin-top: 10px">
+          <div class="w-full lg:py-8 lg:w-auto gc-static">
+            <h1
+              class="w-full text-2xl font-bold text-center lg:text-4xl md:text-start elevate-text"
+            >
+              Elevate your wealth in biomedical <br class="hidden md:block" />
+              research!
+            </h1>
+            <p class="mt-2 text-center md:text-start">
+              Team up with us today for an unforgettableservice experience
+            </p>
+            <div
+              class="flex flex-wrap items-center justify-center gap-4 mt-2 md:justify-start md:items-start flag-buttons"
+            >
               <div
                 v-for="(flag, index) in flags"
                 :key="index"
-                class="flag-button"
+                class="w-16 h-16 mb-2 transition-transform duration-200 bg-center bg-cover border-2 border-gray-300 rounded-full cursor-pointer flag-button"
                 :class="{ active: selectedCountry.country === flag.country }"
                 @click="changeCountry(flag)"
               >
-                <img :src="flag.image" alt="" />
-                <p class="text-center" style="align-items: center; width: 60px">
-                  {{ flag.name }}
-                </p>
+                <img
+                  :src="flag.image"
+                  alt=""
+                  class="w-full h-full rounded-full"
+                />
+                <p class="w-16 text-center">{{ flag.name }}</p>
               </div>
             </div>
           </div>
-          <div class="gc-dynamic">
-            <h5 class="gc-country-name">
-              <b>{{ selectedCountry.country.toUpperCase() }}</b>
+          <div class="gc-dynamic lg:w-[500px]">
+            <h5 class="text-lg font-bold gc-country-name">
+              <b>{{ selectedCountry.bgName.toUpperCase() }}</b>
             </h5>
-            <div class="gc-address w">
-              <p class="mb-4" style="width: 500px">
+            <div class="gc-address">
+              <p class="mb-4">
                 {{ selectedCountry.address }}
               </p>
-              <p class="" style="margin-top: 8px; width: 500px">
+              <p style="margin-top: 8px">
                 {{ selectedCountry.address1 }}
               </p>
             </div>
           </div>
         </div>
       </section>
-      <div class="flex justify-between -mt-4 md:-mt-10">
-        <img src="/partner/sand.svg" class="w-[300px]" alt="" />
-        <img src="/partner/sand2.svg" class="w-[300px] hidden" alt="" />
-      </div>
     </section>
+    <div class="flex justify-between mt-4 md:mt-0 xl:mt-10">
+      <img src="/partner/sand.svg" class="md:w-[400px]" alt="" />
+      <img src="/partner/sand2.svg" class="hidden md:block" alt="" />
+    </div>
   </div>
 </template>
+<script setup>
+import { onMounted, nextTick } from "vue";
+
+useHead({
+  script: [
+    {
+      src: "https://unpkg.co/gsap@3/dist/gsap.min.js",
+    },
+    {
+      src: "https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js",
+    },
+  ],
+});
+
+onMounted(() => {
+  nextTick(() => {
+    gsap.registerPlugin(ScrollTrigger);
+
+    if (typeof ScrollSmoother !== "undefined") {
+      ScrollSmoother.create({
+        content: "#content",
+        wrapper: "#wrapper",
+        smooth: true,
+        effects: false,
+        normalizeScroll: true,
+      });
+    } else {
+      console.error("ScrollSmoother is not defined");
+    }
+
+    // The rest of your animation code...
+
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".accordions",
+        pin: true,
+        start: "top top",
+        end: "bottom top",
+        scrub: 1,
+        ease: "linear",
+      },
+    });
+
+    tl.to(".accordion .text", {
+      height: 0,
+      paddingBottom: 0,
+      opacity: 0,
+      stagger: 0.5,
+    });
+    tl.to(
+      ".accordion",
+      {
+        marginBottom: -15,
+        stagger: 0.5,
+      },
+      "<"
+    );
+  });
+});
+</script>
 
 <script>
 import AOS from "aos";
@@ -222,17 +325,19 @@ export default {
       flags: [
         {
           country: "Hospital",
+          bgName: "Hospital",
           name: "Hospital",
-          image: "/partner/swip1.svg",
+          image: "/partner/slide3.svg",
           address: `Partner with us for an exceptional, personalized service experience that drives success and innovation. Let's ignite progress together.`,
           address1: `Partner with us to advance cutting-edge biomedical research and enhance patient care together.`,
           email: "info@aibotproperties.com",
           phone: "+971-58-599-7430",
         },
         {
-          country: "Diagnostic Labs",
+          bgName: "Diagnostic Labs",
+          country: "Diagnostic <br/> Labs",
           name: " Labs",
-          image: "/partner/swip2.svg",
+          image: "/partner/slide2.svg",
           address:
             "We provide tailored solutions to meet your unique needs. Our approach is personalized, focusing on delivering the most effective outcomes.",
           address1: `Let us help you achieve your goals with precision and care.`,
@@ -241,8 +346,9 @@ export default {
         },
         {
           country: "Pharmaceutical",
+          bgName: "Pharmaceutical",
           name: "Pharma",
-          image: "/partner/swip3.svg",
+          image: "/partner/slide4.svg",
           address:
             "Together, we can enhance global liver health outcomes through collaboration and innovative solutions.",
           address1: `By focusing on prevention, treatment, and education, we aim to make a positive impact.`,
@@ -250,39 +356,23 @@ export default {
           phone: "+41-22-1234-5678",
         },
         {
-          country: "Hospital",
-          name: "Hospital",
-          image: "/partner/swip1.svg",
-          address: `Partner with us for an exceptional, personalized service experience that drives success and innovation. Let's ignite progress together.`,
-          address1: `Partner with us to advance cutting-edge biomedical research and enhance patient care together.`,
+          country: "Clinical Trial <br/> Organizations",
+          bgName: "Clinical Trial Organizations",
+          name: "Clinical ",
+          image: "/partner/slide1.svg",
+          address: `prove trial precision and efficiency with our AI based bio=arkers, offering =ore accurate patient 
+selection and =onitoring.`,
+          address1: `Partner Oith us to advance cutting-edge biomedical 
+research and enhance patients together.`,
           email: "info@aibotproperties.com",
           phone: "+971-58-599-7430",
-        },
-        {
-          country: "Diagnostic Labs",
-          name: " Labs",
-          image: "/partner/swip2.svg",
-          address:
-            "We provide tailored solutions to meet your unique needs. Our approach is personalized, focusing on delivering the most effective outcomes.",
-          address1: `Let us help you achieve your goals with precision and care.`,
-          email: "info@parisbotproperties.com",
-          phone: "+33-1-2345-6789",
-        },
-        {
-          country: "Pharmaceutical",
-          name: "Pharma",
-          image: "/partner/swip3.svg",
-          address:
-            "Together, we can enhance global liver health outcomes through collaboration and innovative solutions.",
-          address1: `By focusing on prevention, treatment, and education, we aim to make a positive impact.`,
-          email: "info@genevabotproperties.com",
-          phone: "+41-22-1234-5678",
         },
       ],
       selectedCountry: {
         country: "Hospital",
+        bgName: "Hospital",
         name: "Hospital",
-        image: "/partner/swip1.svg",
+        image: "/partner/slide3.svg",
         address: `Partner with us for an exceptional, personalized service experience that drives success and innovation. Let's ignite progress together.`,
         address1: `Partner with us to advance cutting-edge biomedical research and enhance patient care together.`,
         email: "info@aibotproperties.com",
@@ -356,69 +446,6 @@ export default {
 </script>
 <style scoped>
 /* Country name in the background */
-.background-country-name {
-  position: absolute;
-  top: 20%;
-  right: 5%;
-  z-index: 1; /* Make sure it’s behind the content */
-  font-size: 100px; /* Make it large */
-  color: rgba(0, 0, 0, 0.1); /* Light gray for background effect */
-  font-weight: bold;
-  transform: translateY(-50%); /* Center it vertically */
-  pointer-events: none; /* Make sure it doesn’t interfere with interactions */
-}
-
-.flag-buttons {
-  display: flex;
-  gap: 15px;
-  margin-bottom: 0.9rem;
-}
-
-.flag-button {
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  border: 2px solid #ddd;
-  background-size: cover;
-  background-position: center;
-  cursor: pointer;
-  transition: transform 0.2s;
-}
-
-.global-container {
-  padding: 1.5rem;
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  align-items: flex-start;
-  justify-content: center;
-  text-align: left;
-  gap: 3rem;
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-  transition: all 0.5s linear;
-  position: relative;
-  z-index: 2; /* Main content on top of the background text */
-}
-
-.gc-static h2 {
-  font-size: 3rem;
-  font-weight: 600;
-  margin-bottom: 1rem;
-}
-
-@media (min-width: 1024px) {
-  .responsive-heading {
-    width: 600px;
-  }
-}
-
-@media (min-width: 768px) and (max-width: 1023px) {
-  .responsive-heading {
-    width: 500px;
-  }
-}
 
 .slide-fade-enter-active,
 .slide-fade-leave-active {
@@ -435,5 +462,65 @@ export default {
   max-height: 1000px; /* Arbitrary value larger than the content's height */
   transform: scale(1);
   opacity: 1;
+}
+
+.title {
+  font-size: max(2vw, 24px);
+  line-height: 1.1;
+  padding-bottom: 0.4em;
+  color: rgba(255, 255, 255, 0.7);
+
+  text-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+}
+
+.text {
+  font-size: max(1vw, 15px);
+  line-height: 1.4;
+  overflow: hidden;
+  padding-bottom: 20px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.accordions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 20vh;
+}
+
+.accordion {
+  background: linear-gradient(120deg, #1f5179, #1f709c);
+  width: max(750px, 380px);
+  padding: 25px 30px 10px;
+  border-radius: 15px;
+  margin-bottom: 40px;
+  box-shadow: 0 30px 30px -10px rgba(0, 0, 0, 0.3);
+}
+
+@media (min-width: 1024px) {
+  .accordion {
+    max-width: 800px; /* Set max-width to 800px after 1024px */
+  }
+}
+
+.accordion:nth-child(2) {
+  background: linear-gradient(120deg, #1f5179, #1f709c);
+}
+
+.accordion:nth-child(3) {
+  background: linear-gradient(120deg, #1f5179, #1f709c);
+}
+
+/* .spacer {
+  height: 70vh;
+} */
+
+@media (max-width: 480px) {
+  .accordion {
+    padding: 15px 20px 8px;
+  }
+  .title {
+    font-size: 20px;
+  }
 }
 </style>

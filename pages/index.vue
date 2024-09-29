@@ -1,6 +1,6 @@
 <template>
   <div class="text-example">
-    <MouseFollower />
+    <!-- <MouseFollower /> -->
     <section
       class="relative w-full overflow-hidden bg-gradient-to-r from-[#1F80AE] to-[#1F3B60]"
       :class="['', isOpen ? ' h-screen ' : ' ']"
@@ -24,12 +24,13 @@
           </h1>
           <p id="typewriter" class="mt-2 text-xl font-semibold text-white"></p>
         </div>
-        <img
+        <!-- <img
           src="/round.png"
           class="md:w-[450px] xl:w-auto"
           alt="round"
           :class="['', isOpen ? ' hidden' : ' ']"
-        />
+        /> -->
+        <Spinner />
       </div>
     </section>
     <section class="mt-4 mb-4 md:mt-10 md:px-10">
@@ -68,7 +69,7 @@
             />
 
             <p
-              class="text-[#274760B3] text-center text-base md:text-[24.47px] md:leading-[34px] lg:w-[450px] xl:w-[580px]"
+              class="text-[#274760B3] text-center md:text-start text-base md:text-[24.47px] md:leading-[34px] lg:w-[450px] xl:w-[580px]"
             >
               By seamlessly integrating multi-omics data, clinical insights,
               literature mining, and advanced imaging techniques, our
@@ -77,7 +78,7 @@
               liver disorder
             </p>
           </div>
-          <div class="flex items-start justify-center gap-2 md:gap-6">
+          <div class="flex items-start justify-center gap-2 mt-2 md:gap-6">
             <img
               src="/right-arrow.svg"
               class="hidden w-8 mt-2 md:w-12 md:block"
@@ -85,7 +86,7 @@
             />
 
             <p
-              class="text-[#274760B3] text-center text-base md:text-[24.47px] md:leading-[34px] lg:w-[450px] xl:w-[580px]"
+              class="text-[#274760B3] text-center md:text-start text-base md:text-[24.47px] md:leading-[34px] lg:w-[450px] xl:w-[580px]"
             >
               Our proprietary AI algorithm technology detects NAFLD at its
               inception, predicts disease progression, and identifies tailored
@@ -102,7 +103,7 @@
       class="w-full px-4 md:px-6 bg-gradient-to-r pb-4 from-[#307BC4] to-[#85B1DC]"
     >
       <div
-        class="flex lg:flex-row flex-col pt-10 md:pt-[100px] justify-between"
+        class="flex lg:flex-row flex-col py-10 md:pt-[100px] justify-between"
       >
         <div class="xl:w-[718px]">
           <h1 class="text-[#3AD9FF] font-semibold text-[25px] md:text-[36px]">
@@ -137,14 +138,15 @@
             </p>
           </div>
         </div>
-        <img
+        <!-- <img
           src="/graph.png"
           class="w-full lg:w-[450px] md:h-[383px] mt-4 md:mt-20"
           alt="why"
-        />
+        /> -->
       </div>
     </section>
-    <section class="lg:py-16 bg-[#F5F7FA] px-4 mt-4 mb-4 md:mt-0">
+
+    <section class="lg:py-16 bg-[#F5F7FA] px-4 mt-4 mb-4 10 md:mt-0">
       <div class="container mx-auto text-center">
         <!-- Section Title -->
         <h2 class="text-4xl font-bold pt-10 text-[#2B3A4B] mb-2 md:mb-12">
@@ -158,7 +160,7 @@
           <div
             v-for="(expert, index) in experts"
             :key="index"
-            class="relative overflow-hidden transition-all duration-300 md:h-[600px] md:w-[360px] lg:w-auto xl:w-[400px] rounded-xl shadow-md"
+            class="relative overflow-hidden transition-all duration-300 md:h-[650px] md:w-[360px] lg:w-auto xl:w-[400px] rounded-xl shadow-md"
           >
             <!-- Image and Basic Info -->
             <div class="">
@@ -201,7 +203,7 @@
               </p>
             </div>
             <div
-              class="flex items-center justify-center w-full gap-4 mb-5 md:absolute bottom-4"
+              class="flex items-center justify-center w-full gap-4 bottom-2 md:absolute"
             >
               <a
                 class="text-[#3B5998] bg-[#83B0DC] cursor-pointer w-10 h-10 rounded-full flex justify-center items-center"
@@ -306,8 +308,62 @@
         </div>
       </div>
     </section>
+
+    <section
+      class="flex flex-col bg-gradient-to-r from-[#1F80AE] to-[#1F3B60] last"
+      id="zoom-in"
+    >
+      <h1 class="text-4xl font-bold z-20 text-white leading-[50px]">
+        Empowering Precision Liver Health
+      </h1>
+      <img src="/zoom.jpg" class="mt-4" alt="Zoom In Image" />
+    </section>
   </div>
 </template>
+<script setup>
+definePageMeta({ layout: "primary" });
+
+useHead({
+  script: [
+    {
+      src: "https://unpkg.co/gsap@3/dist/gsap.min.js",
+    },
+    {
+      src: "https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js",
+    },
+  ],
+});
+
+onMounted(() => {
+  if (typeof gsap !== "undefined" && typeof ScrollTrigger !== "undefined") {
+    gsap.registerPlugin(ScrollTrigger);
+
+    const { innerHeight } = window;
+
+    // Set the initial width to 400px
+    const img = document.querySelector("#zoom-in img");
+    img.style.width = "400px";
+
+    // Zoom-in animation for the image
+    gsap.fromTo(
+      img,
+      {
+        width: "300px",
+      },
+      {
+        width: "500px",
+        duration: 3,
+        scrollTrigger: {
+          trigger: "#zoom-in",
+          pin: true,
+          end: `+=${innerHeight * 1.3}`,
+          scrub: 3,
+        },
+      }
+    );
+  }
+});
+</script>
 
 <script>
 import AOS from "aos";
@@ -405,6 +461,13 @@ export default {
 };
 </script>
 <style scoped>
+.last {
+  height: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 /* Tailwind transition classes for smooth animations */
 #style-2::-webkit-scrollbar-track {
   -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
