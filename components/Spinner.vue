@@ -10,9 +10,6 @@
         <i></i>
         <i></i>
         <!-- Centered SVG -->
-        <div class="center-svg">
-          <img src="/liver.svg" alt="Centered SVG" />
-        </div>
       </div>
     </section>
   </div>
@@ -32,16 +29,24 @@ section.wrapper {
 section.wrapper.dark {
   background: #313134;
 }
-
 div.spinner {
   animation: rotate 10s infinite linear;
   position: relative;
   display: block;
   margin: auto;
 
-  /* Adjusted size based on the image */
-  width: 500px;
-  height: 500px;
+  /* Default size for larger screens */
+  width: 600px;
+  height: 600px;
+}
+
+/* Media query for mobile screens */
+@media (max-width: 768px) {
+  div.spinner {
+    /* Adjusted size for mobile screens */
+    width: 300px;
+    height: 300px;
+  }
 }
 
 div.spinner i {

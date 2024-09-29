@@ -2,8 +2,8 @@
   <div class="text-example">
     <!-- <MouseFollower /> -->
     <section
-      class="relative w-full overflow-hidden bg-gradient-to-r from-[#1F80AE] to-[#1F3B60]"
-      :class="['', isOpen ? ' h-screen ' : ' ']"
+      class="relative w-full md:h-screen overflow-hidden bg-gradient-to-r from-[#1F80AE] to-[#1F3B60]"
+      :class="['', isOpen ? '  ' : ' ']"
     >
       <img
         src="/about/home.svg"
@@ -13,16 +13,22 @@
       />
 
       <div
-        class="flex flex-col items-center justify-between px-4 mt-20 md:mt-28 md:flex-row md:px-6 xl:px-10"
+        class="flex flex-col items-center justify-center px-4 mt-20 lg:-mt-10 md:flex-row md:px-6 xl:pl-20"
       >
-        <div :class="['', isOpen ? 'hidden ' : 'block']">
+        <div
+          class="relative lg:left-20"
+          :class="['', isOpen ? 'hidden ' : 'block']"
+        >
           <!-- Typewriter effect here -->
           <h1
-            class="text-4xl font-bold z-20 relative text-white leading-[50px]"
+            class="text-4xl xl:text-[50px] font-bold z-20 relative text-white leading-[50px] xl:leading-[80px]"
           >
             Empowering Precision Liver Health
           </h1>
-          <p id="typewriter" class="mt-2 text-xl font-semibold text-white"></p>
+          <p
+            id="typewriter"
+            class="relative z-20 mt-2 text-xl font-semibold text-white"
+          ></p>
         </div>
         <!-- <img
           src="/round.png"
@@ -30,7 +36,18 @@
           alt="round"
           :class="['', isOpen ? ' hidden' : ' ']"
         /> -->
-        <Spinner />
+        <div class="relative">
+          <img
+            data-aos="flip-left"
+            src="/liver.svg"
+            class="w-[200px] top-28 lg:top-72 left-14 lg:left-[200px] md:right-20 lg:right-0 animate-jump animate-infinite animate-delay-[150ms] z-20 absolute"
+            alt="liver"
+          />
+
+          <div>
+            <Spinner />
+          </div>
+        </div>
       </div>
     </section>
     <section class="mt-4 mb-4 md:mt-10 md:px-10">
@@ -160,7 +177,7 @@
           <div
             v-for="(expert, index) in experts"
             :key="index"
-            class="relative overflow-hidden transition-all duration-300 md:h-[650px] md:w-[360px] lg:w-auto xl:w-[400px] rounded-xl shadow-md"
+            class="relative overflow-hidden transition-all duration-300 md:h-[650px] pb-4 md:pb-0 md:w-[360px] lg:w-auto xl:w-[400px] rounded-xl shadow-md"
           >
             <!-- Image and Basic Info -->
             <div class="">
@@ -313,7 +330,9 @@
       class="flex flex-col bg-gradient-to-r from-[#1F80AE] to-[#1F3B60] last"
       id="zoom-in"
     >
-      <h1 class="text-4xl font-bold z-20 text-white leading-[50px]">
+      <h1
+        class="text-xl px-4 md:text-4xl text-center font-bold z-20 text-white md:leading-[50px]"
+      >
         Empowering Precision Liver Health
       </h1>
       <img src="/zoom.jpg" class="mt-4" alt="Zoom In Image" />
@@ -338,20 +357,24 @@ onMounted(() => {
   if (typeof gsap !== "undefined" && typeof ScrollTrigger !== "undefined") {
     gsap.registerPlugin(ScrollTrigger);
 
-    const { innerHeight } = window;
+    const { innerHeight, innerWidth } = window;
 
-    // Set the initial width to 400px
+    // Adjust the size dynamically based on screen width
+    let initialWidth = innerWidth > 768 ? 400 : 200; // Larger size for desktops, smaller for mobile
+    let zoomInWidth = innerWidth > 768 ? 500 : 500; // Target size for zoom-in animation
+
+    // Set the initial width based on the screen size
     const img = document.querySelector("#zoom-in img");
-    img.style.width = "400px";
+    img.style.width = `${initialWidth}px`;
 
-    // Zoom-in animation for the image
+    // Responsive zoom-in animation for the image
     gsap.fromTo(
       img,
       {
-        width: "300px",
+        width: `${initialWidth}px`,
       },
       {
-        width: "500px",
+        width: `${zoomInWidth}px`,
         duration: 3,
         scrollTrigger: {
           trigger: "#zoom-in",
