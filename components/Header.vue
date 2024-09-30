@@ -90,7 +90,7 @@
           </div>
           <div
             class="flex flex-col items-center justify-center mt-10 md:mt-0 md:flex-row"
-            @click="toggleMenu"
+            @click="closeMenu"
           >
             <img
               :src="'/logo2.svg'"
@@ -150,6 +150,9 @@ export default {
     }
   },
   methods: {
+    closeMenu() {
+      this.isOpen = false; // Close the navigation menu
+    },
     handlePreloaderComplete() {
       this.headerVisible = true; // Show the header once preloader is complete
     },
