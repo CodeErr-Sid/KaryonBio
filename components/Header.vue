@@ -66,7 +66,7 @@
           ]"
           class="absolute top-0 left-0 w-full transition-all duration-300 md:bg-none md:top-20 md:static md:w-auto md:block"
         >
-          <div class="flex items-center justify-center mt-2 md:hidden">
+          <div class="px-4 mt-2 md:hidden">
             <button
               @click="toggleMenu"
               class="text-[#1F3B60] focus:outline-none"
@@ -77,7 +77,7 @@
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
-                class="w-8 h-8"
+                class="w-6 h-6"
               >
                 <path
                   stroke-linecap="round"
@@ -88,37 +88,46 @@
               </svg>
             </button>
           </div>
-
-          <nuxt-link
-            class="block py-2 px-2 md:inline-block text-sm lg:text-xl hover:text-[#3AD9FF] cursor-pointer"
-            to="/"
-            >Home</nuxt-link
+          <div
+            class="flex flex-col items-center justify-center mt-10 md:mt-0 md:flex-row"
+            @click="toggleMenu"
           >
-          <nuxt-link
-            class="block py-2 px-2 md:inline-block text-sm lg:text-xl hover:text-[#3AD9FF] cursor-pointer"
-            to="/about"
-            >About</nuxt-link
-          >
-          <nuxt-link
-            class="block py-2 px-2 md:inline-block text-sm lg:text-xl hover:text-[#3AD9FF] cursor-pointer"
-            to="#"
-            >Technology</nuxt-link
-          >
-          <nuxt-link
-            class="block py-2 px-2 md:inline-block text-sm lg:text-xl hover:text-[#3AD9FF] cursor-pointer"
-            to="/partner"
-            >Partner</nuxt-link
-          >
-          <nuxt-link
-            class="block py-2 px-2 md:inline-block text-sm lg:text-xl hover:text-[#3AD9FF] cursor-pointer"
-            to="/teams"
-            >Our Experts</nuxt-link
-          >
-          <nuxt-link
-            class="block py-2 px-2 md:inline-block text-sm lg:text-xl hover:text-[#3AD9FF] cursor-pointer"
-            to="/contact"
-            >Contact</nuxt-link
-          >
+            <img
+              :src="'/logo2.svg'"
+              alt="logo"
+              class="w-20 md:hidden md:w-28"
+            />
+            <nuxt-link
+              class="block py-2 px-2 md:inline-block text-sm lg:text-xl hover:text-[#3AD9FF] cursor-pointer"
+              to="/"
+              >Home</nuxt-link
+            >
+            <nuxt-link
+              class="block py-2 px-2 md:inline-block text-sm lg:text-xl hover:text-[#3AD9FF] cursor-pointer"
+              to="/about"
+              >About</nuxt-link
+            >
+            <nuxt-link
+              class="block py-2 px-2 md:inline-block text-sm lg:text-xl hover:text-[#3AD9FF] cursor-pointer"
+              to="#"
+              >Technology</nuxt-link
+            >
+            <nuxt-link
+              class="block py-2 px-2 md:inline-block text-sm lg:text-xl hover:text-[#3AD9FF] cursor-pointer"
+              to="/partner"
+              >Partner</nuxt-link
+            >
+            <nuxt-link
+              class="block py-2 px-2 md:inline-block text-sm lg:text-xl hover:text-[#3AD9FF] cursor-pointer"
+              to="/teams"
+              >Our Experts</nuxt-link
+            >
+            <nuxt-link
+              class="block py-2 px-2 md:inline-block text-sm lg:text-xl hover:text-[#3AD9FF] cursor-pointer"
+              to="/contact"
+              >Contact</nuxt-link
+            >
+          </div>
         </div>
       </nav>
     </div>
