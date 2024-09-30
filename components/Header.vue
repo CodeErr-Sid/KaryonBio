@@ -1,10 +1,7 @@
 <template>
   <div class="bg-custom-gradient">
-    <Preloader
-      v-if="!preloaderComplete"
-      @preloader-complete="preloaderCompleteHandler"
-    />
-    <div v-if="preloaderComplete">
+    <Preloader @preloader-complete="handlePreloaderComplete" />
+    <div v-if="headerVisible">
       <nav
         class="fixed z-[99999] flex items-center justify-between px-4 py-2 md:py-1 md:px-10 xl:px-20 transition-all duration-300"
         :class="[
@@ -23,6 +20,7 @@
         />
         <div class="md:hidden" :class="isOpen ? 'hidden' : ''">
           <button @click="toggleMenu" class="text-white focus:outline-none">
+            <!-- Hamburger Icon -->
             <svg
               v-if="!isOpen"
               xmlns="http://www.w3.org/2000/svg"
@@ -38,6 +36,7 @@
                 d="M4 6h16M4 12h16M4 18h16"
               />
             </svg>
+            <!-- Close Icon -->
             <svg
               v-if="isOpen"
               xmlns="http://www.w3.org/2000/svg"
@@ -55,6 +54,8 @@
             </svg>
           </button>
         </div>
+
+        <!-- Navigation Links -->
         <div
           :class="[
             'md:flex gap-2 lg:gap-6 text-[#1F3B60] font-semibold text-[20px]',
@@ -87,6 +88,7 @@
               </svg>
             </button>
           </div>
+
           <nuxt-link
             class="block py-2 px-2 md:inline-block text-sm lg:text-xl hover:text-[#3AD9FF] cursor-pointer"
             to="/"
@@ -129,35 +131,43 @@ export default {
     return {
       isOpen: false,
       isScrolled: false, // Track scroll state
-      preloaderComplete: false,
+      headerVisible: false,
     };
   },
   mounted() {
     window.addEventListener("scroll", this.handleScroll);
     if (this.$route.path !== "/") {
-      this.preloaderComplete = true;
+      this.preloaderComplete = true; // Skip preloader if not on the home page
     }
   },
   methods: {
-    preloaderCompleteHandler() {
-      this.preloaderComplete = true; // Show layout once preloader is done
+    handlePreloaderComplete() {
+      this.headerVisible = true; // Show the header once preloader is complete
     },
     toggleMenu() {
-      this.isOpen = !this.isOpen;
+      this.isOpen = !this.isOpen; // Toggle the navigation menu
     },
     handleScroll() {
       this.isScrolled = window.scrollY > 50; // Change logo when scrolled past 50px
     },
   },
   watch: {
+    // React to route changes and show preloader on every route change
     $route(to, from) {
-      if (this.isOpen) {
-        this.toggleMenu(); // Close menu on route change
-      }
+      this.preloaderComplete = false; // Reset preloader on route change
+      // Optionally, you could trigger your preloader here
+      // You might want to implement a timeout to simulate loading time
+      setTimeout(() => {
+        this.preloaderComplete = true; // Complete preloader after some time
+      }, 500); // Adjust the timeout as needed
     },
   },
   beforeDestroy() {
-    window.removeEventListener("scroll", this.handleScroll);
+    window.removeEventListener("scroll", this.handleScroll); // Clean up event listener
   },
 };
 </script>
+
+<style scoped>
+/* Add any additional styles you need here */
+</style>
