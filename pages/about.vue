@@ -56,7 +56,7 @@
           Disease) and its more severe form, NASH (Non-Alcoholic Steatohepatitis
         </p>
         <div
-          class="flex items-center justify-center gap-2 mt-2 lg:justify-start lg:items-start lg:mt-6 md:mt-10 xl:mt-10"
+          class="flex items-center justify-center gap-2 mt-2 lg:mt-6 md:mt-10 xl:mt-10"
         >
           <img
             src="/teams/expert1.png"
@@ -65,6 +65,7 @@
           />
           <div>
             <img src="/about/sign.png" class="w-[150px] -ml-2" alt="sign" />
+            <h1 class="text-xl">Srinivas Thirunagari</h1>
             <p class="text-[15px] mt-1">Founder & CEO</p>
           </div>
         </div>

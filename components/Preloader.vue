@@ -4,7 +4,9 @@
       <div class="mil-pos-abs mil-animation-1">
         <p class="mil-h3 mil-thin font-weight-600">Transforming</p>
         <p class="font-bold mil-h3 text-gradient">Liver Care</p>
-        <p class="mil-h3 mil-thin font-weight-600">Through AI</p>
+        <p class="mil-h3 mil-thin font-weight-600">
+          Through <span class="text-gradient">AI</span>
+        </p>
       </div>
       <div class="mil-pos-abs mil-animation-2">
         <div class="mil-reveal-frame">
@@ -200,9 +202,11 @@ export default {
 
 .font-weight-600 {
   font-weight: 600;
+  font-size: 50px;
 }
 .font-bold {
   font-weight: 800;
+  font-size: 50px;
 }
 .text-gradient {
   background: linear-gradient(to right, #1f80ae, #1f3b60);
@@ -214,4 +218,3 @@ export default {
   pointer-events: none;
 }
 </style>
-``

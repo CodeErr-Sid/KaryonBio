@@ -110,7 +110,7 @@
         </div>
       </div>
     </section>
-    <div id="wrapper" class="hidden md:block">
+    <div id="wrapper" class="hidden md:h-[1500px] pb-40 md:block">
       <div id="content">
         <!-- <div class="spacer"></div> -->
         <div class="px-4 mt-4 md:px-0 xl:mt-40 accordions">
@@ -154,8 +154,10 @@
         <!-- <div class="spacer"></div> -->
       </div>
     </div>
-    <section class="relative z-30 w-full bg-white md:px-0">
-      <div class="absolute bottom-0 flex justify-between w-full mt-4 md:-mt-20">
+    <section
+      class="relative z-30 w-full md:mt-40 lg:mt-[400px] bg-white md:px-0"
+    >
+      <div class="absolute bottom-0 flex justify-between w-full mt-4">
         <img src="/partner/sand.svg" class="lg:w-[700px]" alt="" />
         <img src="/partner/sand2.svg" class="hidden lg:block" alt="" />
       </div>
@@ -163,12 +165,15 @@
         <div
           class="relative z-20 flex flex-col items-start justify-center h-full gap-12 text-left transition-all duration-500 md:-mt-40 global-container"
           :style="{
-            backgroundImage: showBackgroundImage
-              ? 'url(' + selectedCountry.image + ')'
-              : 'none',
+            backgroundImage:
+              selectedCountry.country === flags[3].country // Apply specific image for index 3
+                ? 'url(' + flags[3].image + ')'
+                : showBackgroundImage
+                ? 'url(' + selectedCountry.image + ')'
+                : 'none',
             backgroundSize: '400px',
             backgroundRepeat: 'no-repeat',
-            backgroundPosition: 'right 10% top 20%',
+            backgroundPosition: 'right 10% top 100%',
           }"
         >
           <!-- Country name in the background, hidden on mobile/tablet -->
@@ -193,7 +198,7 @@
               research!
             </h1>
             <p class="mt-2 text-center md:text-start">
-              Team up with us today for an unforgettableservice experience
+              Team up with us today for an unforgettable service experience
             </p>
             <div
               class="flex flex-wrap items-center justify-center gap-4 mt-2 md:justify-start md:items-start flag-buttons"
@@ -210,6 +215,7 @@
                   alt=""
                   class="w-full h-full rounded-full"
                 />
+
                 <p class="w-16 text-center">{{ flag.name }}</p>
               </div>
             </div>
@@ -266,32 +272,30 @@ onMounted(() => {
       console.error("ScrollSmoother is not defined");
     }
 
-    // The rest of your animation code...
-
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: ".accordions",
         pin: true,
-        start: "top 100px", // Start when the top of .accordions is 20px from the top of the viewport
-        end: "bottom top",
+        start: "top 100px",
+        end: "bottom 100px top 100px",
         scrub: 1,
         ease: "linear",
       },
     });
 
-    tl.to(".accordion .text .number", {
-      height: 300,
+    // Hide the text and number classes
+    tl.to(".accordion .text, .accordion .number", {
+      height: 0,
       paddingBottom: 0,
       opacity: 0,
       stagger: 0.5,
     });
 
+    // Reduce card height (accordion margin-bottom)
     tl.to(
       ".accordion",
       {
-        height: 0,
-
-        marginBottom: -15,
+        marginBottom: -20, // Adjust this value to reduce the gap
         stagger: 0.5,
       },
       "<"
@@ -483,6 +487,8 @@ research and enhance patients together.`,
   flex-direction: column;
   align-items: center;
   padding-bottom: 20vh;
+  height: auto; /* Ensure the container resizes with its content */
+  overflow: hidden;
 }
 
 .accordion {
