@@ -44,9 +44,9 @@
         class="flex flex-col order-1 text-black md:justify-center md:items-center lg:items-start lg:justify-start lg:order-2 text-balance md:text-center lg:text-start"
       >
         <p class="font-semibold">ABOUT</p>
-        <h1 class="md:text-[36px] mt-1 md:mt-0 xl:text-[50px] font-bold">
+        <!-- <h1 class="md:text-[36px] mt-1 md:mt-0 xl:text-[50px] font-bold">
           The Science Behind Karyon Bio
-        </h1>
+        </h1> -->
         <p class="xl:text-[18px] mt-1 md:mt-0 md:w-[500px] leading-8 text-sm">
           At the heart of Karyon Bio lies a profound scientific vision: to
           transform the landscape of liver disease diagnosis and treatment

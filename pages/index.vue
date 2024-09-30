@@ -7,7 +7,7 @@
     >
       <img
         src="/about/home.svg"
-        class="absolute top-0 hidden opacity-50 md:block -left-10 md:-left-28"
+        class="absolute top-0 w-[700px] hidden opacity-50 md:block -left-10 md:-left-28"
         alt="hero-dot"
         :class="['', isOpen ? ' hidden' : ' ']"
       />
@@ -116,39 +116,7 @@
         </div>
       </div>
     </section>
-    <section class="px-4 py-12 bg-gray-100 md:px-6">
-      <div
-        class="flex flex-col items-start justify-center gap-2 space-y-6 lg:items-center md:flex-row md:space-y-0"
-      >
-        <!-- SVG Section -->
-        <div class="flex justify-center w-full md:w-1/2">
-          <!-- Replace this path with the actual path to your SVG file -->
-          <img
-            src="/percent.svg"
-            alt="90 percent SVG"
-            class="w-[500px] h-auto"
-          />
-        </div>
 
-        <!-- Text Section -->
-        <div class="w-full space-y-6 text-center md:w-1/2 md:text-left">
-          <p class="text-lg leading-relaxed text-gray-700 md:text-xl">
-            Every year, approximately 25% of people worldwide are diagnosed with
-            liver disease, a chronic condition that can lead to life-threatening
-            complications if not treated properly.
-            <br /><br />
-            Liver disease affects people across all age groups and backgrounds,
-            often developing silently until symptoms become severe. It can
-            result in serious health issues such as cirrhosis, liver failure,
-            and in some cases, the need for a liver transplant.
-            <br /><br />
-            This statistic highlights the urgent need for increased awareness,
-            early detection, and effective management of liver-related health
-            concerns to improve long-term outcomes and quality of life.
-          </p>
-        </div>
-      </div>
-    </section>
     <section
       class="w-full px-4 md:px-6 bg-gradient-to-r pb-10 from-[#307BC4] to-[#85B1DC]"
     >
@@ -230,6 +198,51 @@
         </div>
       </div>
     </section>
+    <section
+      class="flex flex-col bg-gradient-to-r from-[#1F80AE] to-[#1F3B60] last"
+      id="zoom-in"
+    >
+      <h1
+        class="text-xl px-4 md:text-4xl text-center font-bold z-20 text-white md:leading-[50px]"
+      >
+        Empowering Precision Liver Health
+      </h1>
+      <img src="/zoom.jpg" class="mt-4 rounded-md" alt="Zoom In Image" />
+    </section>
+    <section class="px-4 py-12 bg-gray-100 md:px-6">
+      <div
+        class="flex flex-col items-start justify-center gap-2 space-y-6 lg:items-center md:flex-row md:space-y-0"
+      >
+        <!-- SVG Section -->
+        <div class="flex justify-center w-full md:w-1/2">
+          <!-- Replace this path with the actual path to your SVG file -->
+          <img
+            src="/percent.svg"
+            alt="90 percent SVG"
+            class="w-[500px] h-auto"
+          />
+        </div>
+
+        <!-- Text Section -->
+        <div class="w-full space-y-6 text-center md:w-1/2 md:text-left">
+          <p class="text-lg leading-relaxed text-gray-700 md:text-xl">
+            Every year, approximately 25% of people worldwide are diagnosed with
+            liver disease, a chronic condition that can lead to life-threatening
+            complications if not treated properly.
+            <br /><br />
+            Liver disease affects people across all age groups and backgrounds,
+            often developing silently until symptoms become severe. It can
+            result in serious health issues such as cirrhosis, liver failure,
+            and in some cases, the need for a liver transplant.
+            <br /><br />
+            This statistic highlights the urgent need for increased awareness,
+            early detection, and effective management of liver-related health
+            concerns to improve long-term outcomes and quality of life.
+          </p>
+        </div>
+      </div>
+    </section>
+
     <section class="lg:py-16 bg-[#F5F7FA] px-4 mt-4 mb-4 10 md:mt-0">
       <div class="container mx-auto text-center">
         <!-- Section Title -->
@@ -382,18 +395,6 @@
         </div>
       </div>
     </section>
-
-    <section
-      class="flex flex-col bg-gradient-to-r from-[#1F80AE] to-[#1F3B60] last"
-      id="zoom-in"
-    >
-      <h1
-        class="text-xl px-4 md:text-4xl text-center font-bold z-20 text-white md:leading-[50px]"
-      >
-        Empowering Precision Liver Health
-      </h1>
-      <img src="/zoom.jpg" class="mt-4 rounded-md" alt="Zoom In Image" />
-    </section>
   </div>
 </template>
 <script setup>
@@ -437,7 +438,7 @@ onMounted(() => {
           trigger: "#zoom-in",
           pin: true,
           end: `+=${innerHeight * 1.3}`,
-          scrub: 3,
+          scrub: 1,
         },
       }
     );
