@@ -7,7 +7,7 @@
     >
       <img
         src="/about/home.svg"
-        class="absolute top-0 w-[700px] hidden opacity-50 md:block -left-10 md:-left-28"
+        class="absolute top-0 lg:w-[700px] hidden opacity-50 md:block -left-10 md:-left-[350px] lg:-left-[200px] xl:-left-[100px]"
         alt="hero-dot"
         :class="['', isOpen ? ' hidden' : ' ']"
       />
