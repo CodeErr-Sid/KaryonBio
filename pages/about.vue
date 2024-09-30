@@ -1,20 +1,22 @@
 <template>
   <div class="text-example">
-    <section class="w-full relative overflow-hidden md:pb-10 md:h-[700px]">
+    <section
+      class="w-full relative overflow-hidden md:pb-10 h-[400px] md:h-[700px]"
+    >
       <div>
         <img
           src="/about/hero.png"
-          class="absolute -top-12 md:top-0 md:inset-0 object-cover w-full md:h-[715px]"
+          class="absolute -top-12 md:top-0 md:inset-0 object-cover h-[400px] w-full md:h-[715px]"
           alt="hero-dot"
         />
       </div>
 
       <div
-        class="relative z-10 flex mt-20 md:mt-28 text-[#F5F7FA] items-center justify-center px-4 md:pt-[163px] md:flex-row md:px-6 xl:px-10"
+        class="relative z-10 flex mt-32 md:mt-28 text-[#F5F7FA] items-center justify-center md:pt-[163px] md:flex-row md:px-6 xl:px-10"
       >
         <div class="">
           <h1
-            class="text-[35px] text-base mt-4 md:mt-0 lg:text-[52px] font-semibold md:leading-[63px] text-center"
+            class="text-[37px] text-base mt-4 md:mt-0 lg:text-[52px] leading-10 font-semibold md:leading-[63px] text-center"
           >
             The Science Behind Karyon Bio
           </h1>
@@ -22,7 +24,7 @@
       </div>
     </section>
     <section
-      class="w-full overflow-hidden gap-20 px-4 md:px-20 items-center flex lg:flex-row pt-[150px] pb-24 flex-col justify-center lg:justify-center"
+      class="w-full overflow-hidden gap-20 px-4 md:px-20 items-center flex lg:flex-row md:pt-[150px] pb-24 flex-col justify-center lg:justify-center"
     >
       <div class="order-2 lg:order-1 lg:w-[600px] xl:w-[600px]">
         <!-- First Image (smaller, positioned lower) -->
@@ -32,16 +34,20 @@
           alt=""
         /> -->
         <!-- Second Image (larger, default positioning) -->
-        <img src="/about/hero.webp" class="z-0 rounded-xl h-[450px]" alt="" />
+        <img
+          src="/about/hero.webp"
+          class="z-0 rounded-xl h-[300px] xl:h-[450px]"
+          alt=""
+        />
       </div>
       <div
-        class="flex flex-col justify-center order-1 text-black lg:order-2 text-balance md:text-center lg:text-start"
+        class="flex flex-col order-1 text-black md:justify-center md:items-center lg:items-start lg:justify-start lg:order-2 text-balance md:text-center lg:text-start"
       >
         <p class="font-semibold">ABOUT</p>
         <h1 class="md:text-[36px] mt-1 md:mt-0 xl:text-[50px] font-bold">
           The Science Behind Karyon Bio
         </h1>
-        <p class="xl:text-[18px] mt-1 md:mt-0 md:w-[500px] text-sm">
+        <p class="xl:text-[18px] mt-1 md:mt-0 md:w-[500px] leading-8 text-sm">
           At the heart of Karyon Bio lies a profound scientific vision: to
           transform the landscape of liver disease diagnosis and treatment
           through innovation. Founded in Mountain View, California, Karyon Bio
@@ -58,7 +64,7 @@
             alt=""
           />
           <div>
-            <h1 class="text-xl">Srinivas Thirunagari</h1>
+            <img src="/about/sign.png" class="w-[150px] -ml-2" alt="sign" />
             <p class="text-[15px] mt-1">Founder & CEO</p>
           </div>
         </div>
@@ -67,7 +73,7 @@
 
     <section>
       <div
-        class="relative flex flex-col items-center justify-center px-4 pb-8 bg-white md:px-0 lg:flex-row md:pt-10"
+        class="relative flex flex-col items-center justify-center px-4 bg-white md:pb-8 md:px-0 lg:flex-row md:pt-10"
       >
         <div
           class="w-full text-start md:p-4 mt-4 md:mt-0 lg:w-[500px] xl:w-[650px]"
@@ -75,16 +81,22 @@
           <div
             class="p-1 md:p-2 rounded-lg border-[#2078A7] lg:h-[304px] xl:h-[300px] border shadow-lg"
           >
-            <h2 class="md:text-[32px] text-sm font-bold text-[#1F3B60]">
+            <h2
+              class="md:text-[32px] text-sm font-bold text-center text-[#1F3B60]"
+            >
               Our mission
             </h2>
-            <p class="mt-4 md:text-[16px] text-xs md:leading-8 text-gray-700">
+            <p
+              class="mt-4 px-4 md:text-[16px] text-xs md:leading-8 text-gray-700"
+            >
               RECEPTOR.AI's mission is to create superior drugs, which are safe,
               efficient and successful in clinical trials by developing a next
               generation drug discovery platform based on the synergy of AI,
               computational chemistry and biology.
             </p>
-            <p class="mt-4 md:text-[16px] text-xs md:leading-8 text-gray-700">
+            <p
+              class="mt-4 px-4 md:text-[16px] text-xs md:leading-8 text-gray-700"
+            >
               We aim to improve access to AI drug discovery via our AI platform
               which is integrated with wet labs to make the drug discovery
               process more efficient.
@@ -103,14 +115,20 @@
           <div
             class="p-1 md:p-2 rounded-lg border-[#2078A7] lg:h-[304px] xl:h-[300px] border shadow-lg"
           >
-            <h2 class="md:text-[32px] text-sm font-bold text-[#1F3B60]">
+            <h2
+              class="md:text-[32px] text-center text-sm font-bold text-[#1F3B60]"
+            >
               Our vision
             </h2>
-            <p class="mt-4 md:text-[16px] text-xs md:leading-8 text-gray-700">
+            <p
+              class="mt-4 px-4 md:text-[16px] text-start text-xs md:leading-8 text-gray-700"
+            >
               We dream about a world where new drugs are developed so fast, that
               new diseases have no chances to spread.
             </p>
-            <p class="mt-4 md:text-[16px] text-xs md:leading-8 text-gray-700">
+            <p
+              class="mt-4 px-4 md:text-[16px] text-start text-xs md:leading-8 text-gray-700"
+            >
               We envision radical minimization of drug testing on animals and
               humans with improvement of their safety and efficiency by
               combining advanced AI with novel biomimetic technologies.
@@ -120,28 +138,30 @@
       </div>
     </section>
     <section
-      class="w-full overflow-hidden px-4 md:px-0 flex lg:flex-row flex-col md:justify-center gap-10 lg:h-[550px] xl:h-[700px] md:pb-10"
+      class="w-full overflow-hidden px-4 md:px-0 flex lg:flex-row flex-col items-start md:justify-center md:items-center gap-10 lg:h-[550px] xl:h-[700px] md:pb-10"
     >
       <div
-        class="relative top-20 md:top-36 order-1 lg:order-2 text-black text-balance md:text-center lg:text-start flex flex-col justify-center md:items-center lg:items-start lg:justify-start pb-20 md:pb-28 lg:w-[400px] xl:w-[500px] lg:mr-24 xl:mr-20"
+        class="relative top-10 md:top-36 order-1 lg:order-2 text-black text-balance md:text-center lg:text-start flex flex-col justify-center md:items-center lg:items-start lg:justify-start pb-20 md:pb-28 lg:w-[400px] xl:w-[500px] lg:mr-24 xl:mr-20"
       >
         <h1 class="md:text-[36px] mt-1 md:mt-0 xl:text-[40px] font-bold">
           What karyon bio offers
         </h1>
-        <p class="xl:text-[18px] mt-1 md:mt-2 md:w-[500px] text-sm">
+        <p class="xl:text-[18px] leading-8 mt-1 md:mt-2 md:w-[500px] text-sm">
           When combined with metabolic dysfunctions, the morbidity associated
           with NAFLD/NASH increases exponentially, making early diagnosis and
           effective management critical.
         </p>
-        <p class="xl:text-[18px] mt-1 md:mt-4 md:w-[500px] text-sm">
+        <p
+          class="xl:text-[18px] mt-1 leading-8 md:mt-2 lg:mt-4 md:w-[500px] text-sm"
+        >
           Recognizing this urgent need, Karyon Bio explored uncharted
           territories in healthcare diagnostics, understanding the pressing need
           for our innovative solutions.
         </p>
         <div
-          class="flex items-center justify-center gap-2 mt-2 lg:justify-start lg:items-start lg:mt-6 md:mt-10 xl:mt-10"
+          class="flex items-start justify-start gap-2 mt-2 lg:pl-7 lg:mt-6 md:mt-10 xl:mt-10"
         >
-          <ul class="-ml-3 text-sm list-disc md:ml-4 md:text-lg">
+          <ul class="text-sm list-disc text-start lg:-ml-3 md:ml-4 md:text-lg">
             <li>Led by Passionate Experts</li>
             <li>Safe Diagnoses and Effective Therapies</li>
             <li>Fully Equipment</li>
@@ -196,7 +216,7 @@
       </div>
     </section>
     <section class="flex flex-col items-center justify-center px-4 py-12">
-      <div class="max-w-5xl mx-auto lg:text-center">
+      <div class="max-w-5xl md:mx-auto lg:text-center">
         <h2 class="mb-4 font-bold text-black md:text-4xl">
           Over 20
           <span
@@ -214,7 +234,7 @@
             >Best Results</span
           >
         </h2>
-        <p class="mb-8 ml-4 text-black md:text-lg text-start">
+        <p class="mb-8 text-black md:ml-4 md:text-lg text-start">
           Empowering Healthcare with Early, Accurate, and Personalized
           Diagnostics At Karyon Bio, we offer a groundbreaking solution to liver
           disease diagnostics. Our AI-driven, multi-omics platform detects early

@@ -332,7 +332,7 @@
   </div>
 </template>
 <script setup>
-definePageMeta({ layout: "primary" });
+// definePageMeta({ layout: "primary" });
 
 useHead({
   script: [
