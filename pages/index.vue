@@ -483,7 +483,7 @@
         </div>
       </div>
     </section>
-    <div id="wrapper" class="hidden md:h-[1500px] md:block">
+    <div id="wrapper" class="hidden h-[1500px] overflow-hidden md:block">
       <div id="content">
         <!-- <div class="spacer"></div> -->
         <div class="px-4 mt-4 md:px-0 xl:mt-40 accordions">
