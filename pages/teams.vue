@@ -97,6 +97,8 @@
               class="flex items-center justify-center w-full gap-4 mb-5 md:absolute bottom-4"
             >
               <a
+                :href="expert.linkedin"
+                target="_blank"
                 class="text-[#3B5998] bg-[#83B0DC] cursor-pointer w-10 h-10 rounded-full flex justify-center items-center"
               >
                 <img src="/social-icons/1.svg" alt="linkedin" />
@@ -141,8 +143,11 @@
                       {{ selectedExpert.position }}
                     </p>
                     <!-- Social Links -->
+
                     <div class="flex justify-center gap-2 md:gap-4 md:mb-5">
                       <a
+                        :href="selectedExpert.linkedin"
+                        target="_blank"
                         class="text-[#3B5998] flex gap-2 bg-[#83B0DC] cursor-pointer px-3 py-2 rounded-full justify-center items-center"
                       >
                         <!-- <img src="/social-icons/1.svg" alt="linkedin" /> -->
@@ -231,11 +236,7 @@ export default {
           fullDescription: `Srinivas Thirunagari brings over two decades of experience in computer vision and AI. With an educational foundation in Biomedical Engineering and Computer Science, he has made significant contributions to AI-driven diagnostics and video processing. His expertise also extends to integrating large language models (LLMs) into healthcare solutions.`,
           expertise: `Srinivas specializes in leveraging AI technologies to transform diagnostic solutions. His work focuses on using computer vision and AI to create non-invasive diagnostic methods, providing innovative healthcare solutions.`,
           role: `As the Founder & CEO of Karyon Bio, Srinivas leads the company's mission to develop AI-powered solutions for the early diagnosis, prognosis, and treatment of liver disorders, specifically NAFLD/NASH.`,
-          social: {
-            facebook: "#",
-            twitter: "#",
-            linkedin: "#",
-          },
+          linkedin: "https://www.linkedin.com/in/tsrinivas/",
         },
         {
           name: "Dr. Eckart Bindewald, Principal Scientist - AI/ML",
@@ -245,11 +246,7 @@ export default {
           fullDescription: `Dr. Eckart Bindewald holds a Ph.D. in Natural Sciences from the University of Heidelberg, Germany. With over 20 years of experience in bioinformatics and computational biology, he has published more than 30 peer-reviewed papers, specializing in structural bioinformatics and protein structure prediction.`,
           expertise: `Dr. Bindewald has developed advanced computational approaches for protein fold recognition, RNA structure prediction, and genome annotation. His expertise includes biomarker discovery, multi-omics integration, and applying machine learning to biomedical research.`,
           role: `At Karyon Bio, Dr. Bindewald leads the AI/ML initiatives, focusing on biomarker discovery and applying deep learning to enhance diagnostic tool accuracy. His research aims to harness artificial intelligence to discover new biomarkers and therapeutic targets, advancing personalized medicine.`,
-          social: {
-            facebook: "#",
-            twitter: "#",
-            linkedin: "#",
-          },
+          linkedin: "https://www.linkedin.com/in/eckart-bindewald/",
         },
         {
           name: "Dr. Dhatchana Moorthy, Principal Scientist - Biomarker Research",
@@ -259,11 +256,7 @@ export default {
           fullDescription: `Dr. Dhatchana Moorthy holds a Ph.D. in Pharmaceutical Science and Biochemistry, with over 25 years of experience in drug discovery, biomarker research, and biotherapeutics. He has led numerous research initiatives, particularly in gene therapy and targeted small molecules.`,
           expertise: `Dr. Moorthy is an expert in genomics, computational drug discovery, and AI/ML-driven biomarker research. His contributions have been crucial in developing targeted therapies and advancing the digital transformation of pharmaceutical manufacturing.`,
           role: `As Principal Scientist at Karyon Bio, Dr. Moorthy leads the biomarker research team. He applies his expertise in genomics and machine learning to identify and validate novel biomarkers for liver disorders, particularly NAFLD/NASH, to drive precision medicine forward.`,
-          social: {
-            facebook: "#",
-            twitter: "#",
-            linkedin: "#",
-          },
+          linkedin: "https://www.linkedin.com/in/dhatchanamoorthy/",
         },
         {
           name: "Dr. Rajasekaran - Principal Scientist, Imaging Research",
@@ -273,11 +266,7 @@ export default {
           fullDescription: `Dr. Rajasekaran has a Ph.D. in Computer Science and over 26 years of experience in AI-driven imaging research and clinical diagnostics. His career spans both technology and healthcare, with a focus on applying AI/ML to diagnostic imaging.`,
           expertise: `Dr. Rajasekaran specializes in developing AI algorithms for medical imaging, including MRI, CT, and X-ray analysis. His work has significantly advanced diagnostic accuracy and enabled early detection of diseases.`,
           role: `At Karyon Bio, Dr. Rajasekaran leads the imaging research team, developing advanced AI-driven diagnostic tools. His innovations, particularly in cancer diagnostics, have contributed to the precision of the company’s biomarker discovery efforts.`,
-          social: {
-            facebook: "#",
-            twitter: "#",
-            linkedin: "#",
-          },
+          linkedin: "https://www.linkedin.com/in/sraja2911/",
         },
         {
           name: "Mahati Munikoti, Senior Research Scientist, Bioinformatics",
@@ -287,11 +276,7 @@ export default {
           fullDescription: `Mahati is an accomplished Bioinformatics Data Scientist with a proven track record in leveraging AI and machine learning for biomarker discovery. With a Master’s in Bioinformatics from Indiana University and a Bachelor’s in Biotechnology, Mahati excels at applying advanced computational techniques to genetic research.`,
           expertise: `Mahati specializes in predictive models for gene biomarker identification, deep learning applications for disease classification, and enhancing data accessibility through biomedical ontologies. Her work with Next-Generation Sequencing (NGS) supports informed decision-making in drug discovery.`,
           role: `As a Senior Research Scientist at Karyon Bio, Mahati applies advanced AI and machine learning techniques to biomarker discovery. She leads interdisciplinary teams to create innovative AI-driven solutions, improving patient outcomes in precision medicine.`,
-          social: {
-            facebook: "#",
-            twitter: "#",
-            linkedin: "#",
-          },
+          linkedin: "https://www.linkedin.com/in/mahati-munikoti/",
         },
         {
           name: "Janiel Jawahar Kirubakaran, Senior Research Scientist AI/ML",
@@ -301,11 +286,8 @@ export default {
           fullDescription: `Janiel is an AI/ML expert specializing in biomarker discovery and personalized medicine. At Karyon Bio, Janiel drives innovation by applying advanced machine learning models and deep learning architectures to complex biological data, including genomic and proteomic datasets.`,
           expertise: `Janiel has made significant contributions to biomarker discovery, leveraging NLP, deep learning, and explainable AI. His work is regularly published in top journals and presented at international conferences, focusing on the intersection of AI and biomedical applications.`,
           role: `At Karyon Bio, Janiel is a Senior Research Scientist driving innovation in biomarker discovery. His focus on AI and machine learning techniques is advancing personalized medicine through the analysis of complex biological datasets.`,
-          social: {
-            facebook: "#",
-            twitter: "#",
-            linkedin: "#",
-          },
+          linkedin:
+            "https://www.linkedin.com/in/janiel-jawahar-kirubakaran-9b8433138/",
         },
         {
           name: "Dr. Lipi Singh, Advisor",
@@ -315,11 +297,7 @@ export default {
           fullDescription: `Dr. Lipi Singh is a distinguished expert in regenerative medicine and healthcare strategy with over 16 years of experience in advancing patient care, clinical research, and therapeutic innovations. Holding a Ph.D. in Pancreatology and Experimental Medicine, along with an MBA in Biotechnology Administration, Dr. Singh has led groundbreaking research in stem cell therapies and chronic disease management.`,
           expertise: `Dr. Singh specializes in stem cell therapy research, chronic disease management, and biotherapeutics. Her work in clinical trials and regenerative medicine has driven advances in patient care and therapeutic innovations.`,
           role: `As an Advisor at Karyon Bio, Dr. Singh guides the integration of AI/ML into biomarker discovery and healthcare strategies. She plays a pivotal role in advancing personalized medicine and therapeutic development, focusing on regenerative medicine and clinical trials.`,
-          social: {
-            facebook: "#",
-            twitter: "#",
-            linkedin: "#",
-          },
+          linkedin: "https://www.linkedin.com/in/dr-lipi-singh-b1434939/",
         },
         {
           name: "Dr. Keerthi Harikrishnan, Advisor",
@@ -329,11 +307,7 @@ export default {
           fullDescription: `Dr. Keerthi Harikrishnan is a seasoned domain expert with over a decade of experience in healthcare R&D, specializing in oncology, cardiology, drug discovery, and clinical research. Holding a Ph.D. in Biomedical Sciences and currently pursuing an MBA in Digital Business, Dr. Harikrishnan has made significant contributions to the field by developing AI/ML-driven solutions that enhance diagnostic workflows and advance scientific research.`,
           expertise: `Dr. Harikrishnan has developed solutions in computational pathology and omics analysis, improving diagnostic workflows and drug discovery. Her leadership has been instrumental in creating AI-based solutions that enhance clinical accuracy.`,
           role: `As an Advisor at Karyon Bio, Dr. Harikrishnan helps guide AI/ML integration in biomarker discovery and clinical research. Her leadership in advancing oncology and cardiology diagnostics contributes to Karyon Bio's mission of driving personalized medicine through AI-based innovations.`,
-          social: {
-            facebook: "#",
-            twitter: "#",
-            linkedin: "#",
-          },
+          linkedin: "https://www.linkedin.com/in/keerthi-harikrishnan-4013a37/",
         },
       ],
 

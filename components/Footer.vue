@@ -51,7 +51,8 @@
           </li> -->
           <li>
             <a
-              href="#"
+              href="https://www.linkedin.com/company/karyon-bio/"
+              target="_blank"
               class="transition duration-300 ease-in-out hover:text-white"
               >Linkedin ↗</a
             >
