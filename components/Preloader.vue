@@ -1,7 +1,7 @@
 <template>
   <div class="mil-preloader" v-if="!isLoaded">
     <div class="mil-preloader-animation">
-      <div class="mil-pos-abs mil-animation-1">
+      <div class="mil-pos-abs mil-animation-1 font-nunito">
         <p class="mil-h3 mil-thin font-weight-600">Transforming</p>
         <p class="font-bold mil-h3 text-gradient">Liver Care</p>
         <p class="mil-h3 mil-thin font-weight-600">

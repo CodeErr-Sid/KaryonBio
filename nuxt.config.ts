@@ -19,7 +19,7 @@ export default defineNuxtConfig({
     },
   },
   ssr: true,
-  modules: ["@nuxtjs/tailwindcss"],
+  modules: ["@nuxtjs/tailwindcss", "@nuxtjs/google-fonts"],
   plugins: [],
   css: ["~/assets/base.css"],
   http: {},
@@ -28,7 +28,7 @@ export default defineNuxtConfig({
   },
   runtimeConfig: {},
   googleFonts: {
-    families: {},
+    families: { Nunito: true },
   },
   vite: {
     resolve: {
