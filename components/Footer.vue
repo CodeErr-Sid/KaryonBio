@@ -35,20 +35,20 @@
       <div class="text-center md:text-start">
         <h3 class="mb-4 text-sm font-bold md:text-2xl">Follow us</h3>
         <ul class="space-y-4 text-[#A3A3A3]">
-          <li>
+          <!-- <li>
             <a
               href="#"
               class="transition duration-300 ease-in-out hover:text-white"
               >Instagram ↗</a
             >
-          </li>
-          <li>
+          </li> -->
+          <!-- <li>
             <a
               href="#"
               class="transition duration-300 ease-in-out hover:text-white"
               >Facebook ↗</a
             >
-          </li>
+          </li> -->
           <li>
             <a
               href="#"

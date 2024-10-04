@@ -142,21 +142,12 @@
                     </p>
                     <!-- Social Links -->
                     <div class="flex justify-center gap-2 md:gap-4 md:mb-5">
-                      <!-- <a
-                        class="text-[#3B5998] bg-[#83B0DC] cursor-pointer md:w-10 md:h-10 w-8 h-8 rounded-full flex justify-center items-center"
-                      >
-                        <img src="/social-icons/2.svg" alt="facebook" />
-                      </a> -->
                       <a
-                        class="text-[#3B5998] bg-[#83B0DC] cursor-pointer md:w-10 md:h-10 w-8 h-8 rounded-full flex justify-center items-center"
+                        class="text-[#3B5998] flex gap-2 bg-[#83B0DC] cursor-pointer px-3 py-2 rounded-full justify-center items-center"
                       >
-                        <img src="/social-icons/1.svg" alt="linkedin" />
+                        <!-- <img src="/social-icons/1.svg" alt="linkedin" /> -->
+                        <p class="font-semibold text-white">linkedin</p>
                       </a>
-                      <!-- <a
-                        class="text-[#3B5998] bg-[#83B0DC] cursor-pointer md:w-10 md:h-10 w-8 h-8 rounded-full flex justify-center items-center"
-                      >
-                        <img src="/social-icons/3.svg" alt="twitter" />
-                      </a> -->
                     </div>
                   </div>
 
