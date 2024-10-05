@@ -14,11 +14,12 @@
           Feel free to reach out if you want to collaborate with us, or simply
           have a chat.
         </p>
-        <button
+        <nuxt-link
+          to="/contact"
           class="bg-white text-[#0F1F35] px-2 md:px-6 py-2 font-semibold rounded hover:bg-gray-200"
         >
           Get In Touch
-        </button>
+        </nuxt-link>
       </div>
 
       <!-- Middle section: Contact info -->

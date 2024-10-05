@@ -121,11 +121,11 @@
       class="w-full px-4 md:px-6 bg-gradient-to-r pb-10 from-[#307BC4] to-[#85B1DC]"
     >
       <div
-        class="flex lg:flex-row flex-col py-10 md:pt-[100px] justify-center items-center"
+        class="flex lg:flex-row flex-col py-10 md:py-[100px] justify-center items-center"
       >
         <div class="">
           <h1
-            class="text-[#3AD9FF] text-center font-semibold text-[25px] md:text-[36px]"
+            class="text-white text-center font-bold text-[25px] md:text-[36px]"
           >
             Why Karyon Bio
           </h1>
@@ -173,7 +173,9 @@
 
         <!-- Text Section -->
         <div class="w-full space-y-6 text-center md:w-1/2 md:text-left">
-          <p class="text-lg leading-relaxed text-gray-700 md:text-xl">
+          <p
+            class="text-base md:text-[24.47px] md:leading-[34px] text-[#274760B3]"
+          >
             Every year, approximately 20% of people worldwide are diagnosed with
             liver disease, a chronic condition that can lead to life-threatening
             complications if not treated properly.
@@ -232,7 +234,9 @@
 
         <!-- Text Section -->
         <div class="w-full space-y-6 text-center md:w-1/2 md:text-left">
-          <p class="text-lg leading-relaxed text-gray-700 md:text-xl">
+          <p
+            class="text-base md:text-[24.47px] md:leading-[34px] text-[#274760B3]"
+          >
             Every year, approximately 25% of people worldwide are diagnosed with
             liver disease, a chronic condition that can lead to life-threatening
             complications if not treated properly.
@@ -312,7 +316,7 @@
               <a
                 :href="expert.linkedin"
                 target="_blank"
-                class="text-[#3B5998] bg-[#83B0DC] cursor-pointer w-10 h-10 rounded-full flex justify-center items-center"
+                class="bg-gradient-to-r from-[#1F80AE] to-[#1F3B60] text-white cursor-pointer w-10 h-10 rounded-full flex justify-center items-center"
               >
                 <img src="/social-icons/1.svg" alt="linkedin" />
               </a>
@@ -359,7 +363,7 @@
                       <a
                         :href="selectedExpert.linkedin"
                         target="_blank"
-                        class="text-[#3B5998] flex gap-2 bg-[#83B0DC] cursor-pointer px-3 py-2 rounded-full justify-center items-center"
+                        class="flex gap-2 bg-gradient-to-r from-[#1F80AE] to-[#1F3B60] cursor-pointer px-3 py-2 rounded-full justify-center items-center"
                       >
                         <!-- <img src="/social-icons/1.svg" alt="linkedin" /> -->
                         <p class="font-semibold text-white">linkedin</p>
@@ -494,7 +498,9 @@
           <div class="accordion">
             <div class="title">INNOVATIVE TECHNOLOGY</div>
             <div class="flex items-start justify-between">
-              <p style="font-size: 30px" class="w-[500px] text">
+              <p
+                class="w-[500px] text-base md:text-[24.47px] md:leading-[34px] text-white text"
+              >
                 Stay ahead in liver disease diagnostics with our cutting-edge AI
                 and multi-omics platform. Our technology enables earlier
                 detection and more precise insights for better outcomes. Partner
@@ -506,7 +512,9 @@
           <div class="accordion">
             <div class="title">Diagnostic Labs</div>
             <div class="flex justify-between">
-              <p style="font-size: 30px" class="w-[500px] text">
+              <p
+                class="w-[500px] text-base md:text-[24.47px] md:leading-[34px] text-white text"
+              >
                 We provide tailored solutions to meet your unique needs. Our
                 approach is personalized, focusing on delivering the most
                 effective outcomes. Let us help you achieve your goals with
@@ -518,7 +526,9 @@
           <div class="accordion">
             <div class="font-bold title">Hospital</div>
             <div class="flex justify-between">
-              <p style="font-size: 30px" class="w-[500px] text">
+              <p
+                class="w-[500px] text-base md:text-[24.47px] md:leading-[34px] text-white text"
+              >
                 Together, we can enhance global liver health outcomes through
                 collaboration and innovative solutions. By focusing on
                 prevention, treatment, and education, we aim to make a positive
@@ -534,7 +544,7 @@
 
     <section class="relative w-full bg-white md:pt-40 md:px-0">
       <div class="absolute bottom-0 flex justify-between w-full mt-4">
-        <img src="/partner/sand.svg" class="lg:w-[700px]" alt="" />
+        <img src="/partner/sand.svg" class="lg:w-[700px] lg:h-[220px]" alt="" />
         <img src="/partner/sand2.svg" class="hidden -mt-20 lg:block" alt="" />
       </div>
       <section class="lg:h-[600px] px-4 text-center bg-white">
@@ -554,7 +564,7 @@
         >
           <!-- Country name in the background, hidden on mobile/tablet -->
           <div
-            class="absolute text-center -top-20 right-0 -z-10 text-gray-300 font-bold pointer-events-none text-[60px]"
+            class="absolute text-center -top-20 right-4 -z-10 text-gray-300 font-bold pointer-events-none text-[60px]"
             v-if="windowWidth >= 1024"
           >
             <b
@@ -566,17 +576,14 @@
             ></b>
           </div>
 
-          <div class="w-full -mt-40 lg:py-8 lg:w-auto gc-static">
+          <div class="w-full -mt-72 lg:py-8 lg:w-auto gc-static">
             <h1
               class="w-full text-2xl font-bold text-center lg:text-4xl md:text-start elevate-text"
             >
               Elevate your wealth in biomedical <br class="hidden md:block" />
-              resea<span
-                class="bg-clip-text text-transparent bg-gradient-to-r from-[#1F80AE] to-[#1F3B60]"
-                >rch!</span
-              >
+              research!
             </h1>
-            <p class="mt-2 text-center md:text-start">
+            <p class="mt-2 mb-4 text-center md:text-start">
               Team up with us today for an unforgettable service experience
             </p>
             <div
@@ -585,8 +592,16 @@
               <div
                 v-for="(flag, index) in flags"
                 :key="index"
-                class="w-16 h-16 mb-2 transition-transform duration-200 bg-center bg-cover border-2 border-gray-300 rounded-full cursor-pointer flag-button"
-                :class="{ active: selectedCountry.country === flag.country }"
+                class="w-16 h-16 md:w-[100px] md:h-[100px] mb-2 transition-transform duration-200 bg-center bg-cover border-2 rounded-full cursor-pointer flag-button"
+                :class="{
+                  active: selectedCountry.country === flag.country,
+                  'border-[#1F3B60]':
+                    selectedCountry === flag ||
+                    selectedCountry === flags[index], // Add blue border when active
+                  'border-gray-300':
+                    selectedCountry !== flag &&
+                    selectedCountry !== flags[index], // Default border for inactive
+                }"
                 @click="changeCountry(flag)"
               >
                 <img
@@ -594,20 +609,36 @@
                   alt=""
                   class="w-full h-full rounded-full"
                 />
-
-                <p class="w-16 text-center">{{ flag.name }}</p>
+                <p
+                  class="mt-2 text-base text-center"
+                  :class="{
+                    active: selectedCountry.country === flag.country,
+                    'font-bold text-[#1F3B60]':
+                      selectedCountry === flag ||
+                      selectedCountry === flags[index], // Add blue font-bold text when active
+                    ' text-black ':
+                      selectedCountry !== flag &&
+                      selectedCountry !== flags[index], // Default border for inactive
+                  }"
+                >
+                  {{ flag.name }}
+                </p>
               </div>
             </div>
           </div>
           <div class="gc-dynamic lg:w-[500px]">
-            <h5 class="text-lg font-bold gc-country-name">
+            <h5 class="mb-4 text-2xl font-bold gc-country-name">
               <b>{{ selectedCountry.bgName.toUpperCase() }}</b>
             </h5>
-            <div class="gc-address">
-              <p class="mb-4">
+            <div class="gc-address md:w-[600px]">
+              <p
+                class="text-base md:text-[24.47px] md:leading-[34px] w-full text-black text"
+              >
                 {{ selectedCountry.address }}
               </p>
-              <p style="margin-top: 8px">
+              <p
+                class="mb-4 -mt-5 text-base md:text-[24.47px] md:leading-[34px] text-black text"
+              >
                 {{ selectedCountry.address1 }}
               </p>
             </div>
@@ -751,6 +782,9 @@ export default {
       ],
       isModalOpen: false,
       selectedExpert: null,
+      selectedCountry: null,
+      autoChangeInterval: null,
+      windowWidth: null,
       expandedSection: null,
       swiperInstance: null,
       windowWidth: null,
@@ -847,26 +881,55 @@ research and enhance patients together.`,
     AOS.init();
     this.updateWindowWidth(); // Set initial window width
     window.addEventListener("resize", this.updateWindowWidth);
-    AOS.init();
+
+    // Initialize automatic change interval
+    this.startAutoChange();
+
     // Call the typewriter effect after the component is mounted
     this.typeWriterEffect(
-      " AI-Driven Novel Biomarker Discovery",
+      " AI-Driven Novel Biomarker Discovery for Enhanced Diagnosis, Personalized Treatment Strategies, and Improved Clinical Outcomes",
       "typewriter",
       100
     );
   },
   beforeDestroy() {
     window.removeEventListener("resize", this.updateWindowWidth); // Clean up the event listener
+    clearInterval(this.autoChangeInterval); // Clear the interval on component destroy
+  },
+  beforeDestroy() {
+    window.removeEventListener("resize", this.updateWindowWidth); // Clean up the event listener
   },
   methods: {
     changeCountry(flag) {
-      this.selectedCountry = flag;
+      this.selectedCountry = flag; // Manual country change
     },
     updateWindowWidth() {
       if (typeof window !== "undefined") {
         this.windowWidth = window.innerWidth; // Update the window width
       }
     },
+    // Automatic country change every 5 seconds
+    startAutoChange() {
+      let currentIndex = 0;
+      this.autoChangeInterval = setInterval(() => {
+        currentIndex = (currentIndex + 1) % this.flags.length;
+        this.selectedCountry = this.flags[currentIndex];
+      }, 2000); // Change every 5 seconds (adjust as needed)
+    },
+    // Typewriter effect method
+    typeWriterEffect(text, elementId, speed) {
+      let i = 0;
+      const element = document.getElementById(elementId);
+      const typeWriter = () => {
+        if (i < text.length) {
+          element.innerHTML += text.charAt(i);
+          i++;
+          setTimeout(typeWriter, speed);
+        }
+      };
+      typeWriter(); // Start typing
+    },
+
     getAosAnimation(index) {
       switch (index % 3) {
         case 0:
@@ -1017,11 +1080,7 @@ research and enhance patients together.`,
 }
 
 .text {
-  font-size: max(1vw, 15px);
-  line-height: 1.4;
-  overflow: hidden;
   padding-bottom: 40px;
-  color: rgba(255, 255, 255, 0.7);
 }
 
 .accordions {

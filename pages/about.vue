@@ -43,7 +43,7 @@
       <div
         class="flex flex-col order-1 text-black md:justify-center md:items-center lg:items-start lg:justify-start lg:order-2 text-balance md:text-center lg:text-start"
       >
-        <p class="font-semibold">ABOUT</p>
+        <!-- <p class="font-semibold">ABOUT</p> -->
         <!-- <h1 class="md:text-[36px] mt-1 md:mt-0 xl:text-[50px] font-bold">
           The Science Behind Karyon Bio
         </h1> -->
@@ -88,19 +88,16 @@
               Our mission
             </h2>
             <p
-              class="mt-4 px-4 md:text-[16px] text-xs md:leading-8 text-gray-700"
+              class="mt-4 px-4 text-base md:text-[20px] text-start md:leading-[34px] text-gray-700"
             >
-              RECEPTOR.AI's mission is to create superior drugs, which are safe,
-              efficient and successful in clinical trials by developing a next
-              generation drug discovery platform based on the synergy of AI,
-              computational chemistry and biology.
+              To revolutionize liver disease diagnosis and treatment by
+              harnessing the power of AI and multi-omics technologies, providing
             </p>
             <p
-              class="mt-4 px-4 md:text-[16px] text-xs md:leading-8 text-gray-700"
+              class="px-4 text-base md:text-[20px] text-start md:leading-[34px] text-gray-700"
             >
-              We aim to improve access to AI drug discovery via our AI platform
-              which is integrated with wet labs to make the drug discovery
-              process more efficient.
+              early, accurate, and non-invasive solutions that empower
+              healthcare providers and improve patient outcomes worldwide.
             </p>
           </div>
         </div>
@@ -122,27 +119,28 @@
               Our vision
             </h2>
             <p
-              class="mt-4 px-4 md:text-[16px] text-start text-xs md:leading-8 text-gray-700"
+              class="mt-4 px-4 text-base md:text-[20px] text-start md:leading-[34px] text-gray-700"
             >
-              We dream about a world where new drugs are developed so fast, that
-              new diseases have no chances to spread.
+              To lead the global fight against liver diseases by becoming the
+              foremost innovator in AI-driven diagnostics, ensuring early
+              detection and personalized care for all..
             </p>
             <p
-              class="mt-4 px-4 md:text-[16px] text-start text-xs md:leading-8 text-gray-700"
+              class="mt-4 px-4 text-base md:text-[20px] text-start md:leading-[34px] text-gray-700"
             >
-              We envision radical minimization of drug testing on animals and
-              humans with improvement of their safety and efficiency by
-              combining advanced AI with novel biomimetic technologies.
+              Join us on our journey as we work to bring hope and healing to
+              those affected by liver diseases, harnessing the power of AI to
+              create a healthier world.
             </p>
           </div>
         </div>
       </div>
     </section>
     <section
-      class="w-full overflow-hidden px-4 md:px-0 flex lg:flex-row flex-col items-start md:justify-center md:items-center gap-10 lg:h-[550px] xl:h-[700px] md:pb-10"
+      class="w-full overflow-hidden bg-gradient-to-r py-10 from-[#1F80AE] to-[#1F3B60] px-4 md:px-0 flex lg:flex-row flex-col items-start md:justify-center md:items-center gap-10 md:pb-10"
     >
       <div
-        class="relative top-10 md:top-36 order-1 lg:order-2 text-black text-balance md:text-center lg:text-start flex flex-col justify-center md:items-center lg:items-start lg:justify-start pb-20 md:pb-28 lg:w-[400px] xl:w-[500px] lg:mr-24 xl:mr-20"
+        class="relative md:top-7 order-1 lg:order-2 text-white text-balance md:text-center lg:text-start flex flex-col justify-center md:items-center lg:items-start lg:justify-start pb-20 md:pb-28 lg:w-[400px] xl:w-[500px] lg:mr-24 xl:mr-20"
       >
         <h1 class="md:text-[36px] mt-1 md:mt-0 xl:text-[40px] font-bold">
           What karyon bio offers
@@ -170,9 +168,7 @@
           </ul>
         </div>
       </div>
-      <div
-        class="relative order-2 pb-20 lg:order-1 lg:pb-0 top-10 md:top-16 lg:top-36"
-      >
+      <div class="relative order-2 pb-20 lg:order-1 lg:pb-0 top-10 md:top-0">
         <!-- First Image (smaller, positioned lower) -->
         <!-- <img
           src="https://bracketweb.com/ogencywp/wp-content/uploads/2023/07/about-3-1.jpg"

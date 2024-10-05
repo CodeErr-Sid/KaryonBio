@@ -3,6 +3,7 @@
     <Preloader @preloader-complete="handlePreloaderComplete" />
     <div v-if="headerVisible">
       <nav
+        v-if="headerVisible"
         class="fixed z-[99999] flex items-center justify-between px-4 py-2 md:py-1 md:px-10 xl:px-20 transition-all duration-300"
         :class="[
           isOpen ? 'w-[150px]' : 'w-full',
@@ -122,11 +123,11 @@
               to="/teams"
               >Our Experts</nuxt-link
             > -->
-            <nuxt-link
+            <!-- <nuxt-link
               class="block py-2 px-2 md:inline-block text-sm lg:text-xl hover:text-[#3AD9FF] cursor-pointer"
               to="/contact"
               >Contact</nuxt-link
-            >
+            > -->
           </div>
         </div>
       </nav>
@@ -140,7 +141,8 @@ export default {
     return {
       isOpen: false,
       isScrolled: false, // Track scroll state
-      headerVisible: false,
+      headerVisible: true, // Start with header visible
+      lastScrollPosition: 0, // Track the last scroll position
     };
   },
   mounted() {
@@ -160,7 +162,25 @@ export default {
       this.isOpen = !this.isOpen; // Toggle the navigation menu
     },
     handleScroll() {
-      this.isScrolled = window.scrollY > 50; // Change logo when scrolled past 50px
+      const currentScrollPosition = window.scrollY;
+
+      // Detect scroll direction
+      if (
+        currentScrollPosition > this.lastScrollPosition &&
+        currentScrollPosition > 100
+      ) {
+        // User is scrolling down and past 100px, hide the header
+        this.headerVisible = false;
+      } else {
+        // User is scrolling up, show the header
+        this.headerVisible = true;
+      }
+
+      // Change logo when scrolled past 50px
+      this.isScrolled = currentScrollPosition > 50;
+
+      // Update the last scroll position
+      this.lastScrollPosition = currentScrollPosition;
     },
   },
   watch: {
