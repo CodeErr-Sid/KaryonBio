@@ -238,32 +238,18 @@
           biomarkers, predicts disease progression, and tailors treatment plans
           to each patient’s unique needs.
         </p>
-        <div
-          class="grid items-center justify-center grid-cols-1 gap-1 md:gap-6"
-        >
+        <div class="grid items-start justify-center grid-cols-1 gap-1 md:gap-6">
           <div
             v-for="(benefit, index) in benefits"
             :key="index"
             class="flex items-start mb-2"
           >
-            <div class="flex-shrink-0">
-              <span
-                class="inline-flex items-center justify-center w-8 h-8 text-black bg-gray-300 rounded-full md:w-12 md:h-12"
+            <div class="text-black rounded-full md:-mt-4">
+              <p
+                class="bg-clip-text text-transparent bg-gradient-to-r font-extrabold text-[36px] w-8 h-8 md:w-12 md:h-12 from-black to-black"
               >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  x="0px"
-                  y="0px"
-                  width="20"
-                  height="20"
-                  viewBox="0 0 48 48"
-                >
-                  <path
-                    fill="#1F80AE"
-                    d="M40.6 12.1L17 35.7 7.4 26.1 4.6 29 17 41.3 43.4 14.9z"
-                  ></path>
-                </svg>
-              </span>
+                .
+              </p>
             </div>
             <div class="ml-4">
               <h3 class="font-bold text-black md:text-xl text-start">
