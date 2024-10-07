@@ -27,7 +27,7 @@
           </h1>
           <p
             id="typewriter"
-            class="relative z-20 mt-2 text-xl font-semibold text-white"
+            class="relative z-20 mt-2 text-sm font-semibold text-white md:text-xl"
           ></p>
         </div>
         <!-- <img
@@ -63,7 +63,7 @@
       </p>
       <div class="flex justify-center px-4 mt-4 md:mt-10 md:px-0">
         <p
-          class="text-[#274760B3] text-center text-base md:text-[24.47px] md:text-center lg:w-[450px] xl:w-[538px] md:leading-[34px]"
+          class="text-[#274760B3] text-center text-base md:text-[20px] md:text-center lg:w-[450px] xl:w-[538px] md:leading-[34px]"
         >
           At Karyon Bio, we revolutionize liver disease management with our
           innovative, AI-powered biomarker and drug discovery solutions.
@@ -86,13 +86,15 @@
             />
 
             <p
-              class="text-[#274760B3] text-center md:text-start text-base md:text-[24.47px] md:leading-[34px] lg:w-[450px] xl:w-[580px]"
+              class="text-[#274760B3] text-center md:text-start text-base md:text-[20px] md:leading-[34px] lg:w-[450px] xl:w-[580px]"
             >
-              By seamlessly integrating multi-omics data, clinical insights,
-              literature mining, and advanced imaging techniques, our
-              non-invasive platform offers early diagnosis, accurate prognosis,
-              and personalized treatment strategies for NAFLD/NASH and other
-              liver disorder
+              By seamlessly integrating
+              <span class="font-semibold text-[#307BC4]">multi-omics data</span
+              >, clinical insights, literature mining, and advanced Imaging
+              techniques, our non-invasive platform offers early diagnosis,
+              accurate prognosis, and personalized treatment strategies for
+              <span class="font-semibold text-[#307BC4]">NAFLD/NASH</span> and
+              other liver disorder
             </p>
           </div>
           <div class="flex items-start justify-center gap-2 mt-2 md:gap-6">
@@ -103,12 +105,17 @@
             />
 
             <p
-              class="text-[#274760B3] text-center md:text-start text-base md:text-[24.47px] md:leading-[34px] lg:w-[450px] xl:w-[580px]"
+              class="text-[#274760B3] text-center md:text-start text-base md:text-[20px] md:leading-[34px] lg:w-[450px] xl:w-[580px]"
             >
-              Our proprietary AI algorithm technology detects NAFLD at its
-              inception, predicts disease progression, and identifies tailored
-              therapeutic options. With a commitment to precision medicine,
-              Karyon Bio is at the forefront of transforming liver care,
+              Our proprietary
+              <span class="font-semibold text-[#307BC4]"
+                >AI algorithm technology detects NAFLD</span
+              >
+              at its inception, predicts disease progression, and identifies
+              tailored therapeutic options. With a commitment to
+              <span class="font-semibold text-[#307BC4]">
+                precision medicine</span
+              >, Karyon Bio is at the forefront of transforming liver care,
               providing patients and healthcare providers with the tools they
               need for better health outcomes.
             </p>
@@ -130,19 +137,21 @@
             Why Karyon Bio
           </h1>
           <p
-            class="ttext-[25px] md:text-[36px] font-medium text-[#F5F7FA] mt-2 md:mt-6 md:leading-[46px]"
+            class="text-[25px] md:text-[30px] font-medium text-[#F5F7FA] mt-2 md:mt-6 md:leading-[46px]"
           >
             Chronic liver disease is the only top ten global killer on the rise
           </p>
           <p
-            class="text-[#F5F7FA] text-xl md:text-[29px] font-normal border-l-2 border-[#3AD9FF] mt-2 md:mt-5 pl-2 md:pl-[23px]"
+            class="text-[#F5F7FA] text-xl md:text-[20px] font-normal border-l-2 border-[#3AD9FF] mt-2 md:mt-5 pl-2 md:pl-[23px]"
           >
             "Liver disease is the third leading cause of premature death.”
             <span class="text-[19px]"
               >UK Health Security Agency, July 2021</span
             >
           </p>
-          <p class="text-[#F5F7FA] text-sm md:text-2xl mt-[20px]">
+          <p
+            class="text-[#F5F7FA] text-sm md:text-[20px] md:leading-8 mt-[20px]"
+          >
             Without effective therapies, the only resort for many patients
             remains a liver transplant. However the supply of healthy donor
             organs cannot meet what’s required, with minorities
@@ -158,11 +167,6 @@
             </p>
           </div> -->
         </div>
-        <!-- <img
-          src="/graph.png"
-          class="w-full lg:w-[450px] md:h-[383px] mt-4 md:mt-20"
-          alt="why"
-        /> -->
       </div>
     </section>
     <section class="px-4 py-12 bg-gray-100 md:px-6">
@@ -174,7 +178,7 @@
         <!-- Text Section -->
         <div class="w-full space-y-6 text-center md:w-1/2 md:text-left">
           <p
-            class="text-base md:text-[24.47px] md:leading-[34px] text-[#274760B3]"
+            class="text-base md:text-[20px] md:leading-[34px] text-[#274760B3]"
           >
             Every year, approximately 20% of people worldwide are diagnosed with
             liver disease, a chronic condition that can lead to life-threatening
@@ -205,16 +209,18 @@
       id="zoom-in"
     >
       <h1
-        class="text-xl px-4 md:text-4xl text-center font-bold z-20 text-white md:leading-[50px]"
+        class="text-xl px-4 md:text-4xl text-center font-bold md:z-20 text-white md:leading-[50px]"
       >
         Empowering Precision Liver Health
       </h1>
-      <div class="">
-        <img
-          src="/zoom.jpg"
-          class="object-cover mt-4 rounded-md"
-          alt="Zoom In Image"
-        />
+      <p class="text-white text-center mt-4 md:mt-4 md:w-[600px]">
+        This project aims to leverage advanced technologies to enhance liver
+        health through precise and personalized medical insights and solutions
+        to improve patient outcomes and quality of life for individuals with
+        liver disorders such as NAFLD/NASH and other liver diseases.
+      </p>
+      <div class="overflow-hidden">
+        <img src="/zoom.jpg" class="mt-4 rounded-md" alt="Zoom In Image" />
       </div>
     </section>
 
@@ -228,14 +234,14 @@
           <img
             src="/percent.svg"
             alt="90 percent SVG"
-            class="w-[500px] h-auto"
+            class="md:w-[500px] h-auto"
           />
         </div>
 
         <!-- Text Section -->
         <div class="w-full space-y-6 text-center md:w-1/2 md:text-left">
           <p
-            class="text-base md:text-[24.47px] md:leading-[34px] text-[#274760B3]"
+            class="text-base md:text-[20px] md:leading-[34px] text-[#274760B3]"
           >
             Every year, approximately 25% of people worldwide are diagnosed with
             liver disease, a chronic condition that can lead to life-threatening
@@ -476,7 +482,7 @@
                 <p
                   :data-aos="getAosAnimation(index)"
                   :data-aos-delay="index * 100"
-                  class="text-sm md:text-[25px] w-[800px] md:leading-8 text-center md:text-start font-semibold"
+                  class="text-sm md:text-[25px] md:w-[800px] md:leading-8 text-start font-semibold"
                 >
                   {{ section.content }}
                 </p>
@@ -499,7 +505,7 @@
             <div class="title">INNOVATIVE TECHNOLOGY</div>
             <div class="flex items-start justify-between">
               <p
-                class="w-[500px] text-base md:text-[24.47px] md:leading-[34px] text-white text"
+                class="w-[500px] text-base md:text-[20px] md:leading-[34px] text-white text"
               >
                 Stay ahead in liver disease diagnostics with our cutting-edge AI
                 and multi-omics platform. Our technology enables earlier
@@ -513,7 +519,7 @@
             <div class="title">Diagnostic Labs</div>
             <div class="flex justify-between">
               <p
-                class="w-[500px] text-base md:text-[24.47px] md:leading-[34px] text-white text"
+                class="w-[500px] text-base md:text-[20px] md:leading-[34px] text-white text"
               >
                 We provide tailored solutions to meet your unique needs. Our
                 approach is personalized, focusing on delivering the most
@@ -527,7 +533,7 @@
             <div class="font-bold title">Hospital</div>
             <div class="flex justify-between">
               <p
-                class="w-[500px] text-base md:text-[24.47px] md:leading-[34px] text-white text"
+                class="w-[500px] text-base md:text-[20px] md:leading-[34px] text-white text"
               >
                 Together, we can enhance global liver health outcomes through
                 collaboration and innovative solutions. By focusing on
@@ -542,7 +548,7 @@
       </div>
     </div>
 
-    <section class="relative w-full bg-white md:pt-40 md:px-0">
+    <section class="relative w-full bg-white pt-80 md:pt-40 md:px-0">
       <div class="absolute bottom-0 flex justify-between w-full mt-4">
         <img src="/partner/sand.svg" class="lg:w-[700px] lg:h-[220px]" alt="" />
         <img src="/partner/sand2.svg" class="hidden -mt-20 lg:block" alt="" />
@@ -552,8 +558,8 @@
           class="relative z-20 flex flex-col items-start justify-center h-full gap-12 text-left transition-all duration-500 global-container"
           :style="{
             backgroundImage:
-              selectedCountry.country === flags[3].country // Apply specific image for index 3
-                ? 'url(' + flags[3].image + ')'
+              selectedCountry.country === flags.country // Apply specific image for index 3
+                ? 'url(' + flags.image + ')'
                 : showBackgroundImage
                 ? 'url(' + selectedCountry.image + ')'
                 : 'none',
@@ -587,12 +593,12 @@
               Team up with us today for an unforgettable service experience
             </p>
             <div
-              class="flex flex-wrap items-center justify-center gap-4 mt-2 md:justify-start md:items-start flag-buttons"
+              class="flex flex-wrap items-center justify-center gap-6 mt-2 md:gap-4 md:justify-start md:items-start flag-buttons"
             >
               <div
                 v-for="(flag, index) in flags"
                 :key="index"
-                class="w-16 h-16 md:w-[100px] md:h-[100px] mb-2 transition-transform duration-200 bg-center bg-cover border-2 rounded-full cursor-pointer flag-button"
+                class="w-16 h-16 md:w-[70px] md:h-[70px] mb-2 transition-transform duration-200 bg-center bg-cover border-2 rounded-full cursor-pointer flag-button"
                 :class="{
                   active: selectedCountry.country === flag.country,
                   'border-[#1F3B60]':
@@ -632,12 +638,12 @@
             </h5>
             <div class="gc-address md:w-[600px]">
               <p
-                class="text-base md:text-[24.47px] md:leading-[34px] w-full text-black text"
+                class="text-base md:text-[20px] md:leading-[34px] w-full text-black text"
               >
                 {{ selectedCountry.address }}
               </p>
               <p
-                class="mb-4 -mt-5 text-base md:text-[24.47px] md:leading-[34px] text-black text"
+                class="mb-4 -mt-5 text-base md:text-[20px] md:leading-[34px] text-black text"
               >
                 {{ selectedCountry.address1 }}
               </p>
@@ -981,6 +987,7 @@ research and enhance patients together.`,
 <style scoped>
 .last {
   height: 600px;
+
   display: flex;
   justify-content: center;
   align-items: center;

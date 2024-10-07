@@ -99,7 +99,7 @@
               <a
                 :href="expert.linkedin"
                 target="_blank"
-                class="text-[#3B5998] bg-[#83B0DC] cursor-pointer w-10 h-10 rounded-full flex justify-center items-center"
+                class="bg-gradient-to-r from-[#1F80AE] to-[#1F3B60] text-white cursor-pointer w-10 h-10 rounded-full flex justify-center items-center"
               >
                 <img src="/social-icons/1.svg" alt="linkedin" />
               </a>
@@ -148,7 +148,7 @@
                       <a
                         :href="selectedExpert.linkedin"
                         target="_blank"
-                        class="text-[#3B5998] flex gap-2 bg-[#83B0DC] cursor-pointer px-3 py-2 rounded-full justify-center items-center"
+                        class="flex gap-2 bg-gradient-to-r from-[#1F80AE] to-[#1F3B60] cursor-pointer px-3 py-2 rounded-full justify-center items-center"
                       >
                         <!-- <img src="/social-icons/1.svg" alt="linkedin" /> -->
                         <p class="font-semibold text-white">linkedin</p>
