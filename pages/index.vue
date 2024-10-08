@@ -858,8 +858,8 @@ export default {
           bgName: "Clinical Trial Organizations",
           name: "Clinical ",
           image: "/partner/slide1.svg",
-          address: `prove trial precision and efficiency with our AI based bio=arkers, offering =ore accurate patient 
-selection and =onitoring.`,
+          address: `prove trial precision and efficiency with our AI based bio   markers, offering  accurate patient 
+selection and monitoring.`,
           address1: `Partner Oith us to advance cutting-edge biomedical 
 research and enhance patients together.`,
           email: "info@aibotproperties.com",
