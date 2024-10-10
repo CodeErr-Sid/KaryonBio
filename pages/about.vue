@@ -24,7 +24,7 @@
       </div>
     </section>
     <section
-      class="w-full overflow-hidden gap-20 px-4 md:px-20 items-center flex lg:flex-row md:pt-[150px] pb-24 flex-col justify-center lg:justify-center"
+      class="w-full overflow-hidden gap-4 md:gap-20 px-4 md:px-20 items-center flex lg:flex-row md:pt-[150px] pb-4 md:pb-24 flex-col justify-center lg:justify-center"
     >
       <div class="order-2 lg:order-1 lg:w-[600px] xl:w-[600px]">
         <!-- First Image (smaller, positioned lower) -->
@@ -74,11 +74,9 @@
 
     <section>
       <div
-        class="relative flex flex-col items-center justify-center px-4 bg-white md:pb-8 md:px-0 lg:flex-row md:pt-10"
+        class="relative flex flex-col items-center justify-center px-4 pb-2 bg-white md:pb-8 md:px-0 lg:flex-row md:pt-10"
       >
-        <div
-          class="w-full text-start md:p-4 mt-4 md:mt-0 lg:w-[500px] xl:w-[650px]"
-        >
+        <div class="w-full text-start md:p-4 md:mt-0 lg:w-[500px] xl:w-[650px]">
           <div
             class="p-1 md:p-2 rounded-lg border-[#2078A7] lg:h-[304px] xl:h-[300px] border shadow-lg"
           >
@@ -140,7 +138,7 @@
       class="w-full overflow-hidden bg-gradient-to-r py-10 from-[#1F80AE] to-[#1F3B60] px-4 md:px-0 flex lg:flex-row flex-col items-start md:justify-center md:items-center gap-10 md:pb-10"
     >
       <div
-        class="relative md:top-7 order-1 lg:order-2 text-white text-balance md:text-center lg:text-start flex flex-col justify-center md:items-center lg:items-start lg:justify-start pb-20 md:pb-28 lg:w-[400px] xl:w-[500px] lg:mr-24 xl:mr-20"
+        class="relative md:top-7 order-1 lg:order-2 text-white text-balance md:text-center lg:text-start flex flex-col justify-center md:items-center lg:items-start lg:justify-start md:pb-28 lg:w-[400px] xl:w-[500px] lg:mr-24 xl:mr-20"
       >
         <h1 class="md:text-[36px] mt-1 md:mt-0 xl:text-[40px] font-bold">
           What karyon bio offers
@@ -160,7 +158,9 @@
         <div
           class="flex items-start justify-start gap-2 mt-2 lg:pl-7 lg:mt-6 md:mt-10 xl:mt-10"
         >
-          <ul class="text-sm list-disc text-start lg:-ml-3 md:ml-4 md:text-lg">
+          <ul
+            class="ml-4 text-sm list-disc text-start lg:-ml-3 md:ml-4 md:text-lg"
+          >
             <li>Led by Passionate Experts</li>
             <li>Safe Diagnoses and Effective Therapies</li>
             <li>Fully Equipment</li>
@@ -168,7 +168,9 @@
           </ul>
         </div>
       </div>
-      <div class="relative order-2 pb-20 lg:order-1 lg:pb-0 top-10 md:top-0">
+      <div
+        class="relative order-2 pb-4 md:pb-20 lg:order-1 lg:pb-0 top-10 md:top-0"
+      >
         <!-- First Image (smaller, positioned lower) -->
         <!-- <img
           src="https://bracketweb.com/ogencywp/wp-content/uploads/2023/07/about-3-1.jpg"
@@ -212,7 +214,7 @@
         </div>
       </div>
     </section>
-    <section class="flex flex-col items-center justify-center px-4 py-12">
+    <section class="flex flex-col items-center justify-center px-4 md:py-12">
       <div class="max-w-5xl md:mx-auto lg:text-center">
         <h2 class="mb-4 font-bold text-black md:text-4xl">
           Over 20
@@ -246,13 +248,15 @@
           >
             <div class="text-black rounded-full md:-mt-4">
               <p
-                class="bg-clip-text text-transparent bg-gradient-to-r font-extrabold text-[36px] w-8 h-8 md:w-12 md:h-12 from-black to-black"
+                class="bg-clip-text text-transparent hidden md:block bg-gradient-to-r font-extrabold text-[36px] w-12 h-12 from-black to-black"
               >
                 .
               </p>
             </div>
-            <div class="ml-4">
-              <h3 class="font-bold text-black md:text-xl text-start">
+            <div class="md:ml-4">
+              <h3
+                class="font-bold text-center text-black md:text-start md:text-xl"
+              >
                 {{ benefit.title }}
                 <span
                   class="bg-clip-text text-transparent bg-gradient-to-r from-[#1F80AE] to-[#1F3B60]"
@@ -260,7 +264,9 @@
                   {{ benefit.title1 }}
                 </span>
               </h3>
-              <p class="text-sm text-gray-500 text-start md:text-lg">
+              <p
+                class="text-sm text-center text-gray-500 md:text-start md:text-lg"
+              >
                 {{ benefit.description }}
               </p>
             </div>
