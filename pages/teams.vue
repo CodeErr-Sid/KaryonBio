@@ -84,7 +84,7 @@
               <p
                 class="text-[#9CABB6] px-2 md:px-4 lg:px-[35px] text-balance mb-2"
               >
-                <span>Hi, I'm {{ expert.name }}</span> {{ expert.description }}
+                <span> {{ expert.name }}</span> {{ expert.description }}
                 <span
                   @click="openModal(index)"
                   class="w-full py-2 text-[#307BC4] underline cursor-pointer"
@@ -109,7 +109,6 @@
           <transition name="fade-scale">
             <div
               v-if="isModalOpen"
-              @click="closeModal"
               class="fixed inset-0 z-[9999999999] flex items-center justify-center bg-black bg-opacity-50"
             >
               <div
@@ -163,7 +162,7 @@
                     <h4
                       class="text-sm md:text-lg font-semibold text-[#3B5998] text-start"
                     >
-                      Hi, I'm {{ selectedExpert.name }}
+                      {{ selectedExpert.name }}
                     </h4>
                     <p
                       class="mt-2 text-xs text-gray-700 md:mt-4 md:text-sm text-start"

@@ -99,17 +99,17 @@
               class="w-20 md:hidden md:w-28"
             />
             <nuxt-link
-              class="block py-2 px-2 md:inline-block text-sm lg:text-xl hover:text-[#3AD9FF] cursor-pointer"
+              class="block px-2 py-2 text-sm cursor-pointer md:inline-block lg:text-xl"
               to="/"
               >Home</nuxt-link
             >
             <nuxt-link
-              class="block py-2 px-2 md:inline-block text-sm lg:text-xl hover:text-[#3AD9FF] cursor-pointer"
+              class="block px-2 py-2 text-sm cursor-pointer md:inline-block lg:text-xl"
               to="/about"
               >About</nuxt-link
             >
             <nuxt-link
-              class="block py-2 px-2 md:inline-block text-sm lg:text-xl hover:text-[#3AD9FF] cursor-pointer"
+              class="block px-2 py-2 text-sm cursor-pointer md:inline-block lg:text-xl"
               to="#"
               >Technology</nuxt-link
             >

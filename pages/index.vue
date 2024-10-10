@@ -1,5 +1,5 @@
 <template>
-  <div class="text-example">
+  <div class="font-futura">
     <!-- <MouseFollower /> -->
     <section
       class="relative w-full md:h-screen overflow-hidden bg-gradient-to-r from-[#1F80AE] to-[#1F3B60]"
@@ -115,8 +115,10 @@
               tailored therapeutic options. With a commitment to
               <span class="font-semibold text-[#307BC4]">
                 precision medicine</span
-              >, Karyon Bio is at the forefront of transforming liver care,
-              providing patients and healthcare providers with the tools they
+              >, Karyon Bio is at the forefront of
+              <span class="font-semibold text-[#307BC4]">
+                transforming liver care</span
+              >, providing patients and healthcare providers with the tools they
               need for better health outcomes.
             </p>
           </div>
@@ -169,7 +171,7 @@
         </div>
       </div>
     </section>
-    <section class="px-4 py-12 bg-gray-100 md:px-6">
+    <section class="px-4 pt-12 bg-gray-100 md:pb-20 md:px-6">
       <div
         class="flex flex-col items-start justify-center gap-2 space-y-6 lg:items-center md:flex-row md:space-y-0"
       >
@@ -177,23 +179,30 @@
 
         <!-- Text Section -->
         <div class="w-full space-y-6 text-center md:w-1/2 md:text-left">
-          <p
-            class="text-base md:text-[20px] md:leading-[34px] text-[#274760B3]"
-          >
-            Every year, approximately 20% of people worldwide are diagnosed with
-            liver disease, a chronic condition that can lead to life-threatening
-            complications if not treated properly.
-            <br /><br />
-            Liver disease affects people across all age groups and backgrounds,
-            often developing silently until symptoms become severe. It can
-            result in serious health issues such as cirrhosis, liver failure,
-            and in some cases, the need for a liver transplant.
-            <br /><br />
-            This statistic highlights the urgent need for increased awareness,
-            early detection, and effective management of liver-related health
-            concerns to improve long-term outcomes and quality of life.
-          </p>
+          <div class="flex flex-col">
+            <p
+              class="text-base md:text-[20px] md:leading-[34px] text-[#274760B3]"
+            >
+              Every year, approximately 20% of people worldwide are diagnosed
+              with liver disease, a chronic condition that can lead to
+              life-threatening complications if not treated properly.
+              <br /><br />
+              Liver disease affects people across all age groups and
+              backgrounds, often developing silently until symptoms become
+              severe. It can result in serious health issues such as cirrhosis,
+              liver failure, and in some cases, the need for a liver transplant.
+              <br /><br />
+              This statistic highlights the urgent need for increased awareness,
+              early detection, and effective management of liver-related health
+              concerns to improve long-term outcomes and quality of life.
+            </p>
+            <i
+              class="pt-4 text-start cursor-pointer text-[#307BC4] text-[20px] font-semibold"
+              >Click For Label Report</i
+            >
+          </div>
         </div>
+
         <div class="flex justify-center w-full md:w-1/2">
           <!-- Replace this path with the actual path to your SVG file -->
           <img
@@ -205,21 +214,30 @@
       </div>
     </section>
     <section
-      class="flex flex-col bg-gradient-to-r from-[#1F80AE] to-[#1F3B60] last"
+      class="flex flex-col items-center justify-center mt-10 md:mt-0 py-10 md:py-0 bg-[#1F3B60] md:bg-white md:pt-20 last"
       id="zoom-in"
     >
       <h1
-        class="text-xl px-4 md:text-4xl text-center font-bold md:z-20 text-white md:leading-[50px]"
+        class="text-xl px-4 md:text-4xl text-center font-bold md:-mt-20 text-white md:text-black md:leading-[50px]"
       >
         Empowering Precision Liver Health
       </h1>
-      <p class="text-white text-center mt-4 md:mt-4 md:w-[600px]">
+      <p
+        class="text-white md:text-black text-center mt-4 md:mt-4 md:w-[600px] px-4 md:h-[200px]"
+      >
         This project aims to leverage advanced technologies to enhance liver
         health through precise and personalized medical insights and solutions
         to improve patient outcomes and quality of life for individuals with
         liver disorders such as NAFLD/NASH and other liver diseases.
       </p>
-      <div class="overflow-hidden">
+      <div
+        class="bg-gradient-to-r hidden md:block pt-10 md:pt-20 relative from-[#1F80AE] text-[#1F80AE] to-[#1F3B60] w-full h-[150px] md:h-[300px]"
+      >
+        x
+      </div>
+      <div
+        class="flex items-center justify-center w-full overflow-hidden md:absolute"
+      >
         <img src="/zoom.jpg" class="mt-4 rounded-md" alt="Zoom In Image" />
       </div>
     </section>
@@ -240,22 +258,28 @@
 
         <!-- Text Section -->
         <div class="w-full space-y-6 text-center md:w-1/2 md:text-left">
-          <p
-            class="text-base md:text-[20px] md:leading-[34px] text-[#274760B3]"
-          >
-            Every year, approximately 25% of people worldwide are diagnosed with
-            liver disease, a chronic condition that can lead to life-threatening
-            complications if not treated properly.
-            <br /><br />
-            Liver disease affects people across all age groups and backgrounds,
-            often developing silently until symptoms become severe. It can
-            result in serious health issues such as cirrhosis, liver failure,
-            and in some cases, the need for a liver transplant.
-            <br /><br />
-            This statistic highlights the urgent need for increased awareness,
-            early detection, and effective management of liver-related health
-            concerns to improve long-term outcomes and quality of life.
-          </p>
+          <div class="flex flex-col">
+            <p
+              class="text-base md:text-[20px] md:leading-[34px] text-[#274760B3]"
+            >
+              Every year, approximately 20% of people worldwide are diagnosed
+              with liver disease, a chronic condition that can lead to
+              life-threatening complications if not treated properly.
+              <br /><br />
+              Liver disease affects people across all age groups and
+              backgrounds, often developing silently until symptoms become
+              severe. It can result in serious health issues such as cirrhosis,
+              liver failure, and in some cases, the need for a liver transplant.
+              <br /><br />
+              This statistic highlights the urgent need for increased awareness,
+              early detection, and effective management of liver-related health
+              concerns to improve long-term outcomes and quality of life.
+            </p>
+            <i
+              class="pt-4 text-start cursor-pointer text-[#307BC4] text-[20px] font-semibold"
+              >Click For Label Report</i
+            >
+          </div>
         </div>
       </div>
     </section>
@@ -307,7 +331,7 @@
               <p
                 class="text-[#9CABB6] px-2 md:px-4 lg:px-[35px] text-balance mb-2"
               >
-                <span>Hi, I'm {{ expert.name }}</span> {{ expert.description }}
+                <span> {{ expert.name }}</span> {{ expert.description }}
                 <span
                   @click="openModal(index)"
                   class="w-full py-2 text-[#307BC4] underline cursor-pointer"
@@ -332,7 +356,6 @@
           <transition name="fade-scale">
             <div
               v-if="isModalOpen"
-              @click="closeModal"
               class="fixed inset-0 z-[9999999999] flex items-center justify-center bg-black bg-opacity-50"
             >
               <div
@@ -384,7 +407,7 @@
                     <h4
                       class="text-sm md:text-lg font-semibold text-[#3B5998] text-start"
                     >
-                      Hi, I'm {{ selectedExpert.name }}
+                      {{ selectedExpert.name }}
                     </h4>
                     <p
                       class="mt-2 text-xs text-gray-700 md:mt-4 md:text-sm text-start"
@@ -718,13 +741,12 @@ onMounted(() => {
 
     // Adjust the size dynamically based on screen width
     let initialWidth = innerWidth > 768 ? 400 : 200; // Larger size for desktops, smaller for mobile
-    let zoomInWidth = innerWidth > 768 ? 800 : 800; // Target size for zoom-in animation
+    let zoomInWidth = innerWidth > 768 ? 800 : 800;
 
     // Set the initial width based on the screen size
     const img = document.querySelector("#zoom-in img");
     img.style.width = `${initialWidth}px`;
 
-    // Responsive zoom-in animation for the image
     gsap.fromTo(
       img,
       {
@@ -788,9 +810,10 @@ export default {
       ],
       isModalOpen: false,
       selectedExpert: null,
-      selectedCountry: null,
       autoChangeInterval: null,
-      windowWidth: null,
+      selectedCountry: {},
+      userClicked: false,
+      windowWidth: 0,
       expandedSection: null,
       swiperInstance: null,
       windowWidth: null,
@@ -899,11 +922,8 @@ research and enhance patients together.`,
     );
   },
   beforeDestroy() {
-    window.removeEventListener("resize", this.updateWindowWidth); // Clean up the event listener
-    clearInterval(this.autoChangeInterval); // Clear the interval on component destroy
-  },
-  beforeDestroy() {
-    window.removeEventListener("resize", this.updateWindowWidth); // Clean up the event listener
+    window.removeEventListener("resize", this.updateWindowWidth);
+    clearInterval(this.autoChangeInterval); // Clean up interval on destroy
   },
   methods: {
     changeCountry(flag) {
@@ -915,14 +935,41 @@ research and enhance patients together.`,
       }
     },
     // Automatic country change every 5 seconds
+    changeCountry(flag) {
+      this.selectedCountry = flag; // Change to the clicked country
+      this.userClicked = true; // User clicked, so we set this flag
+
+      // Clear current auto-change interval
+      clearInterval(this.autoChangeInterval);
+
+      // Restart auto-change after 10 seconds
+      setTimeout(() => {
+        this.userClicked = false;
+        this.startAutoChange(); // Restart auto-change
+      }, 5000); // 10 seconds pause after user click
+    },
+
+    updateWindowWidth() {
+      if (typeof window !== "undefined") {
+        this.windowWidth = window.innerWidth; // Update window width on resize
+      }
+    },
+
     startAutoChange() {
-      let currentIndex = 0;
+      let currentIndex = this.flags.indexOf(this.selectedCountry);
+      // Clear any existing interval to prevent overlap
+      clearInterval(this.autoChangeInterval);
+
       this.autoChangeInterval = setInterval(() => {
+        // Skip auto-change if user has clicked and is within the 10-second pause
+        if (this.userClicked) return;
+
         currentIndex = (currentIndex + 1) % this.flags.length;
         this.selectedCountry = this.flags[currentIndex];
-      }, 2000); // Change every 5 seconds (adjust as needed)
+      }, 3000); // Auto-change every 5 seconds
     },
-    // Typewriter effect method
+
+    // Typewriter effect method (as is)
     typeWriterEffect(text, elementId, speed) {
       let i = 0;
       const element = document.getElementById(elementId);
@@ -933,7 +980,7 @@ research and enhance patients together.`,
           setTimeout(typeWriter, speed);
         }
       };
-      typeWriter(); // Start typing
+      typeWriter();
     },
 
     getAosAnimation(index) {
@@ -985,14 +1032,6 @@ research and enhance patients together.`,
 };
 </script>
 <style scoped>
-.last {
-  height: 600px;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 /* Tailwind transition classes for smooth animations */
 #style-2::-webkit-scrollbar-track {
   -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
@@ -1135,5 +1174,8 @@ research and enhance patients together.`,
   .title {
     font-size: 20px;
   }
+}
+.future-text {
+  font-family: "Future", sans-serif;
 }
 </style>

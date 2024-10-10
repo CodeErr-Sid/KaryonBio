@@ -21,7 +21,7 @@ export default defineNuxtConfig({
   ssr: true,
   modules: ["@nuxtjs/tailwindcss", "@nuxtjs/google-fonts"],
   plugins: [],
-  css: ["~/assets/base.css"],
+  css: ["~/assets/css/fonts.css", "~/assets/base.css"],
   http: {},
   build: {
     transpile: [""],

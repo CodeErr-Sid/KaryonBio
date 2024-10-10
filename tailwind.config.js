@@ -4,6 +4,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
+        futura: ["Futura W01", "Arial", "Helvetica", "sans-serif"],
         nunito: ["Nunito", "sans-serif"],
       },
       colors: {

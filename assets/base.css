@@ -3,11 +3,10 @@
 @tailwind utilities;
 
 @font-face {
-    font-family: 'FutureW01';
-    src: url('~assets/fonts/FutureW01-Regular.woff2') format('woff2'),
-         url('~assets/fonts/FutureW01-Regular.woff') format('woff'),
-         url('~assets/fonts/FutureW01-Regular.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-  }
-  
+     font-family: 'Futura W01';
+     src: url('/fonts/FontsFree-Net-FUTURE.woff2') format('woff2');
+     font-weight: normal;
+     font-style: normal;
+   }
+   
+   
