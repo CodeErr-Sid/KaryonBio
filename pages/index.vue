@@ -2,16 +2,21 @@
   <div class="font-futura">
     <!-- <MouseFollower /> -->
     <section
-      class="relative w-full md:h-screen overflow-hidden bg-gradient-to-r from-[#1F80AE] to-[#1F3B60]"
+      class="relative w-full md:h-screen overflow-hidden bg-gradient-to-r from-[#1F3B60] to-[#1F80AE]"
       :class="['', isOpen ? '  ' : ' ']"
     >
       <img
         src="/about/home.svg"
-        class="absolute top-0 lg:w-[700px] hidden opacity-50 md:block -left-10 md:-left-[350px] lg:-left-[200px] xl:-left-[100px]"
+        class="absolute -top-36 lg:w-[700px] hidden md:block -left-10 md:-left-[350px] lg:-left-[200px] xl:-left-[100px]"
         alt="hero-dot"
         :class="['', isOpen ? ' hidden' : ' ']"
       />
-
+      <img
+        src="/about/home1.svg"
+        class="absolute -top-36 lg:w-[700px] hidden md:block -left-10 md:-left-[350px] lg:-left-[200px] xl:-left-[100px]"
+        alt="hero-dot"
+        :class="['', isOpen ? ' hidden' : ' ']"
+      />
       <div
         class="flex flex-col items-center justify-center px-4 mt-20 lg:-mt-10 md:flex-row md:px-6 xl:pl-20"
       >
@@ -525,7 +530,7 @@
         <!-- <div class="spacer"></div> -->
         <div class="px-4 mt-4 md:px-0 xl:mt-40 accordions">
           <div class="accordion">
-            <div class="title">INNOVATIVE TECHNOLOGY</div>
+            <div class="mb-4 title">INNOVATIVE TECHNOLOGY</div>
             <div class="flex items-start justify-between">
               <p
                 class="w-[500px] text-base md:text-[20px] md:leading-[34px] text-white text"
@@ -539,7 +544,7 @@
             </div>
           </div>
           <div class="accordion">
-            <div class="title">Diagnostic Labs</div>
+            <div class="mb-4 title">Diagnostic Labs</div>
             <div class="flex justify-between">
               <p
                 class="w-[500px] text-base md:text-[20px] md:leading-[34px] text-white text"
@@ -553,7 +558,7 @@
             </div>
           </div>
           <div class="accordion">
-            <div class="font-bold title">Hospital</div>
+            <div class="mb-4 font-bold title">Hospital</div>
             <div class="flex justify-between">
               <p
                 class="w-[500px] text-base md:text-[20px] md:leading-[34px] text-white text"
