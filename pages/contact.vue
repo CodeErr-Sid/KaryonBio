@@ -1,5 +1,5 @@
 <template>
-  <div class="text-example">
+  <div class="font-futura">
     <section
       class="w-full relative overflow-hidden md:pb-10 md:h-[700px]"
       :class="[
@@ -139,47 +139,22 @@
       <div class="mt-6 md:mt-10 lg:mt-[68px]">
         <div class="flex flex-wrap w-full gap-4">
           <div
-            class="flex bg-[#D2EAEF80] p-4 md:p-[30px] lg:w-[300px] xl:w-[350px] w-full rounded-[25px] items-center gap-5"
+            v-for="(contact, index) in contacts"
+            :key="index"
+            class="flex bg-[#D2EAEF80] p-4 md:p-[16px] lg:w-[300px] xl:w-[350px] w-full rounded-[25px] items-center gap-5"
           >
             <img
-              src="/contact/call.svg"
-              class="lg:w-[60px] w-8 md:w-12"
-              alt="call"
+              :src="contact.icon"
+              class="lg:w-[40px] w-8 md:w-12"
+              alt="contact"
             />
             <div class="flex flex-col justify-center gap-1">
-              <h1 class="text-xl font-bold">Phone</h1>
+              <h1 class="text-xl font-bold">{{ contact.type }}</h1>
               <p class="text-[#1F3B60] text-base">
-                <a href="tel:+91 9985854689">+91 9985854689</a>
-              </p>
-            </div>
-          </div>
-          <div
-            class="flex bg-[#D2EAEF80] p-4 md:p-[30px] lg:w-[300px] xl:w-[350px] w-full rounded-[25px] items-center gap-5"
-          >
-            <img
-              src="/contact/mail.svg"
-              class="lg:w-[60px] w-8 md:w-12"
-              alt="call"
-            />
-            <div class="flex flex-col justify-center gap-1">
-              <h1 class="text-xl font-bold">Email</h1>
-              <p class="text-[#1F3B60] text-base">
-                <a href="mailto:karyonbio@gmail.com">karyonbio@gmail.com</a>
-              </p>
-            </div>
-          </div>
-          <div
-            class="flex bg-[#D2EAEF80] p-4 md:p-[30px] lg:w-[300px] xl:w-[350px] w-full rounded-[25px] items-center gap-5"
-          >
-            <img
-              src="/contact/loaction.svg"
-              class="lg:w-[60px] w-8 md:w-12"
-              alt="call"
-            />
-            <div class="flex flex-col justify-center gap-1">
-              <h1 class="text-xl font-bold">Location</h1>
-              <p class="text-[#1F3B60] text-base">
-                855 Maude Ave, Mountain View, CA 94043
+                <a :href="contact.link" v-if="contact.link">{{
+                  contact.value
+                }}</a>
+                <span v-else>{{ contact.value }}</span>
               </p>
             </div>
           </div>
@@ -211,6 +186,25 @@ definePageMeta({ layout: "primary" });
 export default {
   data() {
     return {
+      contacts: [
+        {
+          type: "Phone",
+          value: "+91 9985854689",
+          link: "tel:+919985854689",
+          icon: "/contact/call.svg",
+        },
+        {
+          type: "Email",
+          value: "karyonbio@gmail.com",
+          link: "mailto:karyonbio@gmail.com",
+          icon: "/contact/mail.svg",
+        },
+        {
+          type: "Location",
+          value: "855 Maude Ave, Mountain View, CA 94043",
+          icon: "/contact/location.svg",
+        },
+      ],
       form: {
         name: "",
         email: "",

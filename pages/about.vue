@@ -1,5 +1,5 @@
 <template>
-  <div class="text-example">
+  <div class="font-futura">
     <section
       class="w-full relative overflow-hidden md:pb-10 h-[400px] md:h-[700px]"
     >
@@ -64,8 +64,8 @@
             alt=""
           />
           <div>
-            <img src="/about/sign.png" class="w-[250px] -ml-8" alt="sign" />
-            <h1 class="-mt-4 text-xl">Srinivas Thirunagari</h1>
+            <!-- <img src="/about/sign.png" class="w-[250px] -ml-8" alt="sign" /> -->
+            <h1 class="text-xl">Srinivas Thirunagari</h1>
             <p class="text-[15px] mt-1">Founder & CEO</p>
           </div>
         </div>

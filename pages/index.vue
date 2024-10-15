@@ -289,6 +289,103 @@
       </div>
     </section>
 
+    <h1
+      class="text-xl md:text-[35px] lg:text-[52px] text-black lg:mt-[60px] pt-4 font-semibold leading-[40px] lg:leading-[63px] text-center"
+    >
+      Why Partner with Karyon Bio?
+    </h1>
+    <section
+      class="w-full md:hidden py-4 md:py-0 bg-gradient-to-r from-[#0C264A] to-[#1F3B60]"
+    >
+      <!-- <div class="flex flex-col items-center justify-center">
+        <img
+          src="/partner/lab.png"
+          class="hidden opacity-80 md:block top-36"
+          alt="lab"
+        />
+      </div> -->
+
+      <div
+        class="container inset-0 z-20 w-full mx-auto md:py-8"
+        :class="expandedSection ? 'mt-10' : 'md:mt-32 mt-4 '"
+      >
+        <div
+          v-for="(section, index) in sections"
+          :key="index"
+          class="text-center cursor-pointer"
+        >
+          <div>
+            <div
+              class="px-2 mb-2 text-sm font-bold text-white transition-colors duration-300 rounded-lg md:text-lg md:px-6"
+              :class="
+                expandedSection === index + 1
+                  ? 'hidden'
+                  : expandedSection
+                  ? 'bg-[#49719D] bg-opacity-10 md:bg-opacity-30 py-4 md:py-10 lg:py-20'
+                  : 'bg-[#49719D] bg-opacity-10 md:bg-opacity-30 py-4 md:py-10 lg:py-20'
+              "
+              @click="toggleSection(index + 1)"
+            >
+              {{ section.title }}
+            </div>
+          </div>
+
+          <transition name="expand">
+            <div>
+              <h1
+                class="md:text-[25px] font-bold text-white text-center cursor-pointer"
+                :class="expandedSection === index + 1 ? '' : 'hidden'"
+                @click="toggleSection(index + 1)"
+              >
+                {{ section.title }}
+              </h1>
+              <div
+                v-if="expandedSection === index + 1"
+                class="flex flex-col items-center justify-center px-4 mt-2 mb-4 text-white rounded-lg md:flex-row md:items-center bg-opacity-90"
+              >
+                <p
+                  :data-aos="getAosAnimation(index)"
+                  :data-aos-delay="index * 100"
+                  class="text-sm md:text-[25px] md:w-[800px] md:leading-8 text-start font-semibold"
+                >
+                  {{ section.content }}
+                </p>
+                <!-- <img
+                  :src="section.image"
+                  :class="section.imageClass"
+                  :alt="section.alt"
+                /> -->
+              </div>
+            </div>
+          </transition>
+        </div>
+      </div>
+    </section>
+    <div id="wrapper" class="hidden md:h-[1500px] overflow-hidden md:block">
+      <div id="content">
+        <!-- <div class="spacer"></div> -->
+        <div class="px-4 mt-4 md:px-0 xl:mt-40 accordions">
+          <div
+            v-for="(item, index) in accordions"
+            :key="index"
+            class="accordion"
+          >
+            <div class="mb-4 title">{{ item.title }}</div>
+            <div class="flex items-start justify-between">
+              <p
+                class="w-[500px] text-base md:text-[20px] md:leading-[34px] text-white text"
+              >
+                {{ item.description }}
+              </p>
+              <p class="text-[200px] font-bold number text-white">
+                {{ item.number }}.
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- <div class="spacer"></div> -->
+      </div>
+    </div>
     <section class="lg:py-16 bg-[#F5F7FA] px-4 mt-4 mb-4 10 md:mt-0">
       <div class="container mx-auto text-center">
         <!-- Section Title -->
@@ -301,7 +398,9 @@
         >
           <!-- Card (for each team member) -->
           <div
-            v-for="(expert, index) in experts"
+            v-for="(expert, index) in showAllExperts
+              ? experts
+              : experts.slice(0, 3)"
             :key="index"
             class="relative overflow-hidden transition-all duration-300 md:h-[650px] pb-4 md:pb-0 md:w-[360px] lg:w-auto xl:w-[400px] rounded-xl shadow-md"
           >
@@ -445,137 +544,14 @@
         </div>
       </div>
       <div class="flex items-center justify-center w-full mt-5">
-        <nuxt-link
-          to="/teams"
+        <button
+          @click="toggleExperts"
           class="bg-gradient-to-r from-[#1F80AE] to-[#1F3B60] text-white rounded-md font-semibold p-2"
         >
-          Know our team
-        </nuxt-link>
+          {{ showAllExperts ? "Show Less" : "Know Our Team" }}
+        </button>
       </div>
     </section>
-    <h1
-      class="text-xl md:text-[35px] lg:text-[52px] text-black lg:mt-[60px] pt-4 font-semibold leading-[40px] lg:leading-[63px] text-center"
-    >
-      Why Partner with Karyon Bio?
-    </h1>
-    <section
-      class="w-full md:hidden py-4 md:py-0 bg-gradient-to-r from-[#0C264A] to-[#1F3B60]"
-    >
-      <!-- <div class="flex flex-col items-center justify-center">
-        <img
-          src="/partner/lab.png"
-          class="hidden opacity-80 md:block top-36"
-          alt="lab"
-        />
-      </div> -->
-
-      <div
-        class="container inset-0 z-20 w-full mx-auto md:py-8"
-        :class="expandedSection ? 'mt-10' : 'md:mt-32 mt-4 '"
-      >
-        <div
-          v-for="(section, index) in sections"
-          :key="index"
-          class="text-center cursor-pointer"
-        >
-          <div>
-            <div
-              class="px-2 mb-2 text-sm font-bold text-white transition-colors duration-300 rounded-lg md:text-lg md:px-6"
-              :class="
-                expandedSection === index + 1
-                  ? 'hidden'
-                  : expandedSection
-                  ? 'bg-[#49719D] bg-opacity-10 md:bg-opacity-30 py-4 md:py-10 lg:py-20'
-                  : 'bg-[#49719D] bg-opacity-10 md:bg-opacity-30 py-4 md:py-10 lg:py-20'
-              "
-              @click="toggleSection(index + 1)"
-            >
-              {{ section.title }}
-            </div>
-          </div>
-
-          <transition name="expand">
-            <div>
-              <h1
-                class="md:text-[25px] font-bold text-white text-center cursor-pointer"
-                :class="expandedSection === index + 1 ? '' : 'hidden'"
-                @click="toggleSection(index + 1)"
-              >
-                {{ section.title }}
-              </h1>
-              <div
-                v-if="expandedSection === index + 1"
-                class="flex flex-col items-center justify-center px-4 mt-2 mb-4 text-white rounded-lg md:flex-row md:items-center bg-opacity-90"
-              >
-                <p
-                  :data-aos="getAosAnimation(index)"
-                  :data-aos-delay="index * 100"
-                  class="text-sm md:text-[25px] md:w-[800px] md:leading-8 text-start font-semibold"
-                >
-                  {{ section.content }}
-                </p>
-                <!-- <img
-                  :src="section.image"
-                  :class="section.imageClass"
-                  :alt="section.alt"
-                /> -->
-              </div>
-            </div>
-          </transition>
-        </div>
-      </div>
-    </section>
-    <div id="wrapper" class="hidden md:h-[1500px] overflow-hidden md:block">
-      <div id="content">
-        <!-- <div class="spacer"></div> -->
-        <div class="px-4 mt-4 md:px-0 xl:mt-40 accordions">
-          <div class="accordion">
-            <div class="mb-4 title">INNOVATIVE TECHNOLOGY</div>
-            <div class="flex items-start justify-between">
-              <p
-                class="w-[500px] text-base md:text-[20px] md:leading-[34px] text-white text"
-              >
-                Stay ahead in liver disease diagnostics with our cutting-edge AI
-                and multi-omics platform. Our technology enables earlier
-                detection and more precise insights for better outcomes. Partner
-                with us to revolutionize liver health diagnostics.
-              </p>
-              <p class="text-[200px] font-bold number text-white">01.</p>
-            </div>
-          </div>
-          <div class="accordion">
-            <div class="mb-4 title">Diagnostic Labs</div>
-            <div class="flex justify-between">
-              <p
-                class="w-[500px] text-base md:text-[20px] md:leading-[34px] text-white text"
-              >
-                We provide tailored solutions to meet your unique needs. Our
-                approach is personalized, focusing on delivering the most
-                effective outcomes. Let us help you achieve your goals with
-                precision and care
-              </p>
-              <p class="text-[200px] font-bold number text-white">02.</p>
-            </div>
-          </div>
-          <div class="accordion">
-            <div class="mb-4 font-bold title">Hospital</div>
-            <div class="flex justify-between">
-              <p
-                class="w-[500px] text-base md:text-[20px] md:leading-[34px] text-white text"
-              >
-                Together, we can enhance global liver health outcomes through
-                collaboration and innovative solutions. By focusing on
-                prevention, treatment, and education, we aim to make a positive
-                impact. Let’s work to promote healthier lives worldwide.
-              </p>
-              <p class="text-[200px] font-bold number text-white">03.</p>
-            </div>
-          </div>
-        </div>
-        <!-- <div class="spacer"></div> -->
-      </div>
-    </div>
-
     <section class="relative w-full bg-white pt-80 md:pt-40 md:px-0">
       <div class="absolute bottom-0 flex justify-between w-full mt-4">
         <img src="/partner/sand.svg" class="lg:w-[700px] lg:h-[220px]" alt="" />
@@ -714,7 +690,7 @@ onMounted(() => {
       scrollTrigger: {
         trigger: ".accordions",
         pin: true,
-        start: "top 100px",
+        start: "",
         end: "bottom 100px top 100px",
         scrub: 1,
         ease: "linear",
@@ -781,6 +757,28 @@ export default {
   data() {
     return {
       isOpen: false,
+      showAllExperts: false,
+      accordions: [
+        {
+          title: "INNOVATIVE TECHNOLOGY",
+          description:
+            "Stay ahead in liver disease diagnostics with our cutting-edge AI and multi-omics platform. Our technology enables earlier detection and more precise insights for better outcomes. Partner with us to revolutionize liver health diagnostics.",
+          number: "01",
+        },
+        {
+          title: "Diagnostic Labs",
+          description:
+            "We provide tailored solutions to meet your unique needs. Our approach is personalized, focusing on delivering the most effective outcomes. Let us help you achieve your goals with precision and care.",
+          number: "02",
+        },
+        {
+          title: "Hospital",
+          description:
+            "Together, we can enhance global liver health outcomes through collaboration and innovative solutions. By focusing on prevention, treatment, and education, we aim to make a positive impact. Let's work to promote healthier lives worldwide.",
+          number: "03",
+        },
+      ],
+
       experts: [
         {
           name: "Srinivas Thirunagari, Founder & CEO",
@@ -811,6 +809,57 @@ export default {
           expertise: `Dr. Moorthy is an expert in genomics, computational drug discovery, and AI/ML-driven biomarker research. His contributions have been crucial in developing targeted therapies and advancing the digital transformation of pharmaceutical manufacturing.`,
           role: `As Principal Scientist at Karyon Bio, Dr. Moorthy leads the biomarker research team. He applies his expertise in genomics and machine learning to identify and validate novel biomarkers for liver disorders, particularly NAFLD/NASH, to drive precision medicine forward.`,
           linkedin: "https://www.linkedin.com/in/dhatchanamoorthy/",
+        },
+        {
+          name: "Dr. Rajasekaran - Principal Scientist, Imaging Research",
+          position: "Principal Scientist, Imaging Research",
+          image: "/teams/expert4.png",
+          description: `Dr. Rajasekaran has a Ph.D. in Computer Science and over 26 years of experience in AI-driven imaging research and clinical diagnostics.`,
+          fullDescription: `Dr. Rajasekaran has a Ph.D. in Computer Science and over 26 years of experience in AI-driven imaging research and clinical diagnostics. His career spans both technology and healthcare, with a focus on applying AI/ML to diagnostic imaging.`,
+          expertise: `Dr. Rajasekaran specializes in developing AI algorithms for medical imaging, including MRI, CT, and X-ray analysis. His work has significantly advanced diagnostic accuracy and enabled early detection of diseases.`,
+          role: `At Karyon Bio, Dr. Rajasekaran leads the imaging research team, developing advanced AI-driven diagnostic tools. His innovations, particularly in cancer diagnostics, have contributed to the precision of the company’s biomarker discovery efforts.`,
+          linkedin: "https://www.linkedin.com/in/sraja2911/",
+        },
+        {
+          name: "Mahati Munikoti, Senior Research Scientist, Bioinformatics",
+          position: "Senior Research Scientist",
+          image: "/teams/expert5.png",
+          description: `Mahati is an accomplished Bioinformatics Data Scientist with a proven track record in leveraging AI and machine learning for biomarker discovery.`,
+          fullDescription: `Mahati is an accomplished Bioinformatics Data Scientist with a proven track record in leveraging AI and machine learning for biomarker discovery. With a Master’s in Bioinformatics from Indiana University and a Bachelor’s in Biotechnology, Mahati excels at applying advanced computational techniques to genetic research.`,
+          expertise: `Mahati specializes in predictive models for gene biomarker identification, deep learning applications for disease classification, and enhancing data accessibility through biomedical ontologies. Her work with Next-Generation Sequencing (NGS) supports informed decision-making in drug discovery.`,
+          role: `As a Senior Research Scientist at Karyon Bio, Mahati applies advanced AI and machine learning techniques to biomarker discovery. She leads interdisciplinary teams to create innovative AI-driven solutions, improving patient outcomes in precision medicine.`,
+          linkedin: "https://www.linkedin.com/in/mahati-munikoti/",
+        },
+        {
+          name: "Janiel Jawahar Kirubakaran, Senior Research Scientist AI/ML",
+          position: "Senior Research Scientist AI/ML",
+          image: "/teams/expert6.png",
+          description: `Janiel is an AI/ML expert specializing in biomarker discovery and personalized medicine.`,
+          fullDescription: `Janiel is an AI/ML expert specializing in biomarker discovery and personalized medicine. At Karyon Bio, Janiel drives innovation by applying advanced machine learning models and deep learning architectures to complex biological data, including genomic and proteomic datasets.`,
+          expertise: `Janiel has made significant contributions to biomarker discovery, leveraging NLP, deep learning, and explainable AI. His work is regularly published in top journals and presented at international conferences, focusing on the intersection of AI and biomedical applications.`,
+          role: `At Karyon Bio, Janiel is a Senior Research Scientist driving innovation in biomarker discovery. His focus on AI and machine learning techniques is advancing personalized medicine through the analysis of complex biological datasets.`,
+          linkedin:
+            "https://www.linkedin.com/in/janiel-jawahar-kirubakaran-9b8433138/",
+        },
+        {
+          name: "Dr. Lipi Singh, Advisor",
+          position: "Advisor",
+          image: "/teams/expert7.png",
+          description: `Dr. Lipi Singh is a distinguished expert in regenerative medicine and healthcare strategy with over 16 years of experience in advancing patient care, clinical research, and therapeutic innovations.`,
+          fullDescription: `Dr. Lipi Singh is a distinguished expert in regenerative medicine and healthcare strategy with over 16 years of experience in advancing patient care, clinical research, and therapeutic innovations. Holding a Ph.D. in Pancreatology and Experimental Medicine, along with an MBA in Biotechnology Administration, Dr. Singh has led groundbreaking research in stem cell therapies and chronic disease management.`,
+          expertise: `Dr. Singh specializes in stem cell therapy research, chronic disease management, and biotherapeutics. Her work in clinical trials and regenerative medicine has driven advances in patient care and therapeutic innovations.`,
+          role: `As an Advisor at Karyon Bio, Dr. Singh guides the integration of AI/ML into biomarker discovery and healthcare strategies. She plays a pivotal role in advancing personalized medicine and therapeutic development, focusing on regenerative medicine and clinical trials.`,
+          linkedin: "https://www.linkedin.com/in/dr-lipi-singh-b1434939/",
+        },
+        {
+          name: "Dr. Keerthi Harikrishnan, Advisor",
+          position: "Advisor",
+          image: "/teams/expert8.png",
+          description: `Dr. Keerthi Harikrishnan is a seasoned domain expert with over a decade of experience in healthcare R&D, specializing in oncology, cardiology, drug discovery, and clinical research.`,
+          fullDescription: `Dr. Keerthi Harikrishnan is a seasoned domain expert with over a decade of experience in healthcare R&D, specializing in oncology, cardiology, drug discovery, and clinical research. Holding a Ph.D. in Biomedical Sciences and currently pursuing an MBA in Digital Business, Dr. Harikrishnan has made significant contributions to the field by developing AI/ML-driven solutions that enhance diagnostic workflows and advance scientific research.`,
+          expertise: `Dr. Harikrishnan has developed solutions in computational pathology and omics analysis, improving diagnostic workflows and drug discovery. Her leadership has been instrumental in creating AI-based solutions that enhance clinical accuracy.`,
+          role: `As an Advisor at Karyon Bio, Dr. Harikrishnan helps guide AI/ML integration in biomarker discovery and clinical research. Her leadership in advancing oncology and cardiology diagnostics contributes to Karyon Bio's mission of driving personalized medicine through AI-based innovations.`,
+          linkedin: "https://www.linkedin.com/in/keerthi-harikrishnan-4013a37/",
         },
       ],
       isModalOpen: false,
@@ -931,6 +980,9 @@ research and enhance patients together.`,
     clearInterval(this.autoChangeInterval); // Clean up interval on destroy
   },
   methods: {
+    toggleExperts() {
+      this.showAllExperts = !this.showAllExperts;
+    },
     changeCountry(flag) {
       this.selectedCountry = flag; // Manual country change
     },
