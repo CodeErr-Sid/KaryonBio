@@ -2,21 +2,22 @@
   <div class="font-futura">
     <!-- <MouseFollower /> -->
     <section
-      class="relative w-full md:h-screen overflow-hidden bg-gradient-to-r from-[#1F3B60] to-[#1F80AE]"
+      class="relative w-full md:h-screen overflow-hidden bg-gradient-to-l from-[#1f3b60] to-[#1f80ae] md:bg-[url('/about/home1.png')] bg-no-repeat md:bg-cover"
       :class="['', isOpen ? '  ' : ' ']"
     >
-      <img
+      <!-- <img
         src="/about/home.svg"
-        class="absolute -top-36 lg:w-[700px] hidden md:block -left-10 md:-left-[350px] lg:-left-[200px] xl:-left-[100px]"
+        class="absolute object-cover w-full h-full md:w-auto lg:w-[700px] hidden md:block -left-10 md:-left-[350px] lg:-left-[200px] xl:-left-[100px]"
         alt="hero-dot"
         :class="['', isOpen ? ' hidden' : ' ']"
       />
+
       <img
         src="/about/home1.svg"
         class="absolute -top-36 lg:w-[700px] hidden md:block -left-10 md:-left-[350px] lg:-left-[200px] xl:-left-[100px]"
         alt="hero-dot"
         :class="['', isOpen ? ' hidden' : ' ']"
-      />
+      /> -->
       <div
         class="flex flex-col items-center justify-center px-4 mt-20 lg:-mt-10 md:flex-row md:px-6 xl:pl-20"
       >
@@ -188,22 +189,21 @@
             <p
               class="text-base md:text-[20px] md:leading-[34px] text-[#274760B3]"
             >
-              Every year, approximately 20% of people worldwide are diagnosed
-              with liver disease, a chronic condition that can lead to
-              life-threatening complications if not treated properly.
-              <br /><br />
-              Liver disease affects people across all age groups and
-              backgrounds, often developing silently until symptoms become
-              severe. It can result in serious health issues such as cirrhosis,
-              liver failure, and in some cases, the need for a liver transplant.
-              <br /><br />
-              This statistic highlights the urgent need for increased awareness,
-              early detection, and effective management of liver-related health
-              concerns to improve long-term outcomes and quality of life.
+              An estimated 20% of patients with NASH will develop cirrhosis, and
+              NASH is predicted to become the leading indication for liver
+              transplants in the US. The mortality rate among patients with NASH
+              is substantially higher than the general population or patients
+              without this inflammatory subtype of NAFLD
             </p>
             <i
               class="pt-4 text-start cursor-pointer text-[#307BC4] text-[20px] font-semibold"
-              >Click For Label Report</i
+            >
+              <a
+                href="https://pubmed.ncbi.nlm.nih.gov/32207804/"
+                target="_blank"
+              >
+                Click For Lab Report</a
+              ></i
             >
           </div>
         </div>
@@ -267,22 +267,19 @@
             <p
               class="text-base md:text-[20px] md:leading-[34px] text-[#274760B3]"
             >
-              Every year, approximately 20% of people worldwide are diagnosed
-              with liver disease, a chronic condition that can lead to
-              life-threatening complications if not treated properly.
-              <br /><br />
-              Liver disease affects people across all age groups and
-              backgrounds, often developing silently until symptoms become
-              severe. It can result in serious health issues such as cirrhosis,
-              liver failure, and in some cases, the need for a liver transplant.
-              <br /><br />
-              This statistic highlights the urgent need for increased awareness,
-              early detection, and effective management of liver-related health
-              concerns to improve long-term outcomes and quality of life.
+              Global prevalence of NAFLD is 25.24% (95% CI: 22.10-28.65) with
+              highest prevalence in the Middle East and South America and lowest
+              in Africa.
             </p>
             <i
               class="pt-4 text-start cursor-pointer text-[#307BC4] text-[20px] font-semibold"
-              >Click For Label Report</i
+            >
+              <a
+                href="https://pubmed.ncbi.nlm.nih.gov/26707365/"
+                target="_blank"
+              >
+                Click For Lab Report</a
+              ></i
             >
           </div>
         </div>
