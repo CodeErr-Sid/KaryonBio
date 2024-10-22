@@ -671,85 +671,86 @@ useHead({
     },
   ],
 });
-nextTick(() => {
-  gsap.registerPlugin(ScrollTrigger);
+onMounted(() => {
+  nextTick(() => {
+    gsap.registerPlugin(ScrollTrigger);
 
-  if (typeof ScrollSmoother !== "undefined") {
-    ScrollSmoother.create({
-      content: "#content",
-      wrapper: "#wrapper",
-      smooth: true,
-      effects: false,
-      normalizeScroll: true,
-    });
-  } else {
-    console.error("ScrollSmoother is not defined");
-  }
-
-  const tl = gsap.timeline({
-    scrollTrigger: {
-      trigger: ".accordions",
-      pin: true,
-      start: "top 100px",
-      end: "bottom 100px top 100px",
-      scrub: 1,
-      ease: "linear",
-    },
-  });
-
-  // Hide the text and number classes
-  tl.to(".accordion .text, .accordion .number", {
-    height: 0,
-    paddingBottom: 0,
-    opacity: 0,
-    stagger: 0.5,
-  });
-
-  // Reduce card height (accordion margin-bottom)
-  tl.to(
-    ".accordion",
-    {
-      marginBottom: -20, // Adjust this value to reduce the gap
-      stagger: 0.5,
-    },
-    "<"
-  );
-});
-if (typeof gsap !== "undefined" && typeof ScrollTrigger !== "undefined") {
-  gsap.registerPlugin(ScrollTrigger);
-
-  const { innerWidth, innerHeight } = window;
-
-  // Adjust dimensions based on screen size
-  const initialWidth = innerWidth > 768 ? 400 : 200;
-  const initialHeight = innerWidth > 768 ? 200 : 0;
-  const zoomInWidth = innerWidth > 768 ? 800 : innerWidth * 0.9;
-  const zoomInHeight = innerWidth > 768 ? 600 : innerHeight * 0.8;
-
-  // Set the initial width based on the screen size
-  const img = document.querySelector("#zoom-in img");
-  img.style.width = `${initialWidth}px`;
-
-  gsap.fromTo(
-    img,
-    {
-      width: `${initialWidth}px`,
-    },
-    {
-      width: `${zoomInWidth}px`,
-      duration: 1,
-      scrollTrigger: {
-        trigger: "#zoom-in",
-        pin: true,
-        end: `+=${innerHeight * 1}`,
-        scrub: 1,
-        start: "top top",
-      },
+    if (typeof ScrollSmoother !== "undefined") {
+      ScrollSmoother.create({
+        content: "#content",
+        wrapper: "#wrapper",
+        smooth: true,
+        effects: false,
+        normalizeScroll: true,
+      });
+    } else {
+      console.error("ScrollSmoother is not defined");
     }
-  );
-}
-</script>
 
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".accordions",
+        pin: true,
+        start: "top 100px",
+        end: "bottom 100px top 100px",
+        scrub: 1,
+        ease: "linear",
+      },
+    });
+
+    // Hide the text and number classes
+    tl.to(".accordion .text, .accordion .number", {
+      height: 0,
+      paddingBottom: 0,
+      opacity: 0,
+      stagger: 0.5,
+    });
+
+    // Reduce card height (accordion margin-bottom)
+    tl.to(
+      ".accordion",
+      {
+        marginBottom: -20, // Adjust this value to reduce the gap
+        stagger: 0.5,
+      },
+      "<"
+    );
+  });
+  if (typeof gsap !== "undefined" && typeof ScrollTrigger !== "undefined") {
+    gsap.registerPlugin(ScrollTrigger);
+
+    const { innerWidth, innerHeight } = window;
+
+    // Adjust dimensions based on screen size
+    const initialWidth = innerWidth > 768 ? 400 : 200;
+    const initialHeight = innerWidth > 768 ? 200 : 0;
+    const zoomInWidth = innerWidth > 768 ? 800 : innerWidth * 0.9;
+    const zoomInHeight = innerWidth > 768 ? 600 : innerHeight * 0.8;
+
+    // Set the initial width based on the screen size
+    const img = document.querySelector("#zoom-in img");
+    img.style.width = `${initialWidth}px`;
+
+    gsap.fromTo(
+      img,
+      {
+        width: `${initialWidth}px`,
+      },
+      {
+        width: `${zoomInWidth}px`,
+        duration: 1,
+        scrollTrigger: {
+          trigger: "#zoom-in",
+          pin: true,
+          end: `+=${innerHeight * 1}`,
+          scrub: 1,
+          start: "top top",
+        },
+      }
+    );
+  }
+});
+</script>
 <script>
 import AOS from "aos";
 import "aos/dist/aos.css";
