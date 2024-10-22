@@ -219,7 +219,7 @@
       </div>
     </section>
     <section
-      class="flex flex-col items-center justify-center mt-10 md:mt-0 py-10 md:py-0 bg-[#1F3B60] md:bg-white md:pt-20 last"
+      class="flex flex-col items-center h-screen md:h-auto justify-center mt-10 md:mt-0 py-10 md:py-0 bg-[#1F3B60] md:bg-white md:pt-20 last"
       id="zoom-in"
     >
       <h1
@@ -228,7 +228,7 @@
         Empowering Precision Liver Health
       </h1>
       <p
-        class="text-white md:text-black text-center mt-4 md:mt-4 md:w-[600px] px-4 md:h-[200px]"
+        class="text-white md:text-black text-center mt-4 md:mt-4 md:w-[600px] px-4 md:h-[220px]"
       >
         This project aims to leverage advanced technologies to enhance liver
         health through precise and personalized medical insights and solutions.
@@ -262,13 +262,13 @@
         <!-- Text Section -->
         <div class="w-full space-y-6 text-center md:w-1/2 md:text-left">
           <div class="flex flex-col">
-            <!-- <p
+            <p
               class="text-base md:text-[20px] md:leading-[34px] text-[#274760B3]"
             >
               Global prevalence of NAFLD is 25.24% (95% CI: 22.10-28.65) with
               highest prevalence in the Middle East and South America and lowest
               in Africa.
-            </p> -->
+            </p>
             <i
               class="pt-4 text-start cursor-pointer text-[#307BC4] text-[20px] font-semibold"
             >
@@ -671,83 +671,83 @@ useHead({
     },
   ],
 });
-onMounted(() => {
-  nextTick(() => {
-    gsap.registerPlugin(ScrollTrigger);
+nextTick(() => {
+  gsap.registerPlugin(ScrollTrigger);
 
-    if (typeof ScrollSmoother !== "undefined") {
-      ScrollSmoother.create({
-        content: "#content",
-        wrapper: "#wrapper",
-        smooth: true,
-        effects: false,
-        normalizeScroll: true,
-      });
-    } else {
-      console.error("ScrollSmoother is not defined");
-    }
-
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: ".accordions",
-        pin: true,
-        start: "",
-        end: "bottom 100px top 100px",
-        scrub: 1,
-        ease: "linear",
-      },
+  if (typeof ScrollSmoother !== "undefined") {
+    ScrollSmoother.create({
+      content: "#content",
+      wrapper: "#wrapper",
+      smooth: true,
+      effects: false,
+      normalizeScroll: true,
     });
-
-    // Hide the text and number classes
-    tl.to(".accordion .text, .accordion .number", {
-      height: 0,
-      paddingBottom: 0,
-      opacity: 0,
-      stagger: 0.5,
-    });
-
-    // Reduce card height (accordion margin-bottom)
-    tl.to(
-      ".accordion",
-      {
-        marginBottom: -20, // Adjust this value to reduce the gap
-        stagger: 0.5,
-      },
-      "<"
-    );
-  });
-  if (typeof gsap !== "undefined" && typeof ScrollTrigger !== "undefined") {
-    gsap.registerPlugin(ScrollTrigger);
-
-    const { innerHeight, innerWidth } = window;
-
-    // Adjust the size dynamically based on screen width
-    let initialWidth = innerWidth > 768 ? 400 : 200; // Larger size for desktops, smaller for mobile
-    let zoomInWidth = innerWidth > 768 ? 800 : 800;
-
-    // Set the initial width based on the screen size
-    const img = document.querySelector("#zoom-in img");
-    img.style.width = `${initialWidth}px`;
-
-    gsap.fromTo(
-      img,
-      {
-        width: `${initialWidth}px`,
-      },
-      {
-        width: `${zoomInWidth}px`,
-        duration: 1,
-        scrollTrigger: {
-          trigger: "#zoom-in",
-          pin: true,
-          end: `+=${innerHeight * 1.3}`,
-          scrub: 1,
-          start: "top top",
-        },
-      }
-    );
+  } else {
+    console.error("ScrollSmoother is not defined");
   }
+
+  const tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".accordions",
+      pin: true,
+      start: "top 100px",
+      end: "bottom 100px top 100px",
+      scrub: 1,
+      ease: "linear",
+    },
+  });
+
+  // Hide the text and number classes
+  tl.to(".accordion .text, .accordion .number", {
+    height: 0,
+    paddingBottom: 0,
+    opacity: 0,
+    stagger: 0.5,
+  });
+
+  // Reduce card height (accordion margin-bottom)
+  tl.to(
+    ".accordion",
+    {
+      marginBottom: -20, // Adjust this value to reduce the gap
+      stagger: 0.5,
+    },
+    "<"
+  );
 });
+if (typeof gsap !== "undefined" && typeof ScrollTrigger !== "undefined") {
+  gsap.registerPlugin(ScrollTrigger);
+
+  const { innerWidth, innerHeight } = window;
+
+  // Adjust dimensions based on screen size
+  const initialWidth = innerWidth > 768 ? 400 : 200;
+  const initialHeight = innerWidth > 768 ? 200 : 0;
+  const zoomInWidth = innerWidth > 768 ? 800 : innerWidth * 0.9;
+  const zoomInHeight = innerWidth > 768 ? 600 : innerHeight * 0.8;
+
+  // Set the initial width based on the screen size
+  const img = document.querySelector("#zoom-in img");
+  img.style.width = `${initialWidth}px`;
+
+  gsap.fromTo(
+    img,
+    {
+      width: `${initialWidth}px`,
+    },
+    {
+      width: `${zoomInWidth}px`,
+      duration: 1,
+      scrollTrigger: {
+        trigger: "#zoom-in",
+        pin: true,
+        end: `+=${innerHeight * 1}`,
+        scrub: 1,
+        start: "top top",
+      },
+    }
+  );
+}
 </script>
 
 <script>
