@@ -1,15 +1,12 @@
 <template>
   <div class="bg-custom-gradient">
     <Preloader @preloader-complete="handlePreloaderComplete" />
-    <div v-if="headerVisible">
+    <div>
       <nav
-        v-if="headerVisible"
         class="fixed z-[99999] flex items-center justify-between px-4 py-2 md:py-1 md:px-10 xl:px-20 transition-all duration-300"
         :class="[
           isOpen ? 'w-[150px]' : 'w-full',
-          isScrolled
-            ? 'bg-white bg-opacity-30 backdrop-filter md:backdrop-blur-lg text-white'
-            : '',
+          isScrolled ? 'bg-white text-white' : '',
         ]"
       >
         <!-- Show logo based on scroll state -->
@@ -61,7 +58,7 @@
           :class="[
             'md:flex gap-2 lg:gap-6 text-[#1F3B60] font-semibold text-[20px]',
             isOpen
-              ? 'block font-semibold bg-opacity-30 backdrop-filter backdrop-blur-lg bg-white h-screen w-[150px]'
+              ? 'block font-semibold  bg-white h-screen w-[150px]'
               : 'hidden',
             isScrolled ? 'md:text-[#1F3B60]' : 'md:text-white',
           ]"

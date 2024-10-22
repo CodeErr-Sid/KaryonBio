@@ -19,12 +19,9 @@
         :class="['', isOpen ? ' hidden' : ' ']"
       /> -->
       <div
-        class="flex flex-col items-center justify-center px-4 mt-20 lg:-mt-10 md:flex-row md:px-6 xl:pl-20"
+        class="flex flex-col items-center justify-center px-4 mt-20 md:flex-row md:mt-52 l md:px-6 xl:pl-20"
       >
-        <div
-          class="relative lg:left-20"
-          :class="['', isOpen ? 'hidden ' : 'block']"
-        >
+        <div class="md:w-[750px]" :class="['', isOpen ? 'hidden ' : 'block']">
           <!-- Typewriter effect here -->
           <h1
             class="text-4xl xl:text-[50px] font-bold z-20 relative text-white leading-[50px] xl:leading-[80px]"
@@ -36,24 +33,12 @@
             class="relative z-20 mt-2 text-sm font-semibold text-white md:text-xl"
           ></p>
         </div>
-        <!-- <img
-          src="/round.png"
-          class="md:w-[450px] xl:w-auto"
-          alt="round"
-          :class="['', isOpen ? ' hidden' : ' ']"
-        /> -->
-        <div class="relative">
-          <img
-            data-aos="flip-left"
-            src="/liver.svg"
-            class="w-[200px] top-28 lg:top-72 left-14 lg:left-[200px] md:right-20 lg:right-0 z-20 absolute"
-            alt="liver"
-          />
-
-          <div>
-            <Spinner />
-          </div>
-        </div>
+        <img
+          data-aos="flip-left"
+          src="/liver.svg"
+          class="w-[200px] animate-jump animate-infinite animate-duration-1000"
+          alt="liver"
+        />
       </div>
     </section>
     <section class="mt-4 mb-4 md:mt-10 md:px-10">
@@ -219,7 +204,7 @@
       </div>
     </section>
     <section
-      class="flex flex-col items-center justify-center mt-10 md:mt-0 py-10 md:py-0 bg-[#1F3B60] md:bg-white md:pt-20 last"
+      class="flex flex-col items-center justify-center mt-10 md:mt-0 py-10 md:py-0 h-screen md:h-auto bg-[#1F3B60] md:bg-white md:pt-20 last"
       id="zoom-in"
     >
       <h1
@@ -228,7 +213,7 @@
         Empowering Precision Liver Health
       </h1>
       <p
-        class="text-white md:text-black text-center mt-4 md:mt-4 md:w-[600px] px-4 md:h-[200px]"
+        class="text-white md:text-black text-center mt-4 md:mt-4 md:w-[600px] px-4 md:h-[220px]"
       >
         This project aims to leverage advanced technologies to enhance liver
         health through precise and personalized medical insights and solutions.
@@ -239,7 +224,7 @@
         x
       </div>
       <div
-        class="flex items-center justify-center w-full overflow-hidden md:absolute"
+        class="flex items-center justify-center h-[400px] md:h-auto overflow-hidden md:absolute"
       >
         <img src="/zoom.jpg" class="mt-4 rounded-md" alt="Zoom In Image" />
       </div>
@@ -262,13 +247,13 @@
         <!-- Text Section -->
         <div class="w-full space-y-6 text-center md:w-1/2 md:text-left">
           <div class="flex flex-col">
-            <!-- <p
+            <p
               class="text-base md:text-[20px] md:leading-[34px] text-[#274760B3]"
             >
               Global prevalence of NAFLD is 25.24% (95% CI: 22.10-28.65) with
               highest prevalence in the Middle East and South America and lowest
               in Africa.
-            </p> -->
+            </p>
             <i
               class="pt-4 text-start cursor-pointer text-[#307BC4] text-[20px] font-semibold"
             >
@@ -691,7 +676,7 @@ onMounted(() => {
       scrollTrigger: {
         trigger: ".accordions",
         pin: true,
-        start: "",
+        start: "top 100px",
         end: "bottom 100px top 100px",
         scrub: 1,
         ease: "linear",
@@ -719,11 +704,13 @@ onMounted(() => {
   if (typeof gsap !== "undefined" && typeof ScrollTrigger !== "undefined") {
     gsap.registerPlugin(ScrollTrigger);
 
-    const { innerHeight, innerWidth } = window;
+    const { innerWidth, innerHeight } = window;
 
-    // Adjust the size dynamically based on screen width
-    let initialWidth = innerWidth > 768 ? 400 : 200; // Larger size for desktops, smaller for mobile
-    let zoomInWidth = innerWidth > 768 ? 800 : 800;
+    // Adjust dimensions based on screen size
+    const initialWidth = innerWidth > 768 ? 400 : 200;
+    const initialHeight = innerWidth > 768 ? 200 : 0;
+    const zoomInWidth = innerWidth > 768 ? 800 : innerWidth * 0.9;
+    const zoomInHeight = innerWidth > 768 ? 600 : innerHeight * 0.8;
 
     // Set the initial width based on the screen size
     const img = document.querySelector("#zoom-in img");
@@ -740,7 +727,7 @@ onMounted(() => {
         scrollTrigger: {
           trigger: "#zoom-in",
           pin: true,
-          end: `+=${innerHeight * 1.3}`,
+          end: `+=${innerHeight * 1}`,
           scrub: 1,
           start: "top top",
         },
