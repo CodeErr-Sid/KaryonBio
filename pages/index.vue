@@ -262,13 +262,13 @@
         <!-- Text Section -->
         <div class="w-full space-y-6 text-center md:w-1/2 md:text-left">
           <div class="flex flex-col">
-            <p
+            <!-- <p
               class="text-base md:text-[20px] md:leading-[34px] text-[#274760B3]"
             >
               Global prevalence of NAFLD is 25.24% (95% CI: 22.10-28.65) with
               highest prevalence in the Middle East and South America and lowest
               in Africa.
-            </p>
+            </p> -->
             <i
               class="pt-4 text-start cursor-pointer text-[#307BC4] text-[20px] font-semibold"
             >
@@ -659,10 +659,15 @@
 useHead({
   script: [
     {
-      src: "https://unpkg.co/gsap@3/dist/gsap.min.js",
+      src: "https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js",
+      async: true,
     },
     {
-      src: "https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js",
+      src: "https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js",
+      async: true,
+    },
+    {
+      src: "https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js",
     },
   ],
 });
@@ -1010,12 +1015,6 @@ research and enhance patients together.`,
         this.userClicked = false;
         this.startAutoChange(); // Restart auto-change
       }, 5000); // 10 seconds pause after user click
-    },
-
-    updateWindowWidth() {
-      if (typeof window !== "undefined") {
-        this.windowWidth = window.innerWidth; // Update window width on resize
-      }
     },
 
     startAutoChange() {
