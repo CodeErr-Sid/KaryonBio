@@ -382,6 +382,7 @@
       </div>
     </div>
     <section
+      id="ourTeamTitle"
       class="lg:py-16 relative z-20 bg-[#F5F7FA] px-4 mt-4 mb-4 10 md:mt-0"
     >
       <div class="container mx-auto text-center">
@@ -665,82 +666,83 @@ useHead({
     },
   ],
 });
-onMounted(async () => {
-  await nextTick();
-  gsap.registerPlugin(ScrollTrigger);
+onMounted(() => {
+  nextTick(() => {
+    gsap.registerPlugin(ScrollTrigger);
 
-  if (typeof ScrollSmoother !== "undefined") {
-    ScrollSmoother.create({
-      content: "#content",
-      wrapper: "#wrapper",
-      smooth: true,
-      effects: false,
-      normalizeScroll: true,
-    });
-  } else {
-    console.error("ScrollSmoother is not defined");
-  }
-
-  const tl = gsap.timeline({
-    scrollTrigger: {
-      trigger: ".accordions",
-      pin: true,
-      start: "",
-      end: "bottom 100px top 100px",
-      scrub: 1,
-      ease: "linear",
-    },
-  });
-
-  // Hide the text and number classes
-  tl.to(".accordion .text, .accordion .number", {
-    height: 0,
-    paddingBottom: 0,
-    opacity: 0,
-    stagger: 0.5,
-  });
-
-  // Reduce card height (accordion margin-bottom)
-  tl.to(
-    ".accordion",
-    {
-      marginBottom: -20, // Adjust this value to reduce the gap
-      stagger: 0.5,
-    },
-    "<"
-  );
-});
-if (typeof gsap !== "undefined" && typeof ScrollTrigger !== "undefined") {
-  gsap.registerPlugin(ScrollTrigger);
-
-  const { innerHeight, innerWidth } = window;
-
-  // Adjust the size dynamically based on screen width
-  let initialWidth = innerWidth > 768 ? 400 : 200; // Larger size for desktops, smaller for mobile
-  let zoomInWidth = innerWidth > 768 ? 800 : 800;
-
-  // Set the initial width based on the screen size
-  const img = document.querySelector("#zoom-in img");
-  img.style.width = `${initialWidth}px`;
-
-  gsap.fromTo(
-    img,
-    {
-      width: `${initialWidth}px`,
-    },
-    {
-      width: `${zoomInWidth}px`,
-      duration: 1,
-      scrollTrigger: {
-        trigger: "#zoom-in",
-        pin: true,
-        end: `+=${innerHeight * 1.3}`,
-        scrub: 1,
-        start: "top top",
-      },
+    if (typeof ScrollSmoother !== "undefined") {
+      ScrollSmoother.create({
+        content: "#content",
+        wrapper: "#wrapper",
+        smooth: true,
+        effects: false,
+        normalizeScroll: true,
+      });
+    } else {
+      console.error("ScrollSmoother is not defined");
     }
-  );
-}
+
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".accordions",
+        pin: true,
+        start: "",
+        end: "bottom 100px top 100px",
+        scrub: 1,
+        ease: "linear",
+      },
+    });
+
+    // Hide the text and number classes
+    tl.to(".accordion .text, .accordion .number", {
+      height: 0,
+      paddingBottom: 0,
+      opacity: 0,
+      stagger: 0.5,
+    });
+
+    // Reduce card height (accordion margin-bottom)
+    tl.to(
+      ".accordion",
+      {
+        marginBottom: -20, // Adjust this value to reduce the gap
+        stagger: 0.5,
+      },
+      "<"
+    );
+  });
+  if (typeof gsap !== "undefined" && typeof ScrollTrigger !== "undefined") {
+    gsap.registerPlugin(ScrollTrigger);
+
+    const { innerHeight, innerWidth } = window;
+
+    // Adjust the size dynamically based on screen width
+    let initialWidth = innerWidth > 768 ? 400 : 200; // Larger size for desktops, smaller for mobile
+    let zoomInWidth = innerWidth > 768 ? 800 : 800;
+
+    // Set the initial width based on the screen size
+    const img = document.querySelector("#zoom-in img");
+    img.style.width = `${initialWidth}px`;
+
+    gsap.fromTo(
+      img,
+      {
+        width: `${initialWidth}px`,
+      },
+      {
+        width: `${zoomInWidth}px`,
+        duration: 1,
+        scrollTrigger: {
+          trigger: "#zoom-in",
+          pin: true,
+          end: `+=${innerHeight * 1.3}`,
+          scrub: 1,
+          start: "top top",
+        },
+      }
+    );
+  }
+});
 </script>
 
 <script>
@@ -976,6 +978,16 @@ research and enhance patients together.`,
   methods: {
     toggleExperts() {
       this.showAllExperts = !this.showAllExperts;
+
+      if (!this.showAllExperts) {
+        // Scroll to the "Our Team" section
+        this.$nextTick(() => {
+          const ourTeamTitle = this.$el.querySelector("#ourTeamTitle");
+          if (ourTeamTitle) {
+            ourTeamTitle.scrollIntoView({ behavior: "smooth", block: "start" });
+          }
+        });
+      }
     },
     changeCountry(flag) {
       this.selectedCountry = flag; // Manual country change
