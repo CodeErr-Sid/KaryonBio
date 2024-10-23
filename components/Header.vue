@@ -1,14 +1,20 @@
 <template>
   <div class="bg-custom-gradient">
     <Preloader @preloader-complete="handlePreloaderComplete" />
-    <div>
+    <div v-if="headerVisible">
       <nav
-        class="fixed z-[99999] bg-white flex items-center justify-between px-4 py-2 md:py-1 md:px-10 xl:px-20 transition-all duration-300"
-        :class="[isOpen ? 'w-[150px]' : 'w-full', isScrolled ? ' ' : '']"
+        v-if="headerVisible"
+        class="fixed z-[99999] flex items-center justify-between px-4 py-2 md:py-1 md:px-10 xl:px-20 transition-all duration-300"
+        :class="[
+          isOpen ? 'w-[150px]' : 'w-full',
+          isScrolled
+            ? 'bg-white bg-opacity-30 backdrop-filter md:backdrop-blur-lg text-white'
+            : '',
+        ]"
       >
         <!-- Show logo based on scroll state -->
         <img
-          :src="'/logo2.svg'"
+          :src="isScrolled ? '/logo2.svg' : '/logo.svg'"
           alt="logo"
           class="w-20 md:w-28"
           :class="isOpen ? 'hidden' : ''"
@@ -55,9 +61,9 @@
           :class="[
             'md:flex gap-2 lg:gap-6 text-[#1F3B60] font-semibold text-[20px]',
             isOpen
-              ? 'block font-semibold  bg-white h-screen w-[150px]'
+              ? 'block font-semibold bg-opacity-30 backdrop-filter backdrop-blur-lg bg-white h-screen w-[150px]'
               : 'hidden',
-            isScrolled ? 'md:text-[#1F3B60]' : 'md:text-[#1F3B60]',
+            isScrolled ? 'md:text-[#1F3B60]' : 'md:text-white',
           ]"
           class="absolute top-0 left-0 w-full transition-all duration-300 md:bg-none md:top-20 md:static md:w-auto md:block"
         >
